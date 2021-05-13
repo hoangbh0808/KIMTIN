@@ -152,3 +152,50 @@
 					width: 0
 				span
 					color: $main
+.button-sw-1
+	width: 50px
+	height: 50px
+	border: 1px solid $border-dc
+	background-color: $white
+	display: flex
+	align-items: center
+	transition: .3s all ease-in-out
+	justify-content: center
+	&:hover
+		background-color: $black
+		border: 1px solid $main
+		em
+			color: $main
+	em
+		transition: .3s all ease-in-out
+	&.button-prev
+		margin-right: 29px
+		@media screen and ( max-width: 1280px )
+			margin-right: 5px
+	&.button-next
+		margin-left: 29px
+		@media screen and ( max-width: 1280px )
+			margin-left: 5px
+.wrap-button-slide
+	display: flex
+	align-items: center
+	justify-content: center
+	@media screen and ( max-width: 1280px )
+		margin-top: 30px
+	.button-prev
+		right: 100%
+		top: 50%
+		transform: translateY(-50%)
+		position: absolute
+		@media screen and ( max-width: 1280px )
+			position: static
+			transform: translateY(0)
+	.button-next
+		left: 100%
+		top: 50%
+		transform: translateY(-50%)
+		position: absolute
+		@media screen and ( max-width: 1280px )
+			position: static
+			transform: translateY(0)
+

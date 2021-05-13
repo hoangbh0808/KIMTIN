@@ -139,6 +139,27 @@ const initBanner = () => {
 			},
 		}
 	);
+	var productDetailTop = new Swiper(".page-dau-thau .swiper-container", {
+		slidesPerView: 1,
+		observer: true,
+		observeParents: true,
+		speed: 1000,
+		navigation: {
+			nextEl: ".page-dau-thau .button-next",
+			prevEl: ".page-dau-thau .button-prev",
+		},
+		breakpoints: {
+			414: {
+				slidesPerView: 2,
+			},
+			768: {
+				slidesPerView: 3,
+			},
+			1024: {
+				slidesPerView: 4,
+			},
+		},
+	});
 };
 // ===========================CHECK BANNER========================= //
 const checkLayoutBanner = () => {
@@ -297,7 +318,7 @@ const DropdownProductLang = () => {
 		'<div class="loading"><svg id="load" x="0px" y="0px" viewBox="0 0 150 150"><circle id="loading-inner" cx="75" cy="75" r="60"/></svg></div>'
 	);
 	var $parent = $(".page-langding"),
-		$items = $parent.find(".product-item"),
+		$items = $parent.find(".col-product"),
 		$loadMoreButton = $parent.find(".showItem"),
 		maxItems = 5,
 		numberItems = 10;
@@ -358,6 +379,21 @@ const accordianList = () => {
 		$(".side-navigation-wrapper .title").not(this).removeClass("active");
 	});
 };
+/*==================== tabContent ====================*/
+function tabContent(params) {
+	$(".tabslet-tab .box-tab").on("click", function () {
+		let id = $(this).attr("data-id");
+		$(".tabslet-content").removeClass("active");
+		$("#" + id).addClass("active");
+	});
+}
+/*==================== Tab Đấu thầu ====================*/
+function tabDauThau(e) {
+	$(".box-tab").on("click", function () {
+		$(".page-dau-thau").find(".box-tab").not(this).removeClass("active");
+		$(this).addClass("active");
+	});
+}
 /*==================== LOAD FUNCTION ====================*/
 $(document).ready(function () {
 	// scrollTop();
@@ -375,4 +411,6 @@ $(document).ready(function () {
 	}, 300);
 	DropdownProduct();
 	DropdownProductLang();
+	tabContent();
+	tabDauThau();
 });

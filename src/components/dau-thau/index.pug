@@ -1,0 +1,54 @@
+section.page-dau-thau.section
+	.container
+		h2.title-page.text-center.mx-auto Chào giá cạnh tranh theo nhóm nguyên vật liệu
+		.wrap(data-toggle="tabslet")
+			.wrap-slide-tab
+				.swiper-container
+					.swiper-wrapper.tabslet-tab
+						.swiper-slide
+							.box-tab(data-id="tab1")
+								span Kim loại màu
+						.swiper-slide
+							.box-tab(data-id="tab2")
+								span Kim loại màu
+				.wrap-button-slide
+					.button-prev.button-sw-1
+						em.lnr.lnr-arrow-left
+					.button-next.button-sw-1
+						em.lnr.lnr-arrow-right
+			.tabslet-content.active#tab1
+				.wrap-box-dau-thau
+					-for(i=0;i<5;i++)
+						.box-dau-thau
+							.img
+								a(href="")
+									img(src="./img/dt-1.png" alt="")
+							.content-right
+								a(href="").title Gói kim loại màu 1
+								.content
+									table
+										tr
+											td Nguyên vật liệu
+											td Ván sàn
+										tr
+											td Khu vực
+											td TP.HCM
+										tr
+											td Ngày bắt đầu
+											td 07/04/2021
+										tr
+											td Ngày kết thúc
+											td 07/05/2021
+								.date Ngày đăng: 07/04/2021
+								.option.yellow
+									.desc Mới
+				.pages
+					.modulepager
+						ul.pagination
+							li.active
+								span 1
+							li
+								a(href="") 2
+							li
+								a(href="") 3
+			.tabslet-content#tab2

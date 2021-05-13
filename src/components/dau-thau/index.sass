@@ -1,0 +1,120 @@
+.page-dau-thau
+	.wrap-slide-tab
+		position: relative
+		margin-top: 20px
+	.title-page
+		@media (max-width: 575.98px)
+			font-size: r(24px)
+	.box-tab
+		height: 150px
+		border: 1px solid $border-e5
+		display: flex
+		align-items: center
+		justify-content: center
+		padding: 11px
+		transition: .3s all ease-in-out
+		cursor: pointer
+		&.active
+			border: 1px solid $main
+			box-shadow: 3px 4px 15px rgba(0, 0, 0, 0.1)
+			span
+				background-color: $main
+		&:hover
+			border: 1px solid $main
+			box-shadow: 3px 4px 15px rgba(0, 0, 0, 0.1)
+			span
+				background-color: $main
+		span
+			background-color: #f5f5f5
+			width: 100%
+			height: 100%
+			display: flex
+			align-items: center
+			justify-content: center
+			color: $black-1
+			font-size: r(18px)
+			font-weight: 700
+			pointer-events: none
+			transition: .3s all ease-in-out
+	.wrap-box-dau-thau
+		margin-top: 40px
+		@media (min-width: 1200px)
+			padding: 0 180px
+		.box-dau-thau
+			box-shadow: 3px 4px 15px rgba(0, 0, 0, 0.08)
+			background-color: $white
+			display: flex
+			padding: 20px
+			border: 1px solid transparent
+			transition: .3s all ease-in-out
+			flex-wrap: wrap
+			&:hover
+				border: 1px solid $main
+				box-shadow: 3px 4px 15px rgba(0, 0, 0, 0.2)
+				.img
+					img
+						transform: scale(1.05)
+			&+.box-dau-thau
+				margin-top: 30px
+			.img
+				flex: 0 0 160px
+				max-width: 160px
+				overflow: hidden
+				@media (max-width: 575.98px)
+					flex: 0 0 100%
+					max-width: 100%
+				img
+					width: 100%
+					height: 100%
+					object-fit: cover
+					transition: .3s all ease-in-out
+			.content-right
+				padding-left: 20px
+				position: relative
+				flex: 1
+				@media (max-width: 575.98px)
+					flex: 0 0 100%
+					max-width: 100%
+				.date
+					color: $gray-9
+					font-size: r(12px)
+					font-weight: 400
+					position: absolute
+					right: -12px
+					bottom: -7px
+					@media (max-width: 575.98px)
+						right: 0
+				.content
+					margin-top: 8px
+				.option
+					position: absolute
+					top: -9px
+					right: -11px
+					left: auto
+					@media (max-width: 575.98px)
+						top: 10px
+						right: 0
+				.title
+					color: $black-3
+					font-size: r(18px)
+					font-weight: 700
+					display: block
+					padding-top: 10px
+					transition: .3s all ease-in-out
+					&:hover
+						color: $red
+				table
+					*
+						color: $gray-9
+						font-size: r(14px)
+						font-weight: 400
+					tr
+						td
+							padding-bottom: 8px
+							&:first-child
+								color: $black-3
+								padding-right: 15px
+								@media (min-width: 576px)
+									padding-right: 80px
+	.pagination
+		margin-top: 40px
