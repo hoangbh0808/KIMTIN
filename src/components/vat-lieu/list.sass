@@ -46,7 +46,7 @@
 					align-items: center
 					justify-content: center
 					margin-bottom: 20px
-					min-height: 275px
+					height: 275px
 					border: 1px solid $border-e5
 					background: #fefefe
 					img
@@ -54,7 +54,7 @@
 						transform: scale(.6)
 				.pro-infor
 					.pro-title
-						padding-right: 40px
+						padding-right: 30px
 						padding-bottom: 14px
 						a
 							color: $black-3
@@ -83,12 +83,21 @@
 				&:nth-child(7),
 				&:nth-child(10),
 					margin-left: 0
-		@media screen and ( max-width: 1199.98px )
+		@media screen and ( max-width: 1279.98px )
 			.block_name_category
 				margin-bottom: 30px
 				.name_category
 					h2
-						font-size: 1rem
+						font-size: r(14px)
+				.option-wrap,
+				.sort-wrap
+					p
+						font-size: r(14px)
+					select
+						font-size: r(14px)
+
+		@media screen and ( max-width: 1199.98px )
+			.block_name_category
 				.wrap-left
 					.option-wrap
 						padding-left: 10px
@@ -98,7 +107,7 @@
 				.product-item
 					margin-bottom: 30px
 					.pro-img
-						min-height: 200px
+						height: 200px
 						img
 							transform: scale(.7)
 		@media screen and ( max-width: 767.98px )
@@ -131,7 +140,7 @@
 				.product-item
 					flex: 1 0 calc(( 100% / 2) - 30px)
 					.pro-img
-						min-height: 162.2px
+						height: 162.2px
 						margin-bottom: 10px
 						img
 							transform: scale(.6)
@@ -147,3 +156,11 @@
 			.block-product
 				.product-item
 					flex: 1 0 calc(( 100% / 2) - 30px)
+	&.flooring
+		.hero-product
+			.block-product
+				.product-item
+					.pro-img
+						padding: 29px 16px
+						img
+							transform: scale(1)
