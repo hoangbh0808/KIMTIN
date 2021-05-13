@@ -234,20 +234,16 @@ function adjustProductAmount() {
 
 // ========================SCROLL HEADER ACTIVE ================================ //
 const headerScrollActive = () => {
-	let bannerHeight = $("#banner-home").outerHeight();
-	let pageBanner = $("#page-banner").outerHeight();
 	$(window).scroll(function () {
-		if (
-			$(this).scrollTop() > bannerHeight ||
-			$(this).scrollTop() > pageBanner
-		) {
-			$("header").addClass("show__scroll");
-			$("header").slideDown();
-		} else if ($(this).scrollTop() > 0) {
-			$("header").slideUp();
+		if ($(this).scrollTop() > 0) {
+			$("header").css({
+				position: "fixed",
+				top: "0",
+				"z-index": "1000",
+				transition: "all .5s",
+			});
 		} else {
-			$("header").removeClass("show__scroll");
-			$("header").slideDown();
+			$("header").css("position", "static");
 		}
 	});
 };
