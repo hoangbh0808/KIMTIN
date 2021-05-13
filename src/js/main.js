@@ -1,12 +1,15 @@
 /*==================== SHOW SCROLL TOP ====================*/
 const scrollTop = () => {
-	let headerHeight = $("header").outerHeight();
-	let bannerHeight = $("#section-banner").outerHeight();
+	let bannerHeight = $("#banner-home").outerHeight();
+	let pageBanner = $("#page-banner").outerHeight();
 	$(window).scroll(function () {
-		if ($(this).scrollTop() > headerHeight) {
-			$("#scroll-top").addClass("show-scroll");
+		if (
+			$(this).scrollTop() > bannerHeight ||
+			$(this).scrollTop() > pageBanner
+		) {
+			$("#site-tool").addClass("active");
 		} else {
-			$("#scroll-top").removeClass("show-scroll");
+			$("#site-tool").removeClass("active");
 		}
 	});
 
@@ -289,7 +292,7 @@ const accordianList = () => {
 };
 /*==================== LOAD FUNCTION ====================*/
 $(document).ready(function () {
-	// scrollTop();
+	scrollTop();
 	mainMenu();
 	initBanner();
 	searchButton();
