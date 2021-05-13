@@ -187,78 +187,6 @@
 						padding-left: 0
 					&::before
 						display: none
-.product-item
-	position: relative
-	margin-bottom: 30px
-	.pro-img
-		width: 134px
-		margin: 0 auto
-		a
-			+img-scale(2)
-	ul
-		display: flex
-		align-items: center
-		justify-content: center
-		margin-bottom: 30px
-		li
-			width: 40px
-			height: 40px
-			display: flex
-			align-items: center
-			justify-content: center
-			background: #f8f8f8
-			border: solid 1px #eaeaea
-			a
-				width: 100%
-				display: inline-block
-				+img-scale(.6)
-			+ li
-				margin-left: 10px
-			&.active
-				border: solid 1px $main
-	.pro-infor
-		padding: 0 10px
-		display: flex
-		flex-direction: column
-		justify-content: space-between
-		.pro-title
-			display: flex
-			justify-content: center
-			padding-bottom: 8px
-		.pro-price
-			justify-content: space-between
-			.price
-				.priceold
-					color: $gray-6
-					text-decoration: line-through
-				.pricesale
-					font-size: r(18px)
-					font-weight: 700
-					letter-spacing: 0.05px
-	@media screen and ( min-width: 1025px )
-		&:hover
-			.pro-img
-				a
-					img
-						transform: scale(.95)
-	@media screen and ( max-width: 1199.98px )
-		.pro-img
-			width: 115px
-		.pro-infor
-			.pro-title
-				font-size: r(14px)
-			.pro-price
-				.price
-					.priceold
-						font-size: r(13px)
-					.pricesale
-						font-size: r(14px)
-				.order
-					.btn-order
-						padding: 5px
-.productpage
-	#zone-nav
-		display: none
 .zone-list
 	width: 100%
 	padding: 6px 0
@@ -286,38 +214,156 @@
 					height: 3px
 					background: $black
 					content: ''
-.pagination
-	display: flex
-	align-items: center
-	justify-content: center
-	list-style: none
-	margin: 0
-	padding: 0
-	margin-top: 40px
-	li
-		&.active
-			a,span
-				background-color: $main
-				border: 1px solid $main
-		&+li
-			margin-left: 22px
-		a,span
-			width: 40px
-			height: 40px
-			border: 1px solid $border-dc
-			display: flex
-			align-items: center
-			justify-content: center
-			color: $main
-			color: $black-3
-			font-size: 1rem
-			font-weight: 400
-			transition: .3s all ease-in-out
-			&:hover
-				background-color: $main
-				border: 1px solid $black-3
-				transform: translateY(-3px)
+
 .hover-title
 	transition: .3s all ease-in-out
 	&:hover
 		color: $main
+.side-navigation-wrapper
+	.title
+		position: relative
+		width: 100%
+		padding: 10.2px 0
+		background: $main
+		overflow: hidden
+		display: flex
+		align-items: center
+		justify-content: center
+		h1
+			color: $black-1
+			font-size: r(20px)
+			font-weight: 700
+			text-align: center
+		.btn-dropdown
+			display: flex
+			align-items: center
+			justify-content: center
+			margin-left: 20px
+			em
+				transition: all .3s
+			@media screen and ( min-width: 992px )
+				display: none
+			&.active
+				em
+					transform: rotate(180deg)
+		&::after
+			position: absolute
+			bottom: -15px
+			right: 10px
+			width: 10px
+			height: 60px
+			background: $white
+			content: ''
+			transform: rotate(45deg)
+	.side-navigation
+		padding: 20px
+		background: $white
+		.navigation-item
+			border-bottom: solid 1px #e0e0e0
+			.accordion-title
+				display: flex
+				align-items: center
+				justify-content: space-between
+				a
+					color: $black-3
+					line-height: 50px
+					transition: all .2s
+					font-weight: 400
+				.icon
+					width: 15px
+					height: 15px
+					position: relative
+					cursor: pointer
+					span
+						position: absolute
+						top: 50%
+						transform: translate(-50%, -50%)
+						display: block
+						transition: all .5s
+						&:first-child
+							width: 1px
+							height: 15px
+							background: $black-3
+							left: 50%
+						&:last-child
+							transform: rotate(180deg)
+							width: 15px
+							height: 1px
+							left: 0
+							background-color: $black-3
+			&.active
+				.accordion-title
+					a
+						font-weight: 700
+						text-decoration: underline
+					.icon
+						span
+							&:first-child
+								top: 0
+								transform: rotate(90deg)
+							&:last-child
+								opacity: 0
+								visibility: hidden
+								transform: rotate(180deg)
+			.nav-sub
+				display: none
+				padding-bottom: 17px
+				padding-left: 18px
+				li
+					a
+						color: $black-3
+						font-size: 14px
+						font-weight: 400
+						line-height: 40px
+						transition: all .2s
+					&:hover,
+					&.active
+						a
+							font-weight: 700
+			&:last-child
+				border-bottom: none
+	@media screen and ( max-width: 1199.98px )
+		.title
+			padding: 7px 0
+			h1
+				font-size: r(18px)
+		.side-navigation
+			padding: 15px
+			.navigation-item
+				.accordion-title
+					a
+						font-size: r(14px)
+				.nav-sub
+					padding-left: 7px
+					li
+						a
+							font-size: r(11px)
+	@media screen and ( max-width: 1024.98px )
+		margin-bottom: 30px
+	@media screen and ( max-width: 991.98px )
+		.side-navigation
+			display: none
+			padding: 0 15px
+.filter-wrapper
+	.title
+		position: relative
+		width: 100%
+		padding: 10.2px 0
+		overflow: hidden
+		display: flex
+		align-items: center
+		justify-content: center
+		background: $background-d2
+		color: $black-1
+		font-size: r(20px)
+		font-weight: 700
+		text-align: center
+		&::after
+			position: absolute
+			bottom: -15px
+			right: 10px
+			width: 10px
+			height: 60px
+			background: $white
+			content: ''
+			transform: rotate(45deg)

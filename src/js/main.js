@@ -232,8 +232,12 @@ function adjustProductAmount() {
 // ========================SCROLL HEADER ACTIVE ================================ //
 const headerScrollActive = () => {
 	let bannerHeight = $("#banner-home").outerHeight();
+	let pageBanner = $("#page-banner").outerHeight();
 	$(window).scroll(function () {
-		if ($(this).scrollTop() > bannerHeight) {
+		if (
+			$(this).scrollTop() > bannerHeight ||
+			$(this).scrollTop() > pageBanner
+		) {
 			$("header").addClass("show__scroll");
 			$("header").slideDown();
 		} else if ($(this).scrollTop() > 0) {
@@ -292,6 +296,33 @@ const DropdownProduct = () => {
 };
 /*==================== Click Button Animation ====================*/
 
+const accordianList = () => {
+	$(".accordion-title .icon").on("click", function (e) {
+		let $this = $(this);
+		e.preventDefault();
+		if ($this.parent().next().hasClass("show")) {
+			$this.parent().next().removeClass("show");
+			$this.parent().next().slideUp(350);
+			$this.parents("li").removeClass("active");
+		} else {
+			$this.parent().parents().find(".nav-sub").removeClass("show");
+			$this.parent().parents().find(".nav-sub").slideUp(350);
+			$this.parent().parents().find("li").removeClass("active");
+			$this.parent().next().toggleClass("show");
+			$this.parent().next().slideDown(350);
+			$this.parents("li").addClass("active");
+		}
+	});
+	if ($(".side-navigation li").hasClass("active")) {
+		$(".side-navigation li.active").find(".nav-sub").slideDown(350);
+	}
+	$(".btn-dropdown").on("click", function () {
+		$(this).toggleClass("active");
+		$(this).parent().next().slideToggle();
+		$(".btn-dropdown").not(this).parent().next().slideUp();
+		$(".btn-dropdown").not(this).removeClass("active");
+	});
+};
 /*==================== LOAD FUNCTION ====================*/
 $(document).ready(function () {
 	// scrollTop();
@@ -308,4 +339,7 @@ $(document).ready(function () {
 	setBackgroundElement();
 	mappingInit();
 	headerScrollActive();
+	accordianList();
+	// For Page Product
+	adjustProductAmount();
 });
