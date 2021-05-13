@@ -99,6 +99,46 @@ const initBanner = () => {
 			},
 		});
 	});
+	// Product Detail
+	var productDetailThumbs = new Swiper(
+		".san-pham-ct .thumbnail-product .swiper-container",
+		{
+			slidesPerView: 3,
+			spaceBetween: 5,
+			speed: 1000,
+			observer: true,
+			observeParents: true,
+			slidesPerColumnFill: "row",
+			direction: "horizontal",
+			breakpoints: {
+				414: {
+					slidesPerView: 3,
+				},
+				768: {
+					direction: "vertical",
+					slidesPerView: 4,
+				},
+			},
+		}
+	);
+	var productDetailTop = new Swiper(
+		".san-pham-ct .img-main-product .swiper-container",
+		{
+			slidesPerView: 1,
+			spaceBetween: 10,
+			observer: true,
+			observeParents: true,
+			speed: 1000,
+			slidesPerColumnFill: "row",
+			navigation: {
+				nextEl: ".san-pham-ct .wrap-main-product .button-next",
+				prevEl: ".san-pham-ct .wrap-main-product .button-prev",
+			},
+			thumbs: {
+				swiper: productDetailThumbs,
+			},
+		}
+	);
 };
 // ===========================CHECK BANNER========================= //
 const checkLayoutBanner = () => {
@@ -204,15 +244,68 @@ const headerScrollActive = () => {
 		}
 	});
 };
+/*==================== Responsive height produtct ====================*/
+function responeProduct() {
+	let parent = $(".san-pham-ct.dung-cu-cam-tay");
+	let height = parent.find(".wrap-content-product").outerHeight();
+	let imgProdctThum = parent.find(".thumbnail-product");
+	let imgMainSlide = parent.find(".img-main-product");
+	if ($(window).width() > 1200) {
+		imgProdctThum.css("height", height);
+		imgMainSlide.css("height", height);
+	}
+}
+/*==================== Dropdown Product ====================*/
+const DropdownProduct = () => {
+	$(".san-pham-ct .wrap-other-product").append(
+		'<div class="loading"><svg id="load" x="0px" y="0px" viewBox="0 0 150 150"><circle id="loading-inner" cx="75" cy="75" r="60"/></svg></div>'
+	);
+	var $parent = $(".san-pham-ct"),
+		$items = $parent.find(".item-product-other"),
+		$loadMoreButton = $parent.find(".showItem"),
+		maxItems = 2,
+		numberItems = 2;
+	var hiddenClass = "visually-hidden";
+	$.each($items, function (idx, item) {
+		if (idx > numberItems - 1) {
+			$(this).addClass(hiddenClass);
+		}
+	});
+	$loadMoreButton.on("click", function (e) {
+		$(".loading").addClass("active");
+		setTimeout(() => {
+			$(".loading").removeClass("active");
+		}, 250);
+		setTimeout(() => {
+			$("." + hiddenClass).each(function (idx, item) {
+				if (idx < maxItems) {
+					$(this).removeClass(hiddenClass);
+				}
+				console.log(idx);
+				// kill button if no more to show
+				if ($("." + hiddenClass).length === 0) {
+					$loadMoreButton.hide();
+				}
+			});
+		}, 300);
+	});
+};
+/*==================== Click Button Animation ====================*/
+
 /*==================== LOAD FUNCTION ====================*/
 $(document).ready(function () {
 	// scrollTop();
+	// For Page Product
+	adjustProductAmount();
+	setTimeout(() => {
+		responeProduct();
+	}, 300);
+	DropdownProduct();
+	// Main
 	mainMenu();
 	initBanner();
 	searchButton();
 	setBackgroundElement();
 	mappingInit();
 	headerScrollActive();
-	// For Page Product
-	adjustProductAmount();
 });

@@ -1,7 +1,7 @@
-section.san-pham-ct.van-san
+section.san-pham-ct.dung-cu-cam-tay
 	.container
 		.wrap-main-product
-			.wrap-img-product
+			.wrap-img-product.border-right
 				.thumbnail-product
 					.swiper-container
 						.swiper-wrapper
@@ -9,7 +9,7 @@ section.san-pham-ct.van-san
 								.swiper-slide
 									.wrap-img
 										.img
-											img(src="./img/product-vs.png" alt="")
+											img(src="./img/product-big.png" alt="")
 						.wrap-button
 							.button-prev
 								em.lnr.lnr-arrow-up
@@ -20,69 +20,46 @@ section.san-pham-ct.van-san
 						.swiper-wrapper
 							-for(i=0;i<8;i++)
 								.swiper-slide
-									.img
-										a(href="./img/product-vs.png" data-fancybox)
-											img(src="./img/product-vs.png" alt="")
+									a(href="./img/product-big.png" data-fancybox)
+										img(src="./img/product-big.png" alt="")
 			.wrap-content-product.padding-content
-				h1.title-product-main.lh-8 Ván sàn timbee Căm xe 939 - 144mm
-				.wrap-price
-					ins.main-price 400.000 đ
-					del.sale-price 580.000 đ
-				.donvi.color-text.f-14.fw-400 ĐVT: Hộp
+				h1.title-product-main.lh-8 Máy khoan chạy pin CT21052L CROWN
+				.wrap-main-price-share
+					.wrap-price
+						ins.main-price 3.400.000 đ
+						del.sale-price 4.050.000 đ
+					.wrap-share
+						a(href="").add-favorites
+							em.lnr.lnr-heart
+						a(href="").like-facebook
+							em.fab.fa-facebook-f
 				.content-main
 					.sku SKU: MKCP0123
-					.wrap-kich-thuoc
-						label(for="") Kích thước
-						ul
-							li
-								input(type="radio" id="kichthuoc1" name="kichthuoc")
-								label(for="kichthuoc1") 12mm X 144mm X 1215mm
-							li
-								input(type="radio" id="kichthuoc2" name="kichthuoc")
-								label(for="kichthuoc2") 12mm X 196mm X 1215mm
 					table
 						tr
-							td Màu
-							td Đỏ
+							td Mô tả
+							td Khoan thép 10 mm, khoan gỗ 20 mm
 						tr
-							td Vân
-							td Căm xe
+							td Cỡ vít tối đa
+							td 6mm
 						tr
-							td Độ dày
-							td 12 ly
+							td Lực xoắn tối đa
+							td 27Nm
 						tr
-							td Độ phát thải
-							td Carb - P2
-				.wrap-box-calculate
-					.title-bold-product Nhập diện tích
-					.dien-tich
-						label(for="") Diện tích
-						.wrap-form-dt
-							.d-flex
-								input(type="text" value="80")
-								.box m
-									sup 2
-							input.btn-calculate(type="submit" value="Tính toán")
-					.wrap-form-hop
-						label(for="") Số lượng hộp cần mua
-						.wrap
-							input(type="text" value="15")
-							.box hộp
-				.wrap-order-button-1-line
-					.wrap-number-order.one-line.mt-19
-						span Số lượng
-						.input-amount
-							a.btn-dec(href='#')
-							input.amount(type='text' value='1' name='')
-							a.btn-inc(href='#')
-					.wrap-button-buy.mt-19
-						a(href="").btn.add-to-cart Thêm vào giỏ hàng
-						a(href="").btn.buy-now Mua ngay
-				.wrap-share
-					a(href="").add-favorites
-						em.lnr.lnr-heart
-					a(href="").like-facebook
-						em.fab.fa-facebook-f
+							td Tốc độ không tải
+							td 0-400-1.300v/p
+						tr
+							td Bảo hành
+							td 6 tháng
+				.wrap-number-order.one-line.mt-19
+					span Số lượng
+					.input-amount
+						a.btn-dec(href='#')
+						input.amount(type='text' value='1' name='')
+						a.btn-inc(href='#')
+				.wrap-button-buy.mt-19
+					a(href="").btn.add-to-cart Thêm vào giỏ hàng
+					a(href="").btn.buy-now Mua ngay
 		.wrap-desc-product
 			.row
 				.col-lg-9
@@ -105,10 +82,10 @@ section.san-pham-ct.van-san
 						.title-other-product.color-text.f-18.fw-700.text-uppercase Cùng danh mục
 						.wrap-item
 							-for(i=0;i<5;i++)
-								.item-product-other.no-padding.zoom-img
+								.item-product-other.zoom-img
 									.img
 										a(href="")
-											img(src="./img/845_144mm.png" alt="")
+											img(src="./img/product-big.png" alt="")
 									.wrap-content
 										a(href="").title Máy khoan chạy Pin Crown CT21052L
 										.wrap-price
