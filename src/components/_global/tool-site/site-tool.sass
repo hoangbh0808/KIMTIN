@@ -7,6 +7,8 @@
 	transition: all .5s
 	&.active
 		opacity: 1
+	@media screen and ( max-width: 575.98px )
+		bottom: 5%
 	ul
 		display: flex
 		flex-direction: column
@@ -21,12 +23,15 @@
 				width: 60px
 				height: 60px
 				box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1)
-				border-radius: 30px
+				border-radius: 50%
 				font-size: r(30px)
 				background: $white
 				z-index: 10
 				transition: all .5s
-
+				@media screen and ( max-width: 575.98px )
+					width: 40px
+					height: 40px
+					font-size: r(20px)
 				&::after
 					position: absolute
 					top: 0
@@ -37,6 +42,7 @@
 					z-index: -1
 					border-radius: 50%
 					transition: all .5s
+
 			+ li
 				margin-top: 10px
 			&:nth-child(1)
