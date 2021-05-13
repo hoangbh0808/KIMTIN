@@ -208,6 +208,52 @@ const headerScrollActive = () => {
 		}
 	});
 };
+/*==================== Responsive height produtct ====================*/
+function responeProduct() {
+	let parent = $(".san-pham-ct.dung-cu-cam-tay");
+	let height = parent.find(".wrap-content-product").outerHeight();
+	let imgProdctThum = parent.find(".thumbnail-product");
+	let imgMainSlide = parent.find(".img-main-product");
+	if ($(window).width() > 1200) {
+		imgProdctThum.css("height", height);
+		imgMainSlide.css("height", height);
+	}
+}
+/*==================== Dropdown Product ====================*/
+const DropdownProduct = () => {
+	$(".san-pham-ct .wrap-other-product").append(
+		'<div class="loading"><svg id="load" x="0px" y="0px" viewBox="0 0 150 150"><circle id="loading-inner" cx="75" cy="75" r="60"/></svg></div>'
+	);
+	var $parent = $(".san-pham-ct"),
+		$items = $parent.find(".item-product-other"),
+		$loadMoreButton = $parent.find(".showItem"),
+		maxItems = 2,
+		numberItems = 2;
+	var hiddenClass = "visually-hidden";
+	$.each($items, function (idx, item) {
+		if (idx > numberItems - 1) {
+			$(this).addClass(hiddenClass);
+		}
+	});
+	$loadMoreButton.on("click", function (e) {
+		$(".loading").addClass("active");
+		setTimeout(() => {
+			$(".loading").removeClass("active");
+		}, 250);
+		setTimeout(() => {
+			$("." + hiddenClass).each(function (idx, item) {
+				if (idx < maxItems) {
+					$(this).removeClass(hiddenClass);
+				}
+				if ($("." + hiddenClass).length === 0) {
+					$loadMoreButton.hide();
+				}
+			});
+		}, 300);
+	});
+};
+/*==================== Click Button Animation ====================*/
+
 const accordianList = () => {
 	$(".accordion-title .icon").on("click", function (e) {
 		let $this = $(this);
