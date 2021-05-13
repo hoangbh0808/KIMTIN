@@ -1,0 +1,11 @@
+extends _layout.pug
+
+block var
+	- var title = 'Dụng cụ hàn'
+	- var bodyClass = 'materialpage'
+
+block main
+	include ../components/banner/pageBanner.pug
+	include ../components/_global/breadcrumb/breadcrumb.pug
+	include ../components/dung-cu-han/dung-cu-han.pug
+	

@@ -223,29 +223,40 @@
 	.title
 		position: relative
 		width: 100%
-		padding: 10.2px 0
 		background: $main
 		overflow: hidden
 		display: flex
 		align-items: center
-		justify-content: center
+		padding: 10.2px 20px
 		h1
 			color: $black-1
 			font-size: r(20px)
 			font-weight: 700
 			text-align: center
-		.btn-dropdown
-			display: flex
-			align-items: center
-			justify-content: center
-			margin-left: 20px
-			em
-				transition: all .3s
-			@media screen and ( min-width: 992px )
-				display: none
-			&.active
-				em
+		.icon
+			width: 15px
+			height: 15px
+			position: relative
+			cursor: pointer
+			span
+				position: absolute
+				top: 50%
+				transform: translate(-50%, -50%)
+				display: block
+				transition: all .5s
+				&:first-child
+					width: 1px
+					height: 15px
+					background: $black-3
+					left: 50%
+				&:last-child
 					transform: rotate(180deg)
+					width: 15px
+					height: 1px
+					left: 0
+					background-color: $black-3
+			@media screen and ( min-width: 1025px)
+				display: none
 		&::after
 			position: absolute
 			bottom: -15px
@@ -255,6 +266,18 @@
 			background: $white
 			content: ''
 			transform: rotate(45deg)
+		&.active
+			.icon
+				span
+					&:first-child
+						top: 0
+						transform: rotate(90deg)
+					&:last-child
+						opacity: 0
+						visibility: hidden
+						transform: rotate(180deg)
+		@media screen and ( max-width: 1024.98px )
+			justify-content: space-between
 	.side-navigation
 		padding: 20px
 		background: $white
@@ -324,7 +347,6 @@
 				border-bottom: none
 	@media screen and ( max-width: 1199.98px )
 		.title
-			padding: 7px 0
 			h1
 				font-size: r(18px)
 		.side-navigation
@@ -340,15 +362,18 @@
 							font-size: r(11px)
 	@media screen and ( max-width: 1024.98px )
 		margin-bottom: 30px
-	@media screen and ( max-width: 991.98px )
+		.title
+			padding: 7px 30px
 		.side-navigation
 			display: none
+	@media screen and ( max-width: 991.98px )
+		.side-navigation
 			padding: 0 15px
 .filter-wrapper
 	.title
 		position: relative
 		width: 100%
-		padding: 10.2px 0
+		padding: 10.2px 20px
 		overflow: hidden
 		display: flex
 		align-items: center
@@ -367,3 +392,72 @@
 			background: $white
 			content: ''
 			transform: rotate(45deg)
+		.icon
+			width: 15px
+			height: 15px
+			position: relative
+			cursor: pointer
+			margin-left: auto
+			span
+				position: absolute
+				top: 50%
+				transform: translate(-50%, -50%)
+				display: block
+				transition: all .5s
+				&:first-child
+					width: 1px
+					height: 15px
+					background: $black-3
+					left: 50%
+				&:last-child
+					transform: rotate(180deg)
+					width: 15px
+					height: 1px
+					left: 0
+					background-color: $black-3
+		&.active
+			.icon
+				span
+					&:first-child
+						top: 0
+						transform: rotate(90deg)
+					&:last-child
+						opacity: 0
+						visibility: hidden
+						transform: rotate(180deg)
+		@media screen and ( max-width: 1199.98px )
+			padding: 7px 30px
+	.filter-option
+		display: none
+		background: $white
+		ul
+			padding: 20px
+			li
+				border-bottom: solid 1px #e0e0e0
+				a
+					width: 100%
+					display: block
+					color: $black-3
+					line-height: 50px
+					transition: all .2s
+					font-weight: 400
+					position: relative
+					&::after
+						position: absolute
+						top: 50%
+						right: 0
+						transform: translateY(-50%)
+						color: $black-3
+						font-family: Material Icons
+						line-height: 50px
+						content: 'check_box_outline_blank'
+				&.active
+					a
+						font-weight: 700
+						text-decoration: underline
+						&::after
+							content: 'check_box'
+				&:last-child
+					border-bottom: none
+	@media screen and ( max-width: 1024.98px )
+		margin-bottom: 30px

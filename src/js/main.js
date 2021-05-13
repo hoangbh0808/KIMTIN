@@ -99,46 +99,6 @@ const initBanner = () => {
 			},
 		});
 	});
-	// Product Detail
-	var productDetailThumbs = new Swiper(
-		".san-pham-ct .thumbnail-product .swiper-container",
-		{
-			slidesPerView: 3,
-			spaceBetween: 5,
-			speed: 1000,
-			observer: true,
-			observeParents: true,
-			slidesPerColumnFill: "row",
-			direction: "horizontal",
-			breakpoints: {
-				414: {
-					slidesPerView: 3,
-				},
-				768: {
-					direction: "vertical",
-					slidesPerView: 4,
-				},
-			},
-		}
-	);
-	var productDetailTop = new Swiper(
-		".san-pham-ct .img-main-product .swiper-container",
-		{
-			slidesPerView: 1,
-			spaceBetween: 10,
-			observer: true,
-			observeParents: true,
-			speed: 1000,
-			slidesPerColumnFill: "row",
-			navigation: {
-				nextEl: ".san-pham-ct .wrap-main-product .button-next",
-				prevEl: ".san-pham-ct .wrap-main-product .button-prev",
-			},
-			thumbs: {
-				swiper: productDetailThumbs,
-			},
-		}
-	);
 };
 // ===========================CHECK BANNER========================= //
 const checkLayoutBanner = () => {
@@ -314,23 +274,22 @@ const accordianList = () => {
 	if ($(".side-navigation li").hasClass("active")) {
 		$(".side-navigation li.active").find(".nav-sub").slideDown(350);
 	}
-	$(".btn-dropdown").on("click", function () {
+	$(".filter-wrapper .title").on("click", function () {
 		$(this).toggleClass("active");
-		$(this).parent().next().slideToggle();
-		$(".btn-dropdown").not(this).parent().next().slideUp();
-		$(".btn-dropdown").not(this).removeClass("active");
+		$(this).next().slideToggle();
+		$(".filter-wrapper .title").not(this).next().slideUp();
+		$(".filter-wrapper .title").not(this).removeClass("active");
+	});
+	$(".side-navigation-wrapper .title").on("click", function () {
+		$(this).toggleClass("active");
+		$(this).next().slideToggle();
+		$(".side-navigation-wrapper .title").not(this).next().slideUp();
+		$(".side-navigation-wrapper .title").not(this).removeClass("active");
 	});
 };
 /*==================== LOAD FUNCTION ====================*/
 $(document).ready(function () {
 	// scrollTop();
-	// For Page Product
-	adjustProductAmount();
-	setTimeout(() => {
-		responeProduct();
-	}, 300);
-	DropdownProduct();
-	// Main
 	mainMenu();
 	initBanner();
 	searchButton();
