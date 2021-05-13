@@ -285,8 +285,6 @@ const DropdownProduct = () => {
 				if (idx < maxItems) {
 					$(this).removeClass(hiddenClass);
 				}
-				console.log(idx);
-				// kill button if no more to show
 				if ($("." + hiddenClass).length === 0) {
 					$loadMoreButton.hide();
 				}
