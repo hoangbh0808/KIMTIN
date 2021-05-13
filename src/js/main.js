@@ -102,6 +102,46 @@ const initBanner = () => {
 			},
 		});
 	});
+	// Product Detail
+	var productDetailThumbs = new Swiper(
+		".san-pham-ct .thumbnail-product .swiper-container",
+		{
+			slidesPerView: 3,
+			spaceBetween: 5,
+			speed: 1000,
+			observer: true,
+			observeParents: true,
+			slidesPerColumnFill: "row",
+			direction: "horizontal",
+			breakpoints: {
+				414: {
+					slidesPerView: 3,
+				},
+				768: {
+					direction: "vertical",
+					slidesPerView: 4,
+				},
+			},
+		}
+	);
+	var productDetailTop = new Swiper(
+		".san-pham-ct .img-main-product .swiper-container",
+		{
+			slidesPerView: 1,
+			spaceBetween: 10,
+			observer: true,
+			observeParents: true,
+			speed: 1000,
+			slidesPerColumnFill: "row",
+			navigation: {
+				nextEl: ".san-pham-ct .wrap-main-product .button-next",
+				prevEl: ".san-pham-ct .wrap-main-product .button-prev",
+			},
+			thumbs: {
+				swiper: productDetailThumbs,
+			},
+		}
+	);
 };
 // ===========================CHECK BANNER========================= //
 const checkLayoutBanner = () => {
@@ -255,8 +295,39 @@ const DropdownProduct = () => {
 		}, 300);
 	});
 };
-/*==================== Click Button Animation ====================*/
-
+const DropdownProductLang = () => {
+	$(".page-langding .wrap-flex-product").append(
+		'<div class="loading"><svg id="load" x="0px" y="0px" viewBox="0 0 150 150"><circle id="loading-inner" cx="75" cy="75" r="60"/></svg></div>'
+	);
+	var $parent = $(".page-langding"),
+		$items = $parent.find(".product-item"),
+		$loadMoreButton = $parent.find(".showItem"),
+		maxItems = 5,
+		numberItems = 10;
+	var hiddenClass = "visually-hidden";
+	$.each($items, function (idx, item) {
+		if (idx > numberItems - 1) {
+			$(this).addClass(hiddenClass);
+		}
+	});
+	$loadMoreButton.on("click", function (e) {
+		$(".loading").addClass("active");
+		setTimeout(() => {
+			$(".loading").removeClass("active");
+		}, 250);
+		setTimeout(() => {
+			$("." + hiddenClass).each(function (idx, item) {
+				if (idx < maxItems) {
+					$(this).removeClass(hiddenClass);
+				}
+				if ($("." + hiddenClass).length === 0) {
+					$loadMoreButton.hide();
+				}
+			});
+		}, 300);
+	});
+};
+/*====================  ====================*/
 const accordianList = () => {
 	$(".accordion-title .icon").on("click", function (e) {
 		let $this = $(this);
@@ -302,4 +373,9 @@ $(document).ready(function () {
 	accordianList();
 	// For Page Product
 	adjustProductAmount();
+	setTimeout(() => {
+		responeProduct();
+	}, 300);
+	DropdownProduct();
+	DropdownProductLang();
 });

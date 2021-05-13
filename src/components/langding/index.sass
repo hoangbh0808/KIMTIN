@@ -15,6 +15,10 @@
 		margin-left: 15px
 		margin-bottom: 40px
 		flex: 1 0 calc(( 100% / 3) - 30px)
+		&:hover
+			.pro-img
+				box-shadow: 0px 0px 20px rgba(0, 0, 0, .15)
+				border: 1px solid $main
 		.pro-img
 			width: 100%
 			display: flex
@@ -24,6 +28,7 @@
 			height: 275px
 			border: 1px solid $border-e5
 			background: #fefefe
+			transition: .3s all ease-in-out
 			img
 				width: 100%
 				transform: scale(.6)
@@ -65,7 +70,16 @@
 		margin-right: -7px
 		.col-product
 			padding: 0 7px
+			@media (min-width: 576px)
+				flex: 0 0 50%
+				max-width: 50%
+			@media (min-width: 768px)
+				flex: 0 0 33.3333%
+				max-width: 33.3333%
 			@media (min-width: 1025px)
+				flex: 0 0 25%
+				max-width: 25%
+			@media (min-width: 1200px)
 				flex: 0 0 20%
 				max-width: 20%
 
