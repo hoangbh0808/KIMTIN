@@ -178,24 +178,42 @@ header
 							font-size: r(18px)
 							font-weight: 400
 			.account-wrapper
-				margin-left: 10px
 				display: flex
 				align-items: center
-				a
-					padding: 0 10px
-					color: $brow-f20
-					font-size: r(12px)
-					font-weight: 400
-					display: flex
-					align-items: center
-					transition: all .5s
-					em
+				list-style: none
+				margin-left: 20px
+				li
+					a
 						color: $brow-f20
-						font-size: r(20px)
-						font-weight: 500
-						padding-right: 8px
+						font-size: r(12px)
+						font-weight: 400
+						display: flex
+						align-items: center
 						transition: all .5s
-
+						position: relative
+						padding: 0 10px
+						&::after
+							position: absolute
+							top: 50%
+							left: -10px
+							transform: translateY(-50%)
+							font-family: remixicon
+							color: $brow-f20
+							font-size: r(20px)
+							font-weight: 500
+							margin-right: 8px
+							line-height: 0
+					&:first-child
+						padding-right: 10px
+						a
+							&::after
+								content: '\EFE0'
+					&:last-child
+						padding-left: 30px
+						border-left: solid 1px #e1e1e1
+						a
+							&::after
+								content: "\F264"
 					@media screen and ( min-width: 991.98px )
 						&:hover
 							color: $main
