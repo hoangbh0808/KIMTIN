@@ -13,7 +13,11 @@ header
 					.nav-item
 						position: relative
 						padding: 0 r(20px)
-
+						&.active
+							.nav-link
+								color: $main
+								&::after
+									width: 100%
 						.nav-link
 							padding: 0
 							color: $white
