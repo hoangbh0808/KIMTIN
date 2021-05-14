@@ -1,0 +1,32 @@
+#form-popup.form-popup 
+	.popup-title Form liên hệ báo giá
+	.wrap-form 
+		.form-row 
+			.form-group 
+				input(type="text" placeholder="Họ và tên")
+			.form-group 
+				input(type="text" placeholder="Số điện thoại")
+		.form-row 
+			.form-group 
+				input(type="text" placeholder="Email")
+			.form-group 
+				input(type="text" placeholder="Tên công ty")
+		.form-group 
+			input(type="text" placeholder="Địa chỉ công ty")
+		.form-group 
+			textarea(type="text" placeholder="Ghi chú")
+		.form-group.qupload 
+			label.label(for="") Đính kèm file báo giá
+			.RadUpload
+				ul.ruInputs
+					li 
+						span.ruFileWrap 
+							input.ruButton(type="button")
+							input.ruFileInput(type="file")
+			.button-fileupload
+				span Tải lên 
+				em.material-icons file_upload
+		.form-group.frm-btnwrap
+			.frm-btn
+				input.btn.btn-default.frm-btn-submit(type="submit" value="Gửi")
+

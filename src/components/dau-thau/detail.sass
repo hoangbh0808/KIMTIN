@@ -1,0 +1,257 @@
+.bidding-detail
+	.section-title
+		text-align: left
+		text-transform: none
+		padding-bottom: 13px
+		h1
+			color: $black-1
+			font-size: r(24px)
+			font-weight: 400
+	.bottom-wrapper
+		padding-bottom: 15px
+		border-bottom: solid 1px $border-2
+		margin-bottom: 30px
+		time
+			color: $gray-9
+			font-size: r(14px)
+			font-weight: 400
+			line-height: 24px
+	.brief-content
+		padding-bottom: 55px
+		table
+			width: 100%
+			tr
+				line-height: 50px
+				td
+					&:first-child
+						padding-left: 22px
+						color: $black-1
+						font-weight: 600
+				&:nth-child(2n-1)
+					background-color: #f5f5f5
+	.fullcontent
+		h2
+			color: $black-1
+			font-size: 16px
+			font-weight: 600
+			line-height: 50px
+		p
+			color: $black-1
+			line-height: 24px
+			padding-bottom: 14px
+	.button
+		margin-top: 23px
+		.btn-yellow
+			width: 160px
+			border: 1px solid $brow-f20
+			background: $brow-f20
+	.wrap-other
+		.title-other-post
+			color: $black-1
+			font-size: r(24px)
+			padding-bottom: 15px
+			border-bottom: solid 2px $black
+			margin-bottom: 15px
+		.wrap-list-post
+			.item-post
+				display: flex
+				align-items: center
+				border-bottom: solid 1px $border-2
+				padding: 15px 0
+				.img
+					width: 50px
+					margin-right: 15px
+					a
+						+img-ratio(50/50)
+				.content
+					display: flex
+					flex-direction: column
+					a
+						color: $black-1
+					time
+						color: $gray-9
+						font-size: 14px
+						line-height: 24px
+				&:first-child
+					padding-top: 0
+	@media screen and ( max-width: 1024.98px )
+		.brief-content
+			padding-bottom: 30px
+		.button
+			margin-bottom: 30px
+		.wrap-other
+			.wrap-list-post
+				display: flex
+				flex-wrap: wrap
+				flex-direction: row
+				margin-left: -30px
+				.item-post
+					margin-left: 30px
+					flex: 1 0 calc( 50% - 60px )
+.form-popup
+	width: 1020px
+	background: $white
+	padding: 60px !important
+	display: none
+	.popup-title
+		color: $black-1
+		font-size: r(24px)
+		font-weight: 700
+		text-transform: uppercase
+		padding-bottom: 25px
+		text-align: center
+	.wrap-form
+		.form-row
+			display: flex
+			align-items: center
+			flex-wrap: wrap
+			flex-direction: row
+			margin-left: -30px
+			.form-group
+				margin-left: 30px
+				flex: 1 0 calc(( 100% / 2 ) - 30px)
+				height: 40px
+				border: 1px solid $border-2
+				background: $white
+				input[type="text"]
+					width: 100%
+					height: 100%
+					border-radius: 0
+					border: none
+			@media screen and ( max-width: 575.98px )
+				margin-left: 0
+				.form-group
+					margin-left: 0
+					flex: 1 0 100%
+		.form-group
+			width: 100%
+			background: $white
+			input[type="text"]
+				width: 100%
+				height: 40px
+				border-radius: 0
+				border: none
+				border: 1px solid $border-2
+			textarea
+				width: 100%
+				height: 120px
+				border-radius: 0
+				background: $white
+				border: 1px solid $border-2
+			&.qupload
+				width: max-content
+				position: relative
+				margin-top: 30px
+				.label
+					color: $black-1
+					font-weight: 700
+					padding-bottom: 12px
+				.RadUpload
+					.ruInputs
+						li
+							.ruFileWrap
+								display: flex
+								align-items: center
+								flex-wrap: wrap
+								flex-direction: row
+								input[type="button"]
+									width: 250px
+									height: 40px
+									border: 1px solid $border-2
+									background: $white
+									border-radius: 0
+								input[type="file"]
+									margin-left: 20px
+									width: 120px
+									height: 40px
+									border-radius: 0
+									position: relative
+									cursor: pointer
+								@media screen and ( max-width: 575.98px )
+									width: 100%
+									input[type="button"],
+									input[type="file"]
+										width: 100%
+				.button-fileupload
+					position: absolute
+					bottom: 0
+					right: 0
+					width: 120px
+					height: 40px
+					display: flex
+					align-items: center
+					justify-content: center
+					background: #f5f5f5
+					cursor: pointer
+					pointer-events: none
+					span
+						color: $gray-9
+					em
+						color: $gray-9
+						font-weight: 400
+						padding-left: 9px
+				@media screen and ( max-width: 575.98px )
+					width: 100%
+					.RadUpload
+						.ruInputs
+							li
+								.ruFileWrap
+									input[type="button"]
+										margin-bottom: 20px
+									input[type="file"]
+										margin-left: 0
+					.button-fileupload
+						width: 100%
+			&.frm-btnwrap
+				.frm-btn
+					position: relative
+					width: 160px
+					height: 40px
+					border: 1px solid $brow-f20
+					border-radius: 0
+					box-shadow: unset
+					&::before
+						display: none
+					&::after
+						position: absolute
+						top: 0
+						right: 0
+						width: 100%
+						height: 100%
+						content: ''
+						background: $main
+						z-index: 1
+						padding-left: 0
+						transition: all .5s
+					input[type="submit"]
+						color: $brow-f20
+						font-size: r(14px)
+						font-weight: 700
+						text-transform: uppercase
+						z-index: 10
+						position: relative
+						padding: 0
+					@media screen and ( min-width: 1025px )
+						&:hover
+							&::after
+								width: 0
+	.fancybox-close-small
+		opacity: 1
+		padding: 0
+		background: $main
+		svg
+			display: none
+		&::before
+			content: 'x'
+			position: absolute
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+			color: $black-1
+			font-size: r(30px)
+			font-weight: 400
+			text-transform: uppercase
+
+	@media screen and ( max-width: 575.98px )
+		padding: 30px !important
