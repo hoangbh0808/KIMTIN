@@ -22,16 +22,6 @@ header
 							text-transform: uppercase
 							position: relative
 							transition: all .5s ease-in-out
-							&::after
-								position: absolute
-								width: 0
-								height: 1px
-								background: $white
-								bottom: -14px
-								left: 50%
-								transform: translateX(-50%)
-								transition: all .5s
-								content: ''
 						&::before
 							position: absolute
 							top: 50%
@@ -45,12 +35,14 @@ header
 						&:first-child
 							&::before
 								display: none
+						&.active
+							.nav-link
+								color: $main
 						@media screen and ( min-width: 991.98px )
 							&:hover
 								.nav-link
 									color: $main
-									&::after
-										width: 100%
+
 				.wrap-right
 					margin-left: auto
 					.hotline
