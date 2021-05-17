@@ -77,7 +77,7 @@ const initBanner = () => {
 			observeParents: true,
 			lazy: true,
 			breakpointsInverse: true,
-			loop: true,
+			loop: false,
 			navigation: {
 				nextEl: ".swiper-button-next-" + index,
 				prevEl: ".swiper-button-prev-" + index,

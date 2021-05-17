@@ -39,7 +39,7 @@
 				position: relative
 				margin-left: 15px
 				margin-bottom: 40px
-				flex: 1 0 calc(( 100% / 3) - 30px)
+				flex: 0 0 calc(( 100% / 3) - 10px)
 				.pro-img
 					width: 100%
 					display: flex
@@ -50,8 +50,9 @@
 					border: 1px solid $border-e5
 					background: #fefefe
 					img
-						width: 100%
-						transform: scale(.6)
+						max-height: 100%
+						max-width: 100%
+						object-fit: contain
 				.pro-infor
 					.pro-title
 						padding-right: 30px
