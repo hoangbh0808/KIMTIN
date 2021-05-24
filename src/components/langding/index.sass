@@ -29,24 +29,25 @@
 			align-items: center
 			justify-content: center
 			margin-bottom: 20px
-			height: 275px
+			height: 235px
 			border: 1px solid $border-e5
 			background: #fefefe
 			transition: .3s all ease-in-out
+			padding: 30px
 			img
-				width: 100%
-				transform: scale(.6)
+				max-width: 100%
+				max-height: 100%
+				object-fit: contain
 		.pro-infor
 			.pro-title
 				padding-right: 30px
-				padding-bottom: 14px
 				a
 					color: $black-3
 					font-size: r(14px)
 					font-weight: 400
 					transition: all .3s
+					line-height: 1
 			.pro-price
-				padding-right: 60px
 				align-items: center
 				justify-content: space-between
 				.price
@@ -86,4 +87,25 @@
 			@media (min-width: 1200px)
 				flex: 0 0 20%
 				max-width: 20%
-
+.suggestsearch
+	@media (max-width: 767.98px)
+		padding: 10px 0px
+		height: 279px
+	.page-langding
+		.row
+			@media (max-width: 767.98px)
+				margin-left: -5px
+				margin-right: -5px
+				[class*='col']
+					padding: 0 5px
+		.product-item
+			@media (max-width: 767.98px)
+				margin-bottom: 10px
+			.pro-img
+				@media (max-width: 767.98px)
+					height: 125px
+					padding: 5px
+			.pro-title
+				@media (max-width: 767.98px)
+					height: 63px
+					padding-right: 0px

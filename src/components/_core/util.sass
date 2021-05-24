@@ -220,6 +220,19 @@
 	&:hover
 		color: $main
 .side-navigation-wrapper
+	@media (max-width: 1024.98px)
+		position: fixed
+		top: 0
+		right: 100%
+		background-color: white
+		z-index: 999
+		width: 100%
+		height: calc( 100% - 40px )
+		padding: 20px
+		transition: all 600ms cubic-bezier(0.825, 0.09, 0.085, 1.01)
+		overflow-y: auto
+		&.active
+			right: 0
 	.title
 		position: relative
 		width: 100%
@@ -364,8 +377,6 @@
 		margin-bottom: 30px
 		.title
 			padding: 7px 30px
-		.side-navigation
-			display: none
 	@media screen and ( max-width: 991.98px )
 		.side-navigation
 			padding: 0 15px
@@ -428,7 +439,7 @@
 		@media screen and ( max-width: 1199.98px )
 			padding: 7px 30px
 	.filter-option
-		display: none
+		// display: none
 		background: $white
 		ul
 			padding: 20px
@@ -464,3 +475,61 @@
 	display: none
 	&.active
 		display: block
+input[type="text"],input[type="password"]
+	border: 1px solid transparent !important
+	transition: .3s all ease-in-out
+	&:focus
+		border: 1px solid $main !important
+textarea
+	border: 1px solid transparent !important
+	transition: .3s all ease-in-out
+	&:focus
+		border: 1px solid $main !important
+.product-detail-page
+	#page-banner
+		display: none
+.wrap-filter-wraper
+	@media (max-width: 1024.98px)
+		position: fixed
+		top: 0
+		left: 100%
+		background-color: white
+		z-index: 999
+		width: 100%
+		height: calc( 100% - 40px )
+		padding: 20px
+		transition: all 600ms cubic-bezier(0.825, 0.09, 0.085, 1.01)
+		overflow-y: auto
+		&.active
+			left: 0
+.wrap-fixed-menu
+	display: none
+	@media (max-width: 1024.98px)
+		display: flex
+		border-top: 1px solid $main
+		position: fixed
+		bottom: 0
+		left: 0
+		width: 100%
+		z-index: 99
+		.button-flex
+			display: flex
+			align-items: center
+			justify-content: center
+			flex: 0 0 50%
+			max-width: 50%
+			height: 40px
+			background-color: $black-1
+			color: $main
+			font-size: r(18px)
+			font-weight: bold
+			&+.button-flex
+				border-left: 1px solid $main
+			@media (max-width: 575.98px)
+				font-size: r(14px)
+.fb_iframe_widget_fluid_desktop iframe
+	min-width: 100% !important
+span._50f7
+	color: $black-1
+	font-size: 1rem
+	font-weight: 400

@@ -198,4 +198,39 @@
 		@media screen and ( max-width: 1280px )
 			position: static
 			transform: translateY(0)
-
+.wrap-button-next-cart
+	display: flex
+	align-items: center
+	margin-left: auto
+	margin-top: 42px
+	width: fit-content
+	@media screen and ( max-width: 1023.67px )
+		width: 100%
+	@media (max-width: 575.98px)
+		flex-direction: column
+	.btn
+		width: 250px
+		height: 40px
+		color: $brow-f20
+		font-size: r(14px)
+		font-weight: 700
+		text-transform: uppercase
+		display: flex
+		align-items: center
+		justify-content: center
+		padding-top: 2px
+		@media screen and ( max-width: 1023.67px )
+			width: calc( 50% - 10px )
+		@media (max-width: 575.98px)
+			width: 100%
+			&+.btn
+				margin-top: 15px
+	.btn-shopping
+		border: 1px solid $border-2
+		background-color: $white
+	.btn-checkout
+		border: 1px solid $brow-f20
+		background-color: $main
+		margin-left: 20px
+		@media (max-width: 575.98px)
+			margin-left: 0px

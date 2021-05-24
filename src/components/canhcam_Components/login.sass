@@ -1,5 +1,15 @@
-.login-page
+.login-page,.checkout-login-page
 	padding: 53px 0px 90px 0px
+	.wrap-dang-ky
+		display: flex
+		align-items: baseline
+		span,p,a
+			color: $black-1
+			font-size: 12px
+			font-weight: 600
+		a
+			border-bottom: 1px solid $main
+			margin-left: 5px
 	.login-panel
 		.headtitle
 			color: $black-1
@@ -8,7 +18,154 @@
 			text-align: center
 			text-transform: uppercase
 		.login-form
-			width: 494px
-			height: 570px
+			max-width: 494px
+			min-height: 570px
 			box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.1)
 			background-color: $white
+			width: 100%
+			margin: 0 auto
+			padding: 23px 31px
+			margin-top: 18px
+			.title-thong-tin-tk
+				color: $black-1
+				font-size: 24px
+				font-weight: 400
+				line-height: 1.3333
+				text-transform: uppercase
+				border-bottom: 1px solid $border-2
+				padding-bottom: 8px
+			.login-box-msg
+				color: $black-1
+				font-size: 1rem
+				font-weight: 700
+				text-transform: uppercase
+				margin-top: 25px
+				margin-bottom: 10px
+			.panel-body
+				.input-group
+					span
+						color: $red
+						font-size: 18px
+					&+.input-group
+						margin-top: 27px
+					label
+						display: inline-block
+						margin-bottom: 10px
+					input
+						display: block
+						width: 100%
+						height: 50px
+						background-color: #f0f0f0
+						border: 0
+						outline: none
+						padding-left: 20px
+						border: 1px solid transparent
+						transition: .3s all ease-in-out
+						&:focus
+							border: 1px solid $main
+			.flex
+				display: flex
+			.wrap-dk-mk
+				margin-top: 22px
+				@media screen and ( max-width: 575px )
+					flex-direction: column
+		.buton-login
+			margin-top: 37px
+			input
+				width: 100%
+				height: 40px
+				border: 1px solid $brow-f20
+				background-color: $main
+				color: $brow-f20
+				font-size: r(14px)
+				font-weight: 700
+				text-transform: uppercase
+				z-index: 2
+				transition: .3s all ease-in-out
+				&:hover
+					background-color: $black
+					border: 1px solid $main
+					color: $main
+	.line-hoac
+		display: flex
+		align-items: center
+		justify-content: center
+		position: relative
+		padding: 19px 0px
+		&::before
+			content: ''
+			height: 1px
+			background-color: #f0f0f0
+			display: block
+			width: 100%
+		span
+			display: block
+			width: fit-content
+			color: $gray-9
+			font-size: 14px
+			background-color: #fff
+			position: absolute
+			left: 50%
+			transform: translateX(-50%)
+			padding: 0 10px
+	.cart-login-social-fb
+		width: 100%
+	.quen-mat-khau
+		color: $black-1
+		font-size: 15px
+		font-weight: 400
+		margin-top: -2px
+	.social-login
+		display: flex
+		flex-wrap: wrap
+		margin-top: 5px
+		width: 100%
+		justify-content: space-between
+		.facebook-login
+			width: 100%
+			height: 40px
+			border-radius: 20px
+			background-color: #3b5998
+			transition: .3s all ease-in-out
+			&:hover
+				box-shadow: 0px 0px 15px rgba(#3b5998 , .7 )
+		.google-login
+			width: 100%
+			height: 40px
+			border-radius: 20px
+			background-color: #4285f4
+			transition: .3s all ease-in-out
+			&:hover
+				box-shadow: 0px 0px 15px rgba(#4285f4 , .7 )
+		.btn
+			flex: 0 0 calc( 50% - 7.5px )
+			max-width: calc( 50% - 7.5px )
+			display: flex
+			align-items: center
+			padding-left: 24px
+			@media screen and ( max-width: 575px )
+				flex: 0 0 100%
+				max-width: 100%
+				&+.btn
+					margin-top: 15px
+			span
+				color: $white
+				font-size: r(18px)
+				font-weight: 400
+				display: flex
+				align-items: center
+				padding-top: 3px
+				&::before
+					content: ''
+					width: 1px
+					height: 20px
+					display: inline-block
+					background-color: $white
+					margin-left: 13px
+					margin-right: 18px
+		em
+			color: $white
+			font-size: r(24px)
+			font-weight: 400
+.checkout-login-page
+	padding: 0 !important

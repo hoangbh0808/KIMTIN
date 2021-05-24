@@ -1,0 +1,211 @@
+.checkout-wrapper
+	box-shadow: 3px 4px 15px rgba(0, 0, 0, 0.1)
+	background-color: $white
+	padding: 30px
+	.content-wrapper
+		padding-left: 0px
+		padding-right: 0px
+		padding-top: 32px
+		padding-bottom: 19px
+	.checkout-title
+		padding-left: 0px
+		padding-right: 0px
+		color: $black-1
+		font-size: r(24px)
+		font-weight: 400
+		text-transform: uppercase
+		border-bottom: 1px solid $border-2
+		padding-bottom: 5px
+	.cart-table-wrapper
+		border: 1px solid #e1e1e1
+		.carttable
+			thead
+				@media screen and ( max-width: 1023.67px )
+					display: none
+				tr
+					th
+						height: 50px
+						background-color: #f5f5f5
+						color: $black-3
+						font-size: r(20px)
+						font-weight: 700
+						text-transform: uppercase
+						&+th
+							text-align: center
+						&:first-child
+							padding-left: 40px
+			tbody
+				tr
+					@media screen and ( max-width: 1023.67px )
+						flex-direction: column
+						display: flex
+					td
+						text-align: center
+						@media screen and ( max-width: 1023.67px )
+							display: flex
+							justify-content: space-between
+							align-items: center
+						&:nth-child(2),&:nth-child(3),&:nth-child(4)
+							@media screen and ( max-width: 1023.67px )
+								padding: 10px 15px
+						&:first-child
+							text-align: left
+							width: 48.5%
+							@media screen and ( max-width: 1023.67px )
+								width: 100%
+						&:nth-child(2)
+							width: 24%
+							@media screen and ( max-width: 1023.67px )
+								width: 100%
+						&:nth-child(3)
+							width: 14%
+							@media screen and ( max-width: 1023.67px )
+								width: 100%
+						&:last-child
+							width: 13.5%
+							@media screen and ( max-width: 1023.67px )
+								width: 100%
+			.product-item
+				@media screen and ( max-width: 1023.67px )
+					width: 100%
+				.caption
+					margin-top: 14px
+				.title
+					a
+						color: $black-3
+						font-size: r(18px)
+						font-weight: 400
+				.image
+					@media (max-width: 575.98px)
+						margin-top: 20px
+					a
+						display: flex
+						padding: 10px
+						width: 140px
+						height: 100px
+						align-items: center
+						justify-content: center
+						img
+							width: 100%
+							height: 100%
+							object-fit: contain
+				.remove-item
+					display: flex
+					align-items: baseline
+					cursor: pointer
+					@media screen and ( max-width: 1024.67px )
+						align-items: center
+
+					em
+						color: #ec1f27
+						font-size: 14px
+					span
+						color: $gray-9
+						font-size: 12px
+						padding-top: 2px
+						margin-left: 8px
+			.discount-wrap
+				@media screen and ( max-width: 1023.67px )
+					display: flex
+					justify-content: flex-start
+					align-items: center
+				*
+					display: block
+				.now-price
+					color: $red
+					font-size: 1rem
+					font-weight: 500
+				.old-price
+					color: $gray-9
+					font-size: r(12px)
+					font-weight: 400
+					text-decoration: line-through
+					@media screen and ( max-width: 1023.67px )
+						margin-left: 25px
+						position: relative
+						padding-right: 0
+						&::before
+							background-color: #999
+							width: 6px
+							height: .3px
+							content: ""
+							position: absolute
+							top: 50%
+							transform: translateY(-50%)
+							left: -15px
+			.quantity-wrap
+				.input-amount
+					display: flex
+					align-items: center
+					width: fit-content
+					border: 1px solid #d1d1d1
+					input
+						width: 79px
+						text-align: center
+						height: 40px
+						background-color: $white
+						// Style for "1"
+						color: $black-3
+						font-size: 14px
+						font-weight: 400
+						letter-spacing: 1.4px
+						border: 0
+					.btn-dec, .btn-inc
+						display: flex
+						align-items: center
+						justify-content: center
+						width: 40px
+						height: 40px
+						background-color: #f5f5f5
+						transition: .3s all ease-in-out
+						&:hover
+							background-color: #d9d8d8
+			.total
+				color: $black-3
+				font-size: 1rem
+				font-weight: 500
+	.total-money
+		color: #ec1f27
+	.wrap-discount-button
+		padding-right: 45px
+		margin-top: 20px
+		@media screen and ( max-width: 1023.67px )
+			padding-right: 0px
+		.price-wrapper
+			table
+				margin-left: auto
+				@media screen and ( max-width: 1023.67px )
+					width: 100%
+				tr
+					td
+						padding: 5px 0px
+						&:first-child
+							color: $black-3
+							font-size: r(20px)
+							font-weight: 700
+							padding-right: 92px
+							padding-top: 4px
+						&:last-child
+							color: $black-3
+							font-size: r(18px)
+							font-weight: 700
+							text-align: right
+	.mobile-title
+		display: none
+		@media screen and ( max-width: 1023.67px )
+			font-weight: 700
+			display: inline-block
+.checkout-title
+	span
+		text-align: center
+		display: block
+		@media (max-width: 767.98px)
+			font-size: 1rem
+.cart-display
+	.product-item
+		.title
+			text-align: center
+			@media (max-width: 1024.98px)
+				padding: 0 15px
+.number-quantity
+	font-size: 1.5rem !important

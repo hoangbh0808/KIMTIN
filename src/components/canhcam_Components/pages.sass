@@ -1,45 +1,41 @@
-.pages
-	width: 100%
-	.modulepager
-		width: 100%
+
+.pagination
+	display: flex
+	list-style-type: none
+	justify-content: center
+	flex-wrap: wrap
+	padding: 0
+	margin-bottom: 20px
+	li
 		display: flex
 		justify-content: center
-		.pagination
+		align-items: center
+		&:last-child
+			margin-right: 0
+		a, span
+			position: relative
+			width: 40px
+			height: 40px
+			background: $white
+			font-size: 14/16*1rem
+			color: $black-3
 			display: flex
-			list-style-type: none
 			justify-content: center
-			flex-wrap: wrap
-			padding: 0
-			li
-				display: flex
-				justify-content: center
-				align-items: center
-				&:last-child
-					margin-right: 0
-				a, span
-					position: relative
-					width: 40px
-					height: 40px
-					background: $white
-					font-size: 14/16*1rem
-					color: $black-3
-					display: flex
-					justify-content: center
-					align-items: center
-					transition: .2s ease-in-out all
-					overflow: hidden
-					font-size: r(18px)
-					border: 1px solid $border-dc
-					text-transform: uppercase
-				+ li
-					margin-left: 20px
-				&:hover,
-				&.active
-					a, span
-						color: $black-3
-						background: $main
-						border: 1px solid $black
-				@media(min-width: 1024px)
-					a, span
-						width: 40px
-						height: 40px
+			align-items: center
+			transition: .2s ease-in-out all
+			overflow: hidden
+			font-size: r(18px)
+			border: 1px solid $border-dc
+			text-transform: uppercase
+		+ li
+			margin-left: 20px
+		&:hover,
+		&.active
+			a, span
+				color: $black-3
+				background: $main
+				border: 1px solid $black
+		@media(min-width: 1024px)
+			a, span
+				width: 40px
+				height: 40px

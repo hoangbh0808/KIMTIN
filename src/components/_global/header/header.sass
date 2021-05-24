@@ -1,7 +1,17 @@
 header
 	width: 100%
-	overflow: hidden
 	background: $white
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 99
+	transition: .3s all ease-in-out
+	transform: translateY(0)
+	&.active
+		@media (max-width: 767.98px)
+			transform: translateY(-120px)
+		@media (max-width: 575.98px)
+			transform: translateY(-88px)
 	nav
 		.header-top
 			width: 100%
@@ -54,6 +64,8 @@ header
 						font-size: r(14px)
 						font-weight: 700
 						letter-spacing: 0.7px
+						@media screen and ( max-width: 1200px )
+							display: none
 						em
 							font-size: r(18px)
 							font-weight: 400
@@ -146,11 +158,19 @@ header
 				justify-content: center
 			.search-wrapper
 				margin-left: auto
+				[class*='Module']
+					width: 100%
 				.form-group
-					position: relative
 					width: 280px
 					height: 36px
 					background: #f1f1f1
+					display: flex
+					align-items: center
+					[class*='Module']
+						height: 100%
+					.searchbox
+						height: 100%
+						display: flex
 					input
 						width: 100%
 						height: 100%
@@ -161,9 +181,6 @@ header
 						font-weight: 400
 						padding-left: 10px
 					button
-						position: absolute
-						top: 0
-						right: 10px
 						height: 100%
 						border: none
 						display: flex
@@ -177,7 +194,7 @@ header
 				display: flex
 				align-items: center
 				list-style: none
-				margin-left: 20px
+				margin-left: 32px
 				li
 					a
 						color: $brow-f20
@@ -191,7 +208,7 @@ header
 						&::after
 							position: absolute
 							top: 50%
-							left: -10px
+							left: -18px
 							transform: translateY(-50%)
 							font-family: remixicon
 							color: $brow-f20
@@ -218,6 +235,8 @@ header
 			.shopping-card-toggle
 				margin-left: 30px
 				position: relative
+				.wrap-cart-icon
+					cursor: pointer
 				.icon
 					em
 						color: var(--brow-f20)
@@ -241,6 +260,8 @@ header
 				margin-left: 43px
 				display: flex
 				align-items: center
+				@media screen and ( max-width: 1200px )
+					display: none
 				.btn-yellow
 					margin-left: 10px
 		@media screen and ( max-width: 1279.98px )
@@ -271,15 +292,15 @@ header
 			.header-top
 				.nav-main
 					.navbar
-						padding: 30px
+						padding: 0px
 						margin-left: 0
 						position: absolute
 						flex-direction: column
-						top: calc( 100% + 36px )
+						top: 100%
 						right: -100%
 						opacity: 0
 						visibility: hidden
-						width: 80vw
+						width: 100vw
 						height: 100vh
 						z-index: 1000
 						background: $brow-f20
@@ -290,6 +311,16 @@ header
 							transform: translateX(100%)
 							opacity: 0
 							transition: 1s all
+							width: 100%
+							padding-left: 43px
+							&::before
+								left: 18px
+							&:last-child
+								border-bottom: 1px solid $main
+							.nav-link
+								font-size: 1.1rem
+							&+.nav-item
+								border-top: 1px solid $main
 							&:first-child
 								&::before
 									display: block
@@ -301,18 +332,19 @@ header
 								opacity: 1
 								transform: translateX(0)
 								&:nth-child(1)
-									transition-delay: .5s
+									transition-delay: .3s
 								&:nth-child(2)
-									transition-delay: .6s
+									transition-delay: .4s
 								&:nth-child(3)
-									transition-delay: .7s
+									transition-delay: .5s
 								&:nth-child(4)
-									transition-delay: .8s
+									transition-delay: .6s
 								&:nth-child(5)
-									transition-delay: .9s
+									transition-delay: .7s
 		@media screen and ( max-width: 767.98px )
 			.header-bottom
 				padding-bottom: 15px
+				padding-top: 5px
 				.container
 					flex-wrap: wrap
 					flex-direction: row

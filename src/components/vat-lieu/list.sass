@@ -26,7 +26,11 @@
 						height: 30px
 						border: 1px solid #e0e0e0
 						background: $white
-						padding-left: 15px
+						padding-left: 10px
+						color: $black-3
+						font-size: 14px
+						font-weight: 400
+						padding-right: 15px
 				.option-wrap
 					padding-left: 20px
 				.sort-wrap
@@ -46,9 +50,18 @@
 					align-items: center
 					justify-content: center
 					margin-bottom: 20px
+					padding: 30px
 					height: 275px
 					border: 1px solid $border-e5
 					background: #fefefe
+					transition: .3s all ease-in-out
+					&:hover
+						border: 1px solid $main
+						box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.1)
+					@media (max-width: 767.98px)
+						padding: 15px
+					@media (max-width: 575.98px)
+						padding: 0
 					img
 						max-height: 100%
 						max-width: 100%
@@ -56,7 +69,7 @@
 				.pro-infor
 					.pro-title
 						padding-right: 30px
-						padding-bottom: 14px
+						padding-bottom: 0px
 						a
 							color: $black-3
 							font-size: r(14px)
@@ -66,6 +79,8 @@
 						padding-right: 60px
 						align-items: center
 						justify-content: space-between
+						@media (max-width: 1024.98px)
+							padding-right: 0px
 						.price
 							color: $red
 							font-weight: 500
@@ -89,7 +104,7 @@
 				margin-bottom: 30px
 				.name_category
 					h2
-						font-size: r(14px)
+						font-size: 1.5rem
 				.option-wrap,
 				.sort-wrap
 					p
@@ -132,8 +147,11 @@
 				.wrap-left
 					flex-wrap: wrap
 					flex-direction: row
+					width: 100%
+					justify-content: space-between
 					.option-wrap
 						padding-left: 0
+						padding-bottom: 10px
 					.sort-wrap
 						padding-right: 0
 						padding-bottom: 10px

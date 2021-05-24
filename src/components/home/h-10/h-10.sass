@@ -44,15 +44,24 @@
 					text-align: center
 				+ li
 					padding-left: 45px
+					@media (max-width: 767.98px)
+						&:nth-child(3)
+							&::before
+								display: none
+						&:nth-child(5)
+							&::before
+								display: none
 					&::before
 						position: absolute
 						top: 0
-						left: 0
+						left: 22px
 						width: 1px
 						height: 100%
 						background: $white
 						opacity: .25
 						content: ''
+						@media (max-width: 767.98px)
+							left: 0px
 		.button
 			margin-top: 50px
 			.btn-yellow

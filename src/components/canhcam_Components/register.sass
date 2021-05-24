@@ -1,10 +1,15 @@
-.register-page
+.registerpage
 	.wrap-register
 		width: 100%
 		max-width: 494px
 		margin: 0 auto
 		padding-top: 60px
 		padding-bottom: 80px
+		.headtitle
+			text-align: center
+			margin-bottom: 20px
+			text-transform: uppercase
+			font-size: 2rem
 		.pagetitle
 			color: $black
 			font-size: r(30px)
@@ -13,7 +18,6 @@
 			text-align: center
 			text-transform: uppercase
 			margin-bottom: 25px
-
 		.card-title
 			color: $black
 			font-size: r(24px)
@@ -28,67 +32,75 @@
 			padding: 25px 30px 40px
 			box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.1)
 			background-color: $white
-			.login-box-msg
-				display: none
-			.form-group
-				input,.form-control
-					width: 100% !important
-					height: 50px !important
-					background-color: #f0f0f0
-					border: thin solid #f0f0f0
-					padding: 0px 10px
-					@media screen and ( max-width: 1024px )
-						height: 45px !important
-					@media screen and ( max-width: 576px )
-						height: 30px !important
-					&:active,&:focus
-						border: thin solid $red
-				& + .form-group
-					margin-top: 30px
-				.col-sm-9
-					flex: 100%
-					max-width: 100%
-					padding: 0
-				label
-					padding: 0
-					color: $black
-					font-size: r(16px)
-					font-weight: 400
-			.items-center
-				margin-top: 30px
-				flex-direction: column
-				.col-5
-					display: none
-				[class*="col"]
-					flex: 100%
-					max-width: 100%
-			.btn
-				background-color: $main
-				display: flex
-				justify-content: center
-				align-items: center
-				width: 100%
-				border: 0
-				height: 50px
-				color: $white
-				font-size: r(14px)
-				font-weight: 700
-				text-transform: uppercase
-				transition: .3s all ease-in-out
+		.login-box-msg
+			display: none
+		.form-group
+			input,.form-control
+				width: 100% !important
+				height: 50px !important
+				background-color: #f0f0f0
+				border: thin solid #f0f0f0
+				padding: 0px 10px
 				@media screen and ( max-width: 1024px )
-					height: 45px
+					height: 45px !important
 				@media screen and ( max-width: 576px )
-					height: 30px
-				&:hover
-					background-color: $red
-			.flex
-				display: flex
-				align-items: center
-			.regcomplete
-				span
-					color: $black-1
-					font-size: r(15px)
-					font-weight: 700
-					display: block
-					text-align: center
-					margin-bottom: 10px
+					height: 30px !important
+				&:active,&:focus
+					border: thin solid $main !important
+			& + .form-group
+				margin-top: 13px
+			.col-sm-9
+				flex: 100%
+				max-width: 100%
+				padding: 0
+			label
+				padding: 0
+				color: $black
+				font-size: r(16px)
+				font-weight: 400
+				margin-bottom: 10px
+		.items-center
+			margin-top: 30px
+			flex-direction: column
+			.col-5
+				display: none
+			[class*="col"]
+				flex: 100%
+				max-width: 100%
+		.btn
+			border: 1px solid $brow-f20 !important
+			background-color: $main
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 100%
+			border: 0
+			height: 50px
+			color: $brow-f20
+			font-size: r(14px)
+			font-weight: 700
+			text-transform: uppercase
+			transition: .3s all ease-in-out
+			@media screen and ( max-width: 1024px )
+				height: 45px
+			@media screen and ( max-width: 576px )
+				height: 30px
+			&:hover
+				background-color: $black
+				color: $main
+				border: 1px solid $main !important
+		.flex
+			display: flex
+			align-items: center
+		.regcomplete
+			span
+				color: $black-1
+				font-size: r(15px)
+				font-weight: 700
+				display: block
+				text-align: center
+				margin-bottom: 10px
+	#ctl00_mainContent_RegisterUser_CreateUserStepContainer_pnlRequiredProfileProperties
+		.form-group
+			&:first-child
+				margin-top: 13px

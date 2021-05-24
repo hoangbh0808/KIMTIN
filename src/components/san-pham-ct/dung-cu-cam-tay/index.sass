@@ -16,6 +16,7 @@
 			align-items: center
 			justify-content: center
 			transition: .3s all ease-in-out
+			cursor: pointer
 			@media screen and ( max-width: 575px )
 				min-width: auto
 				width: 100%
@@ -235,6 +236,11 @@
 							display: flex
 							align-items: center
 							justify-content: center
+							@media (max-width: 767.98px)
+								height: 110px
+								padding: 5px
+							@media (max-width: 575.98px)
+								height: 88px
 							img
 								max-width: 100%
 								max-height: 100%
@@ -360,10 +366,16 @@
 					padding-top: 20px
 					border-top: 1px solid $border-2
 			.img
-				padding: 41px
+				padding: 5px
 				border: 1px solid $border-2
 				a
-					+img-ratio(1)
+					display: block
+					height: 245px
+					padding: 20px
+					img
+						width: 100%
+						height: 100%
+						object-fit: contain
 			.wrap-content
 				.title
 					color: $black-3
@@ -536,6 +548,8 @@
 					margin-left: 10px
 				.buy-now
 					margin-left: 10px
+			@media (max-width: 767.98px)
+				flex-direction: column
 	.wrap-number
 	.wrap-select-input
 		display: flex

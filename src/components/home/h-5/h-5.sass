@@ -4,11 +4,10 @@
 		.swiper-inner
 			position: relative
 			transition: all .5s
-
 			.img
 				border: 1px solid $border-e5
 				background: #fefefe
-				padding: 20px
+				padding: 20px 16px
 				margin-bottom: 20px
 				transition: all .5s
 				a
@@ -19,9 +18,9 @@
 					padding-bottom: 14px
 					a
 						color: $black-3
+						+rgtext(2)
 						font-size: r(14px)
 				.wraper-price
-					padding: 0 10px
 					justify-content: space-between
 					.price
 						color: $red
@@ -87,6 +86,10 @@
 				top: auto
 				bottom: -60px
 			.swiper-button-next
-				right: 35%
+				right: 40%
+				@media (max-width: 575.98px)
+					right: 38%
 			.swiper-button-prev
-				left: 35%
+				left: 40%
+				@media (max-width: 575.98px)
+					left: 38%

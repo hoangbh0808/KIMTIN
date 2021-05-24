@@ -255,17 +255,15 @@ function adjustProductAmount() {
 
 // ========================SCROLL HEADER ACTIVE ================================ //
 const headerScrollActive = () => {
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > 0) {
-			$("header").css({
-				position: "fixed",
-				top: "0",
-				"z-index": "1000",
-				transition: "all .5s",
-			});
+	var lastScrollTop = 0;
+	$(window).scroll(function (event) {
+		var checkScroll = $(this).scrollTop();
+		if (checkScroll > lastScrollTop) {
+			$("header").addClass("active");
 		} else {
-			$("header").css("position", "static");
+			$("header").removeClass("active");
 		}
+		lastScrollTop = checkScroll;
 	});
 };
 /*==================== Responsive height produtct ====================*/
@@ -282,7 +280,7 @@ function responeProduct() {
 /*==================== Dropdown Product ====================*/
 const DropdownProduct = () => {
 	$(".san-pham-ct .wrap-other-product").append(
-		'<div class="loading"><svg id="load" x="0px" y="0px" viewBox="0 0 150 150"><circle id="loading-inner" cx="75" cy="75" r="60"/></svg></div>'
+		'<div class="loading-search"><svg id="load" x="0px" y="0px" viewBox="0 0 150 150"><circle id="loading-inner" cx="75" cy="75" r="60"/></svg></div>'
 	);
 	var $parent = $(".san-pham-ct"),
 		$items = $parent.find(".item-product-other"),
@@ -296,9 +294,9 @@ const DropdownProduct = () => {
 		}
 	});
 	$loadMoreButton.on("click", function (e) {
-		$(".loading").addClass("active");
+		$(".loading-search").addClass("active");
 		setTimeout(() => {
-			$(".loading").removeClass("active");
+			$(".loading-search").removeClass("active");
 		}, 250);
 		setTimeout(() => {
 			$("." + hiddenClass).each(function (idx, item) {
@@ -313,10 +311,10 @@ const DropdownProduct = () => {
 	});
 };
 const DropdownProductLang = () => {
-	$(".page-langding .wrap-flex-product").append(
-		'<div class="loading"><svg id="load" x="0px" y="0px" viewBox="0 0 150 150"><circle id="loading-inner" cx="75" cy="75" r="60"/></svg></div>'
+	$(".count-product-10 .wrap-flex-product").append(
+		'<div class="loading-search"><svg id="load" x="0px" y="0px" viewBox="0 0 150 150"><circle id="loading-inner" cx="75" cy="75" r="60"/></svg></div>'
 	);
-	var $parent = $(".page-langding"),
+	var $parent = $(".count-product-10"),
 		$items = $parent.find(".col-product"),
 		$loadMoreButton = $parent.find(".showItem"),
 		maxItems = 5,
@@ -328,9 +326,47 @@ const DropdownProductLang = () => {
 		}
 	});
 	$loadMoreButton.on("click", function (e) {
-		$(".loading").addClass("active");
+		$(".loading-search").addClass("active");
 		setTimeout(() => {
-			$(".loading").removeClass("active");
+			$(".loading-search").removeClass("active");
+		}, 250);
+		setTimeout(() => {
+			$("." + hiddenClass).each(function (idx, item) {
+				if (idx < maxItems) {
+					$(this).removeClass(hiddenClass);
+				}
+				if ($("." + hiddenClass).length === 0) {
+					$loadMoreButton.hide();
+				}
+			});
+		}, 300);
+	});
+};
+const DropdownProductLang2 = () => {
+	$(".count-product-15 .wrap-flex-product").append(
+		'<div class="loading-search"><svg id="load" x="0px" y="0px" viewBox="0 0 150 150"><circle id="loading-inner" cx="75" cy="75" r="60"/></svg></div>'
+	);
+	var $parent = $(".count-product-15"),
+		$items = $parent.find(".col-product"),
+		$loadMoreButton = $parent.find(".showItem"),
+		maxItems = 5,
+		numberItems = 15;
+	let CountProduct = $items.length;
+	console.log(CountProduct);
+	if (CountProduct <= numberItems) {
+		$loadMoreButton.hide();
+	}
+	var hiddenClass = "visually-hidden";
+	$.each($items, function (idx, item) {
+		if (idx > numberItems - 1) {
+			$(this).addClass(hiddenClass);
+		}
+	});
+
+	$loadMoreButton.on("click", function (e) {
+		$(".loading-search").addClass("active");
+		setTimeout(() => {
+			$(".loading-search").removeClass("active");
 		}, 250);
 		setTimeout(() => {
 			$("." + hiddenClass).each(function (idx, item) {
@@ -368,8 +404,8 @@ const accordianList = () => {
 	$(".filter-wrapper .title").on("click", function () {
 		$(this).toggleClass("active");
 		$(this).next().slideToggle();
-		$(".filter-wrapper .title").not(this).next().slideUp();
-		$(".filter-wrapper .title").not(this).removeClass("active");
+		// $(".filter-wrapper .title").not(this).next().slideUp();
+		// $(".filter-wrapper .title").not(this).removeClass("active");
 	});
 	$(".side-navigation-wrapper .title").on("click", function () {
 		$(this).toggleClass("active");
@@ -393,6 +429,131 @@ function tabDauThau(e) {
 		$(this).addClass("active");
 	});
 }
+/*==================== Điều chỉnh input ====================*/
+function EditInputForm() {
+	$(".subscribebutton").text("Gửi");
+}
+/*==================== Dropdown Sản phẩm nổi bật ====================*/
+const DropdownProductHome = () => {
+	$(".home-specail").append(
+		'<div class="loading-search"><svg id="load" x="0px" y="0px" viewBox="0 0 150 150"><circle id="loading-inner" cx="75" cy="75" r="60"/></svg></div>'
+	);
+	var $parent = $(".home-specail"),
+		$items = $parent.find(".col-6"),
+		$loadMoreButton = $parent.find(".btn-defaul"),
+		maxItems = 4,
+		numberItems = 8;
+	var hiddenClass = "visually-hidden";
+	$.each($items, function (idx, item) {
+		if (idx > numberItems - 1) {
+			$(this).addClass(hiddenClass);
+		}
+	});
+	$loadMoreButton.on("click", function (e) {
+		$(".loading-search").addClass("active");
+		setTimeout(() => {
+			$(".loading-search").removeClass("active");
+		}, 250);
+		setTimeout(() => {
+			$("." + hiddenClass).each(function (idx, item) {
+				if (idx < maxItems) {
+					$(this).removeClass(hiddenClass);
+				}
+				if ($("." + hiddenClass).length === 0) {
+					$loadMoreButton.hide();
+				}
+			});
+		}, 300);
+	});
+};
+/*==================== For Cart ====================*/
+function clickAddress() {
+	$(".click-more-address").click(function () {
+		$(".user-info").slideToggle();
+	});
+}
+function clickTriggerCart() {
+	$(".san-pham-ct .add-to-cart").on("click", function () {
+		if ($(".shopping-cart-wrapper").is(".active")) {
+		} else {
+			$(".wrap-cart-icon").trigger("click");
+		}
+	});
+}
+/*==================== ClickFilterProduct ====================*/
+function ClickFilterProduct(e) {
+	$(".button-dmsp").click(function () {
+		if ($(".wrap-filter-wraper").is(".active")) {
+			$(".button-blsp").trigger("click");
+		}
+		$(".side-navigation-wrapper").toggleClass("active");
+		var text = $(this).text();
+		$(this).text(
+			text == "Danh mục sản phẩm"
+				? "Đóng danh mục sản phẩm"
+				: "Danh mục sản phẩm"
+		);
+	});
+	$(".button-blsp").click(function () {
+		if ($(".side-navigation-wrapper").is(".active")) {
+			$(".button-dmsp").trigger("click");
+		}
+		$(".wrap-filter-wraper").toggleClass("active");
+		var text = $(this).text();
+		$(this).text(
+			text == "Bộ lọc sản phẩm"
+				? "Đóng bộ lọc sản phẩm"
+				: "Bộ lọc sản phẩm"
+		);
+	});
+}
+/*==================== Phan trang ====================*/
+function phantrang() {
+	$(".modulepager")
+		.find(".pagination")
+		.find("li>a.NextPage, li>a.LastPage, li>a.BackPage, li>a.FirstPage")
+		.parent()
+		.hide();
+	$(".pagination").appendTo(".hero-product");
+}
+/*==================== ButtonToTOp ====================*/
+function buttonToTop() {
+	$(".button-to-top").click(function () {
+		$("html, body").animate(
+			{
+				scrollTop: 0,
+			},
+			300
+		);
+	});
+}
+/*==================== User Infomation ====================*/
+function FillColorLogin(e) {
+	if ($(".profile-container").length == 1) {
+		$("main").css("background-color", "#f8f8f8");
+	}
+}
+const checkDiaChi = () => {
+	$(".profile-container .address-info .type").each(function () {
+		console.log($(this).text());
+		if (!$(this).text().trim()) {
+			$(this).text("Phụ");
+		} else {
+			$(this).css("background-color", "#000000");
+		}
+	});
+};
+const InsertMobileAccount = () => {
+	$(
+		'<div class="button-account-profile"><p class="title-main">Thông tin tài khoản</p> <em class="ri-arrow-down-s-line"></em></div>'
+	).insertBefore(".user-sidelink");
+	if ($(window).width() < 1024) {
+		$(".button-account-profile").click(function () {
+			$(this).toggleClass("active");
+			$(".user-sidelink").toggleClass("active");
+		});
+	}
+};
 /*==================== LOAD FUNCTION ====================*/
 $(document).ready(function () {
 	scrollTop();
@@ -401,7 +562,9 @@ $(document).ready(function () {
 	searchButton();
 	setBackgroundElement();
 	mappingInit();
-	headerScrollActive();
+	if ($(window).width() < 768) {
+		headerScrollActive();
+	}
 	accordianList();
 	// For Page Product
 	adjustProductAmount();
@@ -410,6 +573,32 @@ $(document).ready(function () {
 	}, 300);
 	DropdownProduct();
 	DropdownProductLang();
+	DropdownProductLang2();
 	tabContent();
 	tabDauThau();
+	EditInputForm();
+	// For Home
+	DropdownProductHome();
+	// For Cart
+	clickAddress();
+	clickTriggerCart();
+	checkLayoutBanner();
+	$(document).click(function (e) {
+		var container = $(".suggestsearch");
+		if (!container.is(e.target) && container.has(e.target).length === 0) {
+			container.hide();
+		}
+	});
+	// For List Product
+	ClickFilterProduct();
+	phantrang();
+	// Main
+	buttonToTop();
+	// Click when after ajax
+	$("header").on("click", ".wrap-cart-icon", function () {
+		$(".shopping-cart-wrapper").toggleClass("active");
+	});
+	FillColorLogin();
+	checkDiaChi();
+	InsertMobileAccount();
 });
