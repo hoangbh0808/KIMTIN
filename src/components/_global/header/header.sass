@@ -78,11 +78,16 @@ header
 							color: $main
 							font-size: r(12px)
 							font-weight: 400
+							&.active
+								text-decoration: underline
 					.wrap-end
 						.language
 							position: relative
 							padding-left: 10px
 							.dropdown
+								&:hover
+									.dropdown-menu
+										opacity: 1
 								a
 									display: flex
 									align-items: center
@@ -99,8 +104,17 @@ header
 								.dropdown-menu
 									padding: 0
 									z-index: 1000
+									position: absolute
+									top: 120%
+									opacity: 0
+									background-color: #fff
+									transition: .3s all ease-in-out
 									li
 										padding: 7px
+										transition: .3s all ease-in-out
+										&:hover
+											background-color: $main
+											color: white
 							&::after
 								position: absolute
 								top: 0

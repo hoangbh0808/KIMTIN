@@ -1,0 +1,49 @@
+.passwordrecovery
+	.admin-content
+		padding: 60px 0px
+	.wrap-secure
+		margin: 18px auto 0
+		box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.2)
+		background-color: #fff
+		padding: 23px 31px
+		width: 100%
+		max-width: 494px
+		input[type="text"], input[type="password"]
+			display: block
+			transition: all .3s ease-in-out
+			outline: none
+			border: 1px solid transparent
+			background-color: #f0f0f0
+			padding-left: 20px
+			width: 100%
+			height: 50px
+			margin-top: 15px
+			margin-bottom: 15px
+		input[type="submit"]
+			z-index: 2
+			transition: all .3s ease-in-out
+			border: 1px solid #231f20
+			background-color: #fd0
+			width: 100%
+			height: 40px
+			color: #231f20
+			font-size: .875rem
+			margin-top: -18px
+			font-weight: 700
+			text-transform: uppercase
+			&:hover
+				background-color: #111
+				color: $main
+				border: 1px solid $main
+		#ctl00_mainContent_PasswordRecovery1_UserNameContainerID_captcha_ctl01
+			display: flex
+			align-items: center
+		.rcRefreshImage
+			font-size: 0
+			&::before
+				margin-left: 20px
+				color: #999
+				font-family: Material Icons
+				font-size: 30px
+				font-weight: 400
+				content: "replay"

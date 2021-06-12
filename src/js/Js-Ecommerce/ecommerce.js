@@ -2970,10 +2970,7 @@ var AjaxCheckout = {
 		displayAjaxLoading(display);
 		this.loadWaiting = display;
 	},
-	toggleCompany: function () {
-		$('#divCompany').slideToggle()
-		console.log('sdsd')
-	},
+
 	getdistrictsbyprovinceguid: function (select, districtElementName) {
 		if (this.loadWaiting != false) {
 			return;
