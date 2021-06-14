@@ -388,14 +388,14 @@ const accordianList = () => {
 		if ($this.parent().next().hasClass("show")) {
 			$this.parent().next().removeClass("show");
 			$this.parent().next().slideUp(350);
-			$this.parents("li").removeClass("active");
+			$this.closest("li").removeClass("active");
 		} else {
 			$this.parent().parents().find(".nav-sub").removeClass("show");
 			$this.parent().parents().find(".nav-sub").slideUp(350);
-			$this.parent().parents().find("li").removeClass("active");
+			$this.closest(".side-navigation").find("li").removeClass("active");
 			$this.parent().next().toggleClass("show");
 			$this.parent().next().slideDown(350);
-			$this.parents("li").addClass("active");
+			$this.closest("li").addClass("active");
 		}
 	});
 	if ($(".side-navigation li").hasClass("active")) {
