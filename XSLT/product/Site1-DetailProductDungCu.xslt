@@ -77,7 +77,7 @@
 						</div>
 						<div class="content-main">
 							<div class="sku">SKU:
-								<xsl:value-of disable-output-escaping="yes" select="ProductId">
+								<xsl:value-of disable-output-escaping="yes" select="Code">
 												</xsl:value-of>
 							</div>
 							<xsl:value-of disable-output-escaping="yes" select="FullContent"></xsl:value-of>

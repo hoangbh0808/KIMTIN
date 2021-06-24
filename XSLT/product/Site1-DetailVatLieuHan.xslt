@@ -44,11 +44,11 @@
 						</div>
 						<div class="donvi color-text f-14 fw-400">
 							<xsl:text disable-output-escaping="yes">ĐVT: </xsl:text>
-							<xsl:value-of disable-output-escaping="yes" select="ProductProperties/Options/Title"></xsl:value-of>
+							<xsl:value-of disable-output-escaping="yes" select="SubTitle"></xsl:value-of>
 						</div>
 						<div class="content-main">
 							<div class="sku">SKU:
-								<xsl:value-of disable-output-escaping="yes" select="ProductId">
+								<xsl:value-of disable-output-escaping="yes" select="Code">
 												</xsl:value-of>
 							</div>
 							<xsl:value-of disable-output-escaping="yes" select="BriefContent"></xsl:value-of>

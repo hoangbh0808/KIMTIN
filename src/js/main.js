@@ -103,45 +103,45 @@ const initBanner = () => {
 		});
 	});
 	// Product Detail
-	var productDetailThumbs = new Swiper(
-		".san-pham-ct .thumbnail-product .swiper-container",
-		{
-			slidesPerView: 3,
-			spaceBetween: 5,
-			speed: 1000,
-			observer: true,
-			observeParents: true,
-			slidesPerColumnFill: "row",
-			direction: "horizontal",
-			breakpoints: {
-				414: {
-					slidesPerView: 3,
-				},
-				768: {
-					direction: "vertical",
-					slidesPerView: 4,
-				},
-			},
-		}
-	);
-	var productDetailTop = new Swiper(
-		".san-pham-ct .img-main-product .swiper-container",
-		{
-			slidesPerView: 1,
-			spaceBetween: 10,
-			observer: true,
-			observeParents: true,
-			speed: 1000,
-			slidesPerColumnFill: "row",
-			navigation: {
-				nextEl: ".san-pham-ct .wrap-main-product .button-next",
-				prevEl: ".san-pham-ct .wrap-main-product .button-prev",
-			},
-			thumbs: {
-				swiper: productDetailThumbs,
-			},
-		}
-	);
+	// var productDetailThumbs = new Swiper(
+	// 	".san-pham-ct .thumbnail-product .swiper-container",
+	// 	{
+	// 		slidesPerView: 3,
+	// 		spaceBetween: 5,
+	// 		speed: 1000,
+	// 		observer: true,
+	// 		observeParents: true,
+	// 		slidesPerColumnFill: "row",
+	// 		direction: "horizontal",
+	// 		breakpoints: {
+	// 			414: {
+	// 				slidesPerView: 3,
+	// 			},
+	// 			768: {
+	// 				direction: "vertical",
+	// 				slidesPerView: 4,
+	// 			},
+	// 		},
+	// 	}
+	// );
+	// var productDetailTop = new Swiper(
+	// 	".san-pham-ct .img-main-product .swiper-container",
+	// 	{
+	// 		slidesPerView: 1,
+	// 		spaceBetween: 10,
+	// 		observer: true,
+	// 		observeParents: true,
+	// 		speed: 1000,
+	// 		slidesPerColumnFill: "row",
+	// 		navigation: {
+	// 			nextEl: ".san-pham-ct .wrap-main-product .button-next",
+	// 			prevEl: ".san-pham-ct .wrap-main-product .button-prev",
+	// 		},
+	// 		thumbs: {
+	// 			swiper: productDetailThumbs,
+	// 		},
+	// 	}
+	// );
 	var productDetailTop = new Swiper(".page-dau-thau .swiper-container", {
 		slidesPerView: 1,
 		observer: true,
