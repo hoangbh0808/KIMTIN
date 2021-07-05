@@ -56,7 +56,7 @@
               <div class="product-briefContent">
                 <xsl:value-of disable-output-escaping="yes" select="BriefContent"></xsl:value-of>
               </div>
-            </div>
+            </div>		
             <div class="wrap-select-input options-wrap">
               <!--
 							<span>Quy cách</span>
@@ -98,7 +98,7 @@
 						<div class="box">hộp</div>
 					</div>
 				</div>
-			</div>
+			</div>				
             <div class="wrap-number-order mt-19">
               <span>Số lượng</span>
               <div class="input-amount">
@@ -123,7 +123,7 @@
 				<a class="btn buy-now" onclick="AjaxCart.addproducttocart_quick(this); return false;">
 					<xsl:attribute name="data-productid">
 						<xsl:value-of select="ProductId"></xsl:value-of>
-					</xsl:attribute>
+					</xsl:attribute>								
 					<xsl:text disable-output-escaping="yes">Mua ngay</xsl:text>
 				</a>
             </div>
@@ -462,7 +462,7 @@
           <span>
             <xsl:choose>
               <xsl:when test="DisplayName!=''">
-                <xsl:value-of select="Title"></xsl:value-of>
+                <xsl:value-of select="DisplayName"></xsl:value-of>
               </xsl:when>
               <xsl:otherwise>
                 <xsl:value-of select="Title"></xsl:value-of>

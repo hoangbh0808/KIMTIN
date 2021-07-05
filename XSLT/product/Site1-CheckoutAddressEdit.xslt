@@ -206,7 +206,7 @@
 									</label>
 								</div>
 								<div class="textarea">
-									<textarea type="text" name="Address_Address">
+									<textarea type="text" name="ShippingAddress_Address">
 										<!-- <xsl:attribute name="placeholder">
 											<xsl:text>Ex: 64 Hiep Binh Street</xsl:text>
 										</xsl:attribute> -->

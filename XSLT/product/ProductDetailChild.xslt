@@ -57,7 +57,7 @@
                 <xsl:value-of disable-output-escaping="yes" select="BriefContent"></xsl:value-of>
               </div>
             </div>
-            <div class="wrap-select-input options-wrap">
+            <div class="wrap-select-input">
               <!--
 							<span>Quy cách</span>
 							<ul>
@@ -79,26 +79,6 @@
                 <xsl:apply-templates select="ProductProperties[EnableShoppingCart='True']"> </xsl:apply-templates>
               </xsl:if>
             </div>
-			<div class="wrap-box-calculate">
-				<div class="title-bold-product">Nhập diện tích</div>
-				<div class="dien-tich">
-					<label for="">Diện tích</label>
-					<div class="wrap-form-dt">
-						<div class="d-flex">
-							<input class="input-area" type="text"/>
-							<div class="box">m<sup>2</sup></div>
-						</div>
-						<input class="btn-calculate" type="submit" value="Tính toán" onclick="AjaxCart.productcalculator(this); return false;"/>
-					</div>
-				</div>
-				<div class="wrap-form-hop">
-					<label for="">Số lượng hộp cần mua</label>
-					<div class="wrap">
-						<input class="calc-res" type="text"/>
-						<div class="box">hộp</div>
-					</div>
-				</div>
-			</div>
             <div class="wrap-number-order mt-19">
               <span>Số lượng</span>
               <div class="input-amount">
@@ -114,18 +94,13 @@
               </div>
             </div>
             <div class="wrap-button-buy mt-19">
-				<a class="btn add-to-cart" onclick="AjaxCart.addproducttocart_details(this); return false;">
-					<xsl:attribute name="data-productid">
-						<xsl:value-of select="ProductId"></xsl:value-of>
-					</xsl:attribute>
-					<xsl:text disable-output-escaping="yes">Thêm vào giỏ hàng</xsl:text>
-				</a>
-				<a class="btn buy-now" onclick="AjaxCart.addproducttocart_quick(this); return false;">
-					<xsl:attribute name="data-productid">
-						<xsl:value-of select="ProductId"></xsl:value-of>
-					</xsl:attribute>
-					<xsl:text disable-output-escaping="yes">Mua ngay</xsl:text>
-				</a>
+              <a class="btn add-to-cart" onclick="AjaxCart.addproducttocart_details(this); return false;">
+                <xsl:attribute name="data-productid">
+                  <xsl:value-of select="ProductId"></xsl:value-of>
+                </xsl:attribute>
+                <xsl:text disable-output-escaping="yes">Thêm vào giỏ hàng</xsl:text>
+              </a>
+              <a class="btn buy-now" href="">Mua ngay</a>
             </div>
             <div class="wrap-share mt">
               <div class="wishlist-warp">
@@ -462,7 +437,7 @@
           <span>
             <xsl:choose>
               <xsl:when test="DisplayName!=''">
-                <xsl:value-of select="Title"></xsl:value-of>
+                <xsl:value-of select="DisplayName"></xsl:value-of>
               </xsl:when>
               <xsl:otherwise>
                 <xsl:value-of select="Title"></xsl:value-of>

@@ -87,6 +87,16 @@
 							<xsl:value-of select="DiscountTotal" />
 						</div>
 					</div>
+					<xsl:if test="CouponTotal != ''">
+						<div class="text">
+							<div class="label">
+								<xsl:text>Coupon</xsl:text>
+							</div>
+							<div class="value discount-total">
+								<xsl:value-of select="CouponTotal" />
+							</div>
+						</div>
+					</xsl:if>
 					<div class="text">
 						<div class="label">
 							<xsl:text disable-output-escaping="yes">Phí vận chuyển</xsl:text>

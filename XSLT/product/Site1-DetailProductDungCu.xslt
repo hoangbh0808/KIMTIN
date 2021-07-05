@@ -30,21 +30,22 @@
 						</div>
 					</div>
 					<div class="wrap-content-product padding-content">
-						<h1 class="title-product-main lh-8">
+						<h1 class="title-product-main lh-8 product-name">
 							<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
 							<xsl:value-of select="EditLink" disable-output-escaping="yes"></xsl:value-of>
 						</h1>
 						<div class="wrap-main-price-share">
 							<div class="wrap-price">
-								<ins class="main-price">
+								<ins class="main-price product-price">
 									<xsl:value-of disable-output-escaping="yes" select="Price"></xsl:value-of>
 								</ins>
-								<del class="sale-price">
+								<del class="sale-price product-oldprice">
 									<xsl:value-of disable-output-escaping="yes" select="OldPrice"></xsl:value-of>
 								</del>
 							</div>
 							<div class="wrap-share">
 								<div class="wishlist-warp">
+									<!--
 									<a class='add-to-wishlist add-favorites' onclick="AjaxCart.addproducttowishlist(this);return false;">
 										<xsl:if test="AddedWishList = 'True'">
 											<xsl:attribute name="class">
@@ -65,6 +66,31 @@
 										</xsl:attribute>
 										<em class="ri-heart-line"></em>
 									</a>
+									-->
+									<xsl:choose>
+										<xsl:when test="AddedWishList='True'">
+											<a class='add-to-wishlist add-favorites' onclick="AjaxCart.removefromwishlist(this);return false;">
+												<xsl:attribute name="data-productid">
+													<xsl:value-of select="ProductId"/>
+												</xsl:attribute>
+												<xsl:attribute name="data-itemguid">
+													<xsl:value-of select="WishItemGuid" />
+												</xsl:attribute>											
+												<em class="ri-heart-fill"></em>
+											</a>
+										</xsl:when>
+										<xsl:otherwise>
+											<a class='add-to-wishlist add-favorites' onclick="AjaxCart.addproducttowishlist(this); return false;">
+												<xsl:attribute name="data-productid">
+													<xsl:value-of select="ProductId"/>
+												</xsl:attribute>
+												<xsl:attribute name="data-itemguid">
+													<xsl:value-of select="WishItemGuid" />
+												</xsl:attribute>												
+												<em class="ri-heart-line"></em>
+											</a>
+										</xsl:otherwise>
+									</xsl:choose>									
 								</div>
 								<a class="like-facebook">
 									<xsl:attribute name="href">
@@ -75,7 +101,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="content-main">
+						<div class="content-main product-sku">
 							<div class="sku">SKU:
 								<xsl:value-of disable-output-escaping="yes" select="Code">
 												</xsl:value-of>
@@ -86,7 +112,7 @@
 							<span>Số lượng</span>
 							<div class="input-amount">
 								<a class="btn-dec" href="javascript:;"></a>
-								<input class="amount" type="text" value="1" name="">
+								<input class="amount product-details-quantity" type="text" value="1" name="">
 									<xsl:attribute name="name">
 										<xsl:text>addtocart_</xsl:text>
 										<xsl:value-of select="ProductId" disable-output-escaping="yes" />
@@ -103,7 +129,12 @@
 								</xsl:attribute>
 								<xsl:text disable-output-escaping="yes">Thêm vào giỏ hàng</xsl:text>
 							</a>
-							<a class="btn buy-now" href="">Mua ngay</a>
+							<a class="btn buy-now" onclick="AjaxCart.addproducttocart_quick(this); return false;">
+								<xsl:attribute name="data-productid">
+									<xsl:value-of select="ProductId"></xsl:value-of>
+								</xsl:attribute>								
+								<xsl:text disable-output-escaping="yes">Mua ngay</xsl:text>
+							</a>							
 						</div>
 					</div>
 				</div>

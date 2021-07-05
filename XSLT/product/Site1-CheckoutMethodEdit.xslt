@@ -33,7 +33,8 @@
 				</a>
 				<a class="btn btn-checkout">
 					<xsl:attribute name="href">
-						<xsl:value-of select="/CheckoutMethod/NextPageUrl"></xsl:value-of>
+						<xsl:text disable-output-escaping="yes">#</xsl:text>
+						<!-- <xsl:value-of select="/CheckoutMethod/NextPageUrl"></xsl:value-of> -->
 					</xsl:attribute>
 					<xsl:attribute name="onclick">
 						<xsl:text>AjaxCheckout.saveorder(true, '</xsl:text>

@@ -69,6 +69,40 @@
 							<xsl:value-of disable-output-escaping="yes" select="OldPrice"></xsl:value-of>
 						</span>
 					</div>
+					<div class="wrap-process">
+						<div class="process-bar">
+							<div class="value-hidden-text"></div>
+							<div class="process-bar-inner" style="width:10%">
+								<xsl:attribute name="style">
+									<xsl:text>width:</xsl:text>
+									<xsl:value-of select="DealSoldPercent"/>
+									<xsl:text>%</xsl:text>
+								</xsl:attribute>
+							</div>							
+						</div>
+						<div class="wrap-date-quantity">
+							<p class="rest">Còn lại:
+								<strong><xsl:value-of select="DealRemainingQty"/></strong>
+							</p>
+							<xsl:if test="DealEndDay!=''">
+								<p class="date">
+									<xsl:attribute name="data-countdown">
+										<xsl:value-of select="DealEndYear"/>
+										<xsl:text>/</xsl:text>
+										<xsl:value-of select="DealEndMonth"/>
+										<xsl:text>/</xsl:text>
+										<xsl:value-of select="DealEndDay"/>
+										<xsl:text> </xsl:text>
+										<xsl:value-of select="DealEndHour"/>
+										<xsl:text>:</xsl:text>
+										<xsl:value-of select="DealEndMinute"/>
+										<xsl:text>:</xsl:text>
+										<xsl:value-of select="DealEndSecond"/>
+									</xsl:attribute>
+								</p>
+							</xsl:if>
+						</div>
+					</div>					
 				</div>
 			</div>
 		</div>
