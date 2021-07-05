@@ -187,6 +187,7 @@ function quantityNumber() {
 }
 
 function ReloadProductDetailSlider() {
+	/*
 	var productThumbs = new Swiper(".wrap-slide-detail .gallery-thumbs", {
 		direction: "vertical",
 		spaceBetween: 25,
@@ -243,6 +244,47 @@ function ReloadProductDetailSlider() {
 			swiper: productThumbs,
 		},
 	});
+	*/
+	// Product Detail
+	var productDetailThumbs = new Swiper(
+		".san-pham-ct .thumbnail-product .swiper-container",
+		{
+			slidesPerView: 3,
+			spaceBetween: 5,
+			speed: 1000,
+			observer: true,
+			observeParents: true,
+			slidesPerColumnFill: "row",
+			direction: "horizontal",
+			breakpoints: {
+				414: {
+					slidesPerView: 3,
+				},
+				768: {
+					direction: "vertical",
+					slidesPerView: 4,
+				},
+			},
+		}
+	);
+	var productDetailTop = new Swiper(
+		".san-pham-ct .img-main-product .swiper-container",
+		{
+			slidesPerView: 1,
+			spaceBetween: 10,
+			observer: true,
+			observeParents: true,
+			speed: 1000,
+			slidesPerColumnFill: "row",
+			navigation: {
+				nextEl: ".san-pham-ct .wrap-main-product .button-next",
+				prevEl: ".san-pham-ct .wrap-main-product .button-prev",
+			},
+			thumbs: {
+				swiper: productDetailThumbs,
+			},
+		}
+	);	
 }
 
 $(document).ready(function () {
@@ -421,10 +463,6 @@ $(document).ready(function () {
 		AjaxCart.buynowpopup(this);
 	});
 
-	$(".btn-continue").on("click", function (e) {
-		e.preventDefault();
-		$.fancybox.close();
-	});
 
 	/*************************************************************************************************************/
 	/* END POPUP/FANCYBOX
@@ -815,6 +853,27 @@ var AjaxCart = {
 	setLoadWaiting: function (display) {
 		displayAjaxLoading(display);
 		this.loadWaiting = display;
+	},
+
+	calculateSquare:function (button) {
+		let unit = $( "input[type=radio][name=kichthuoc]:checked" ).val();
+		let square = $("input[type=text][name=square]").val();
+		let quantityPerUnit = $("#quantityPerUnit").text();
+		if(unit == undefined || unit == 0)
+		{
+			alert("Vui lòng chọn kích thước!");
+		}
+		else if(square == undefined || square < 0)
+		{
+			alert("Vui lòng nhập diện tích!");
+		}
+		else
+		{
+			
+
+			let quantity =  Math.ceil(square * 1000000 / (unit * quantityPerUnit));
+			$("input[type=text][name=soluong]").val(quantity);
+		}
 	},
 
 	//add a product to the cart/wishlist from the catalog pages
@@ -1292,17 +1351,11 @@ var AjaxCart = {
 			name: "optionid",
 			value: $(button).attr("data-id"),
 		});
-		$.each(
-			$(button).parents(".product-attributes").find(".product-options"),
-			function () {
-				var input = $(this).find('input[type="hidden"]');
-				if (input)
-					data.push({
-						name: input.attr("name"),
-						value: input.attr("value"),
-					});
-			}
-		);
+        $.each($(button).parents('.options-wrap').find('.product-options'), function () {
+            var input = $(this).find('input[type="hidden"]');
+            if (input)
+                data.push({ name: input.attr("name"), value: input.attr("value") });
+        })			
 		$.ajax({
 			cache: false,
 			url: url,
@@ -1310,65 +1363,73 @@ var AjaxCart = {
 			type: "post",
 			success: function (response) {
 				if (response.success == true) {
-					if (response.productId) {
-						$(".addto-cart").attr(
-							"data-productid",
-							response.productId
-						);
-						$(".product-details-quantity").attr(
-							"name",
-							"addtocart_" +
-								response.productId +
-								".EnteredQuantity"
-						);
+					if (response.productName){
+						//$('.product-name').text(response.productName);	
+						let pName = response.productName;
+						if (response.editLink){
+							//$(".edit-link").attr("href", response.editLink);
+							pName += "<a title='Sửa' class='edit-link' href='" + response.editLink + "'> <i class='fa fa-pencil'></i></a>"
+						}
+						$('.product-name').html(pName);
 					}
-
-					if (response.productName)
-						$(".product-name").text(response.productName);
-					if (response.editLink)
-						$(".edit-link").attr("href", response.editLink);
-					if (response.productCode)
-						$(".product-code").text(response.productCode);
-					if (response.price)
-						$(".product-price").text(response.price);
-					if (response.oldPrice)
-						$(".product-oldprice").text(response.oldPrice);
-					else if (response.oldPrice == null)
-						$(".product-oldprice").text("");
-					if (response.briefContent)
-						$(".product-briefContent").html(response.briefContent);
-
-					if (response.childProductDetail) {
-						console.log(response.childProductDetail);
-						if (
-							$(response.childProductDetail).find(
-								".wrap-slide-detail"
-							) != undefined
-						)
-							$(".wrap-slide-detail").html(
-								$(response.childProductDetail).find(
-									".wrap-slide-detail"
-								)
-							);
-					}
+                    if (response.price)
+                        $('.product-price').text(response.price);
+                    if (response.oldPrice)
+                        $('.product-oldprice').text(response.oldPrice);
+                    if (response.briefContent)
+                        $('.product-briefContent').html(response.briefContent);					
+                    else if (response.oldPrice == null)
+                        $('.product-oldprice').text('');
 					if (response.productUrl) {
-						// if (typeof (history.pushState) != "undefined") {
-						// var url = response.productUrl;
-						// var obj = {
-						// Title: '',
-						// Url: url
-						// };
-						// history.pushState(obj, obj.Title, obj.Url);
-						// }
-						if (typeof history.replaceState != "undefined") {
+						if (typeof (history.replaceState) != "undefined") {
 							var url = response.productUrl;
 							var obj = {
-								Title: "",
-								Url: url,
+								Title: '',
+								Url: url
 							};
 							history.replaceState(obj, obj.Title, obj.Url);
-						}
+						}						
 					}
+					if(response.productId){
+						$('.add-to-cart').attr("data-productid", response.productId);
+						$('.product-details-quantity').attr("name", 'addtocart_' + response.productId + '.EnteredQuantity');
+					}	
+					if (response.productCode)
+                        $('.product-sku .sku').text('SKU: ' + response.productCode);
+					if (response.productSubtitle)
+                        $('.product-dvt').text('ĐVT: ' + response.productSubtitle);					
+					if (response.selectedOptionIds) {	
+						var optionNames = '';
+						var optionGroupCount = $(".product-info .product-options").length;
+						$(".product-options").each(function (index) {
+							var opt = $(this);
+							$(this).find('.product-option-input').val('');
+							$(this).find('.product-option').removeClass('active');
+							$(this).find('.product-option').removeClass('disable');
+							$(this).find('.product-option').each(function (index2) {
+								var option = $(this);
+								var optionId = parseInt(option.attr('data-id'));
+								if ($.inArray(optionId, response.selectedOptionIds) > -1) {
+									opt.find('.product-option-input').val(optionId);
+									option.addClass('active');
+
+									if (option.parents('.product-intro').length)
+										optionNames += option.attr('data-name') + ', ';
+								}
+								if (optionGroupCount > 1 && $.inArray(optionId, response.optionIds) == -1) {
+									option.addClass('disable');
+								}
+							});
+						});	
+					}
+					if (response.childProductDetail) {
+						if ($(response.childProductDetail).find(".wrap-img-product") != undefined)
+							$('.wrap-img-product').replaceWith($(response.childProductDetail).find(".wrap-img-product"))
+					}					
+					ReloadProductDetailSlider();					
+					/*
+					if (response.productCode)
+						$(".product-code").text(response.productCode);
 
 					if (response.selectedOptionIds) {
 						var optionNames = "";
@@ -1423,8 +1484,8 @@ var AjaxCart = {
 						$(".product-selected-options .option-names").html(
 							optionNames
 						);
-					}
-					ReloadProductDetailSlider();
+					}					
+					*/
 				} else if (response.message) {
 					alert(response.message);
 				}
@@ -2970,7 +3031,10 @@ var AjaxCheckout = {
 		displayAjaxLoading(display);
 		this.loadWaiting = display;
 	},
-
+	toggleCompany: function () {
+		$('#divCompany').slideToggle()
+		console.log('sdsd')
+	},
 	getdistrictsbyprovinceguid: function (select, districtElementName) {
 		if (this.loadWaiting != false) {
 			return;
@@ -3080,7 +3144,10 @@ var AjaxCheckout = {
 		$("textarea[name=Address_Address]").val(
 			$("textarea[name=Address_Address]").val().trim()
 		);
-		let $isttmh = $("#ttmh").is(":checked");
+		$("textarea[name=ShippingAddress_Address]").val(
+			$("textarea[name=ShippingAddress_Address]").val().trim()
+		);		
+		let $isttmh = $(".user-info.clearfix").is(':visible');//$("#ttmh").is(":checked");
 		var validator = $("#aspnetForm").validate({
 			onsubmit: false,
 			rules: {
@@ -3211,6 +3278,13 @@ var AjaxCheckout = {
 
 		var urladd = siteRoot + "/Product/Services/CheckoutService.aspx";
 		var data = $("#aspnetForm").serializeArray();
+		let sameBilling = "off";
+		if($(".user-info.clearfix").is(':visible'))
+			sameBilling = "on";
+		data.push({
+			name: "Address_SameBilling",
+			value: sameBilling,
+		});
 		data.push({
 			name: "method",
 			value: "SaveOrder",

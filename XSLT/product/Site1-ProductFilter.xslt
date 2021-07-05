@@ -32,14 +32,24 @@
 				</xsl:attribute>
 			</xsl:if>
 			<a class="ajaxlink">
-				<xsl:if test="IsActive='true'">
-					<xsl:attribute name="class">
-						<xsl:text>ajaxlink active</xsl:text>
-					</xsl:attribute>
-				</xsl:if>
-				<xsl:attribute name="href">
-					<xsl:value-of select="Url"></xsl:value-of>
-				</xsl:attribute>
+				<xsl:choose>
+					<xsl:when test="IsActive='true'">
+						<xsl:attribute name="class">
+							<xsl:text disable-output-escaping="yes">ajaxlink active</xsl:text>
+						</xsl:attribute>
+						<xsl:attribute name="href">
+							<xsl:value-of select="ClearUrl" disable-output-escaping="yes"/>
+						</xsl:attribute>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:attribute name="class">
+							<xsl:text disable-output-escaping="yes">ajaxlink</xsl:text>
+						</xsl:attribute>
+						<xsl:attribute name="href">
+							<xsl:value-of select="Url" disable-output-escaping="yes"/>
+						</xsl:attribute>
+					</xsl:otherwise>
+				</xsl:choose>
 				<xsl:attribute name="title">
 					<xsl:value-of select="Title"></xsl:value-of>
 				</xsl:attribute>

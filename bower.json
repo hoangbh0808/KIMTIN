@@ -21,6 +21,7 @@
     "mdi": "4.5.95",
     "font-awesome": "5.15.1",
     "linearicons": "1.0.2",
-    "lazysizes": "5.1.0"
+    "lazysizes": "5.1.0",
+    "aos": "^2.3.4"
   }
 }

@@ -201,7 +201,7 @@
 							<em
 								class="ri-subtract-line"></em>
 						</a>
-						<input class="amount" type="text" maxlength="3" onchange="AjaxCart.updatecart();return false;">
+						<input class="amount" type="text" maxlength="3" onchange="AjaxCart.updatecart(this);return false;">
 							<xsl:attribute name="name">
 								<xsl:text>itemquantity</xsl:text>
 								<xsl:value-of select="ItemGuid"></xsl:value-of>

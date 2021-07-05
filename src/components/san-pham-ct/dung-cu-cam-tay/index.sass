@@ -3,26 +3,65 @@
 	padding: 60px 0px
 	.wrap-select-input
 		&.options-wrap
-			border: 1px solid #e1e1e1
-			align-items: normal
-			border-right: 0
-			.product-options
-				padding: 7px 15px
-				border-right: 1px solid #e1e1e1
-				&:first-child
+			margin-top: 30px
+			.filter-wrap
+				display: flex
+				span
+					white-space: nowrap
+					flex: 0 0 130px
+					@media (max-width: 767.98px)
+						flex: 0 0 100%
+				.select-options
 					display: flex
-					flex-direction: column
-					justify-content: center
-				> span
-					font-weight: 600
-					font-size: r(18px)
-			.select-options
-				li
-					margin-left: 0
-					transition: .3s all  ease-in-out
-					padding: 0 5px
-					&:hover
-						color: $main
+					margin-left: -20px
+					margin-right: -20px
+					flex-wrap: wrap
+					width: 100%
+					li
+						min-width: 130px
+						height: 40px
+						padding: 0 10px
+						display: flex
+						justify-content: center
+						align-items: center
+						margin-bottom: 20px
+						a
+							border: 1px solid $border-2
+							background-color: $white
+							width: 100%
+							height: 100%
+							padding: 0 15px
+							display: flex
+							align-items: center
+							justify-content: center
+							transition: .3s all  ease-in-out
+							&.active
+								border: 1px solid #003333
+								.product-option
+									color: $black-1
+							.product-option
+								color: $gray-9
+								font-size: 1rem
+			// border: 1px solid #e1e1e1
+			// align-items: normal
+			// border-right: 0
+			// .product-options
+			// 	padding: 7px 15px
+			// 	border-right: 1px solid #e1e1e1
+			// 	&:first-child
+			// 		display: flex
+			// 		flex-direction: column
+			// 		justify-content: center
+			// 	> span
+			// 		font-weight: 600
+			// 		font-size: r(18px)
+			// .select-options
+			// 	li
+			// 		margin-left: 0
+			// 		transition: .3s all  ease-in-out
+			// 		padding: 0 5px
+			// 		&:hover
+			// 			color: $main
 	.wrap-button-buy
 		&.mt-19
 			margin-top: 19px
@@ -184,6 +223,7 @@
 			flex: 0 0 50%
 			max-width: 50%
 			height: 100%
+			overflow: hidden
 			@media screen and ( max-width: 1200px )
 				height: auto
 				flex: 0 0 100%
@@ -347,6 +387,11 @@
 				border: 1px solid $border-2
 				background-color: $white
 				padding: 24px 50px
+				a
+					transition: .3s all  ease-in-out
+					color: $main
+					&:hover
+						text-decoration: underline
 				p
 					margin-bottom: 15px
 				ul
@@ -587,45 +632,45 @@
 				flex-direction: column
 	.wrap-number
 	.wrap-select-input
-		display: flex
-		align-items: center
-		margin-top: 10px
-		@media (max-width: 767.98px)
-			flex-direction: column
-			align-items: flex-start
-		ul
-			display: flex
-			align-items: center
-			flex-wrap: wrap
-			@media (max-width: 767.98px)
-				margin-top: 10px
-				width: 100%
-				margin-left: -10px
-				margin-right: -10px
-			li
-				@media (min-width: 768px)
-					margin-left: 20px
-				@media (max-width: 767.98px)
-					margin-bottom: 10px
-					flex: 0 0 50%
-					max-width: 50%
-					padding-left: 10px
-					padding-right: 10px
-				input
-					display: none
-					&:checked ~ label
-						border: 1px solid $black-3
-						color: $black-1
-				label
-					min-width: 110px
-					height: 40px
-					border: 1px solid $border-2
-					background-color: $white
-					display: flex
-					align-items: center
-					justify-content: center
-					color: $gray-9
-					transition: .3s all ease-in-out
-					@media (max-width: 767.98px)
-						min-width: auto
-						width: 100%
+		// display: flex
+		// align-items: center
+		// margin-top: 10px
+		// @media (max-width: 767.98px)
+		// 	flex-direction: column
+		// 	align-items: flex-start
+		// ul
+		// 	display: flex
+		// 	align-items: center
+		// 	flex-wrap: wrap
+		// 	@media (max-width: 767.98px)
+		// 		margin-top: 10px
+		// 		width: 100%
+		// 		margin-left: -10px
+		// 		margin-right: -10px
+		// 	li
+		// 		@media (min-width: 768px)
+		// 			margin-left: 20px
+		// 		@media (max-width: 767.98px)
+		// 			margin-bottom: 10px
+		// 			flex: 0 0 50%
+		// 			max-width: 50%
+		// 			padding-left: 10px
+		// 			padding-right: 10px
+		// 		input
+		// 			display: none
+		// 			&:checked ~ label
+		// 				border: 1px solid $black-3
+		// 				color: $black-1
+		// 		label
+		// 			min-width: 110px
+		// 			height: 40px
+		// 			border: 1px solid $border-2
+		// 			background-color: $white
+		// 			display: flex
+		// 			align-items: center
+		// 			justify-content: center
+		// 			color: $gray-9
+		// 			transition: .3s all ease-in-out
+		// 			@media (max-width: 767.98px)
+		// 				min-width: auto
+		// 				width: 100%
