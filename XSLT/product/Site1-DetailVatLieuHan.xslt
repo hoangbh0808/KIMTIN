@@ -79,26 +79,6 @@
                 <xsl:apply-templates select="ProductProperties[EnableShoppingCart='True']"> </xsl:apply-templates>
               </xsl:if>
             </div>
-			<div class="wrap-box-calculate">
-				<div class="title-bold-product">Nhập diện tích</div>
-				<div class="dien-tich">
-					<label for="">Diện tích</label>
-					<div class="wrap-form-dt">
-						<div class="d-flex">
-							<input class="input-area" type="text"/>
-							<div class="box">m<sup>2</sup></div>
-						</div>
-						<input class="btn-calculate" type="submit" value="Tính toán" onclick="AjaxCart.productcalculator(this); return false;"/>
-					</div>
-				</div>
-				<div class="wrap-form-hop">
-					<label for="">Số lượng hộp cần mua</label>
-					<div class="wrap">
-						<input class="calc-res" type="text"/>
-						<div class="box">hộp</div>
-					</div>
-				</div>
-			</div>
             <div class="wrap-number-order mt-19">
               <span>Số lượng</span>
               <div class="input-amount">
@@ -462,10 +442,10 @@
           <span>
             <xsl:choose>
               <xsl:when test="DisplayName!=''">
-                <xsl:value-of select="Title"></xsl:value-of>
+                <xsl:value-of select="DisplayName"></xsl:value-of>
               </xsl:when>
               <xsl:otherwise>
-                <xsl:value-of select="Title"></xsl:value-of>
+                <xsl:value-of select="DisplayName"></xsl:value-of>
               </xsl:otherwise>
             </xsl:choose>
           </span>

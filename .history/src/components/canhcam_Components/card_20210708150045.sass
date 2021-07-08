@@ -1,0 +1,1146 @@
+.shopping-cart-wrapper
+	position: absolute
+	top: calc( 100% + 60px )
+	left: 0
+	width: 370px
+	background-color: $white
+	box-shadow: 0px 0px 20px rgba(#000,0.25)
+	border-radius: 5px
+	overflow: hidden
+	padding: 10px 15px 10px
+	z-index: 1000
+	opacity: 0
+	visibility: hidden
+	transition: .3s all ease-in-out
+	@media (max-width: 767.98px)
+		width: 350px
+	&.active
+		top: calc( 100% + 30px )
+		opacity: 1
+		visibility: visible
+		@media (max-width: 767.98px)
+			top: calc( 100% + 60px )
+	span
+		color: $white
+	.head
+		display: flex
+		justify-content: space-between
+		align-items: center
+		font-weight: 400
+		color: $black-1
+		border-bottom: 3px solid $border-dc
+		padding: 5px 10px
+		.cart-quantity
+			display: flex
+			align-items: center
+			span
+				margin-left: 0
+				color: $black-1
+			.total-cart-items
+				background: $white
+			.item-quantity
+				font-weight: 600
+		.cart-number
+			font-size: r(18px)
+			font-weight: 700
+			margin-left: auto
+			position: static !important
+			span
+				font-weight: 700
+				color: $main
+				padding-left: 10px
+	.body
+		max-height: 300px
+		overflow: auto
+		&::-webkit-scrollbar
+			width: 2px
+			height: 2px
+		.scroll-wrapper.cartpanel
+			padding-right: 10px
+		.cart-item
+			padding: 15px 0
+			display: flex
+			align-items: center
+			.image
+				width: 50px
+				a
+					+img-scale(2)
+			.caption
+				margin-left: 10px
+				display: flex
+				align-items: flex-end
+				justify-content: space-between
+				width: 100%
+				.title
+					font-weight: 400
+					line-height: 1.1
+					font-size: r(14px)
+					padding-right: 15px
+					.price
+						padding: 3px 0px
+						font-weight: 700
+				.quantity
+					color: $gray-6
+					font-size: r(12px)
+					white-space: nowrap
+					span
+						color: $gray-6
+			& + .cart-item
+				border-top: thin solid #ccc
+	.btn-center
+		display: flex
+		justify-content: center
+		align-items: center
+		font-weight: 400
+		color: $white
+		background-color: $main
+		padding: 0
+		transition: .3s all ease-in-out
+		border-radius: 5px
+		margin-top: 30px
+		.btn-primary
+			width: 100%
+			padding: 10px 15px
+			height: 40px
+			text-align: center
+			font-size: r(15px)
+			font-weight: 400
+			color: white
+			display: flex
+			justify-content: center
+			align-items: center
+			border-radius: 5px
+		em
+			margin-right: 10px
+			font-size: r(18px)
+		span
+			margin: 0
+		em
+			margin-left: 10px
+.cartpage,
+.checkout-page
+	background: #f7f7f7
+	.breadcrumb-wrapper
+		background: transparent
+.check-out
+	.cart-wrapper
+		background: #ffffff
+		box-shadow: 0 5px 25px 0 rgba(0,0,0,.05)
+		padding-top: 23px
+		padding-left: 30px
+		padding-right: 30px
+		padding-bottom: 50px
+		.admin-title
+			margin-bottom: r(30px)
+			border-bottom: 3px solid #ebebeb
+			padding-bottom: r(10px)
+			.text
+				display: flex
+				align-items: center
+				font-size: r(24px)
+				font-weight: 700
+				line-height: r(18px)
+				p
+					padding-right: 10px
+					text-transform: uppercase
+				span
+					padding-right: 10px
+					color: $red
+				@media screen and ( max-width: 991px)
+					font-size: .8rem
+		.wrapper
+			width: 100%
+			border: 1px solid #e1e1e1
+			border-radius: 5px
+			.carttable
+				width: 100%
+				thead
+					tr
+						th
+							background: #f0f0f0
+							line-height: 40px
+							height: 50px
+							color: #333
+							font-size: r(20px)
+							font-weight: 700
+							text-align: center
+							text-transform: uppercase
+							&:first-child
+								padding-left: 2rem
+								text-align: left
+						&:first-child
+							th
+								&:first-child
+									border-top-left-radius: 5px
+						&:last-child
+							th
+								&:last-child
+									border-top-right-radius: 5px
+					@media screen and ( max-width: 991px)
+						display: none
+				tbody
+					tr
+						td
+							padding: 1rem
+							width: 20%
+							font-weight: 500
+							.product-item
+								display: flex
+								flex-direction: row
+								align-items: center
+								justify-content: flex-start
+								margin-bottom: 0
+								.image
+									width: 80px
+									a
+										+img-scale(1)
+								.caption
+									margin-left: r(60px)
+									margin-bottom: 1rem
+									font-size: 1rem
+									line-height: r(26px)
+									.title
+										a
+											text-align: center
+											display: block
+											margin-bottom: .25rem
+											color: #333
+											font-size: 1rem
+									.remove-item
+										display: flex
+										align-items: center
+										justify-content: flex-star
+										.lnr
+											display: block
+											margin-right: .5rem
+											height: 16px
+											color: #ec1f27
+											font-size: 16px
+										span
+											color: #999
+											font-size: r(14px)
+								@media screen and ( max-width: 375px)
+									flex-direction: column
+							.price
+								display: flex
+								flex-direction: column
+								align-items: center
+								justify-content: center
+								.current
+									color: #333
+									font-size: r(18px)
+									line-height: 22px
+									font-weight: 700
+									margin-bottom: 5px
+								.old-wrap
+									display: flex
+									.old-price
+										padding-right: 12px
+										font-size: 1rem
+										color: $gray-6
+										line-height: 22px
+										text-decoration: line-through
+									.discount
+										padding-left: 12px
+										position: relative
+										font-weight: 600
+										font-size: 1rem
+										line-height: 22px
+										color: $red
+										&::before
+											content: ''
+											position: absolute
+											left: 0
+											width: 1px
+											height: 100%
+											background: #e1e1e1
+
+							.quantity-wrapper
+								.item-quantity
+									width: 100%
+									.input-group
+										border-width: 1px
+										border-color: rgb(225, 225, 225)
+										border-style: solid
+										background-color: rgb(255, 255, 255)
+										width: 160px
+										height: 40px
+										margin: 0 auto
+										display: flex
+										align-items: center
+										border-radius: 5px
+										input
+											border: none
+											width: 80px
+											height: 100%
+											text-align: center
+										.btn-dec,
+										.btn-inc
+											min-width: 40px
+											height: 40px
+											background: #e5e5e5
+											font-size: r(24px)
+											font-weight: 700
+											display: flex
+											align-items: center
+											justify-content: center
+											cursor: pointer
+										.btn-dec
+											border-top-left-radius: 5px
+											border-bottom-left-radius: 5px
+										.btn-inc
+											border-top-right-radius: 5px
+											border-bottom-right-radius: 5px
+										.form-control
+											padding: 0
+											border: none
+											text-align: center
+											&:focus
+												box-shadow: none
+										@media screen and ( max-width: 991.98px )
+											width: 100%
+											input
+												width: 100%
+							.total
+								color: #333
+								font-size: r(18px)
+								font-weight: 700
+								text-align: center
+							&:first-child
+								width: 40%
+						&:first-child
+							td
+								&:last-child
+									border-bottom-left-radius: 5px
+						&:last-child
+							td
+								padding-bottom: 2rem
+								&:last-child
+									border-bottom-right-radius: 5px
+						@media screen and ( max-width: 991px)
+							display: flex
+							flex-direction: column
+							flex-wrap: wrap
+							td
+								padding: .9rem
+								width: 100%
+								.price
+									align-items: flex-start
+								&:first-child
+									width: 100%
+								.total
+									text-align: left
+							&:last-child
+								td
+									padding-bottom: .9rem
+		.total-wrapper
+			display: flex
+			flex-direction: column
+			align-items: flex-end
+			justify-content: center
+			padding-top: r(30px)
+			.total-table
+				tbody
+					tr
+						td
+							padding: 0 .5rem
+							font-size: r(18px)
+							font-weight: 700
+							line-height: 40px
+						&:last-child
+							td
+								&:last-child
+									color: $red
+			.btn-right
+				padding-top: r(50px)
+				display: flex
+				align-items: center
+				justify-content: flex-end
+				.btn-primary
+					transition: .3s all ease-in-out
+					width: 280px
+					padding: r(13px)
+					display: flex
+					align-items: center
+					justify-content: center
+					border-radius: 5px
+					font-size: 1rem
+					text-transform: uppercase
+					.lnr
+						padding-right: 10px
+					span
+						font-size: 1rem
+						font-weight: 500
+					&.red
+						background: $red
+						color: $white
+						.lnr
+							padding-right: 0
+							padding-left: 10px
+						&:hover
+							background: #ebebeb
+							.lnr,
+							span
+								color: $black-1
+					&.gray-6
+						background: #ebebeb
+						@media screen and ( max-width: 375px)
+							margin-bottom: .9rem
+						.lnr,
+						span
+						&:hover
+							background: $main
+							.lnr,
+							span
+								color: $white
+
+				a:not(:last-child)
+					margin-right: r(20px)
+
+				@media screen and ( max-width: 575px)
+					flex-direction: column
+					max-width: auto
+					a:not(:last-child)
+						margin-right: 0
+			@media screen and ( max-width: 991px)
+				align-items: flex-start
+	&.step-2
+		#divCompany
+			width: 100%
+		.wrap-button-next-cart
+			@media (max-width: 767.98px)
+				margin-top: 10px
+			.btn
+				@media (max-width: 1199.98px)
+					width: 195px
+				@media (max-width: 575.98px)
+					width: 100%
+
+		.select-icon
+			position: relative
+			&::before
+				content: "\e874"
+				color: $black-3
+				font-size: 1rem
+				font-weight: 400
+				font-family: Linearicons-Free
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				right: 20px
+				z-index: 2
+		.check-text
+			color: $gray-9
+			font-size: r(14px)
+			font-weight: 400
+			margin-top: 2px
+		.xuat-hoa-don-input
+			padding: 0 15px
+			width: 100%
+			margin-bottom: 22px
+			label
+				color: $black-3
+				font-size: 1rem
+				font-weight: 400
+				display: flex
+				&::before
+					content: 'check_box_outline_blank'
+					font-family: 'Material Icons'
+					color: $black-1
+					margin-top: -2px
+					margin-right: 11px
+					font-size: 18px
+					font-weight: 400
+			input
+				display: none
+				&:checked ~ label::before
+					content: 'check_box'
+		#divCompany
+			width: 100%
+			padding: 0 15px
+		.massive-wrapper
+			background: $white
+			box-shadow: 0 0 20px rgba(33,33,33,.2)
+			padding: 21px 27px 54px
+			.receive-address
+				.cart-form
+					.group
+						.form-group
+							display: flex
+							align-items: center
+							justify-content: space-between
+							@media (max-width: 767.98px)
+								flex-wrap: wrap
+							.label
+								@media (max-width: 767.98px)
+									margin-bottom: 9px
+								label
+									font-size: 1rem
+									line-height: 22px
+									span
+										color: $red
+								@media screen and ( max-width: 1279.98px )
+									flex: 1 0 30%
+								@media (max-width: 767.98px)
+									flex: 0 0 100%
+							.input
+								width: 490px
+								height: 50px
+								@media screen and ( max-width: 1279.98px )
+									flex: 1 0 70%
+								@media (max-width: 767.98px)
+									flex: 0 0 100%
+								input,
+								select
+									width: 100%
+									height: 100%
+									border: none
+									background: #f0f0f0
+									padding-left: 15px
+									border-radius: 5px
+								select
+									-webkit-appearance: none
+									-moz-appearance: none
+									-ms-appearance: none
+									appearance: none
+									position: relative
+									background-image: url('../img/icons/select.png')
+									background-repeat: no-repeat
+									background-position: 95%
+									&::-ms-expand
+										display: none
+								label
+									&.error
+										color: $red
+							.textarea
+								width: 490px
+								height: 70px
+								@media screen and ( max-width: 1279.98px )
+									flex: 1 0 70%
+								textarea
+									width: 100%
+									height: 100%
+									border-radius: 5px
+									border: none
+									background: #f0f0f0
+									padding-left: 15px
+									padding-top: 15px
+									&::-webkit-resizer
+										background-color: transparent
+									&::-webkit-resizer
+										background-image: url('../img/icons/textarea.png')
+										background-repeat: no-repeat
+						.form-group + .form-group
+							margin-top: 20px
+						&.other-address
+							margin-top: 51px
+							.check-group
+								margin-bottom: 30px
+								#btn-ttmh
+									.click-more-address
+										color: $black-1
+										font-weight: 700
+										position: relative
+										display: inline-block
+										&::before
+											content: ''
+											position: absolute
+											top: 112%
+											left: 0
+											height: 1px
+											background-color: $black-1
+											width: 100%
+							.user-info
+								display: none
+								margin-bottom: 30px
+			.payment-info
+				padding-top: 30px
+				.cart-form
+					padding-bottom: 37px
+					.form-group
+						display: flex
+						align-items: center
+						input[type="radio"]
+							cursor: pointer
+							appearance: none
+							background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAB/klEQVRoQ+2XT2rCUBDGR4lJILhK1YW4UHHx8Ai9QAulvUG7ak/QnsKeoF21N2gptBfoEeQtRF2IC7VZiZA/EsqzCkW0SXh5dAwTeIvATPJ983svM8lBxq9cxv0BGTx0wkSQCCKvAG1R5IAi5RHByBIhDyCCyAFFyiOCkSVCHkAEkQOKlEcEI0uEPIAIygLq9XrGcrm8BIAzADheP+8TAN7CMHxqt9u+7Dv+yldKkHN+CwAd27bBNM3VEpfruqvlOI64vWOM3asyqcwg5/zdsqyTcrkMhmHs1O/7PkwmE1gsFh+MsVMVJpUYFOQsy+rUarVYmkejkTCphGTqBrvdrp7P571GowG6rscy6HkeDIdD0DTNbLVaXqykmEGpG+ScX9u2/VAqlWJK+AmbzWbiTN4wxh4TJUYEqzD4Uq1Wz4vFYiKd8/kcxuPxK2PsIlHiPxj8ajabdqFQSKQzCALo9/sOY+woUSIZTLNcAMA5z/wWzfZHZj2aufV6fW+D3940ouEPBgMIw9BIe3RL/SsqxGe60W/obEa1SqWyt+GLBj+dTg9vVPtlMrvD9sbkenS72vW7pGnac9qj2fb5VnIGU+48Uo8jg1LlQ5BMBBFAkJJABKXKhyCZCCKAICWBCEqVD0EyEUQAQUoCEZQqH4JkIogAgpQEIihVPgTJmSf4DWNIwDkYSBQTAAAAAElFTkSuQmCC')
+							background-position: 50%
+							background-repeat: no-repeat
+							width: 20px
+							height: 20px
+							&:checked
+								background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAACUElEQVRoQ+2XP4gaURDGv23OtPs2vY1op1iqlYKQYEwaQSutEhAbhaTxtPJPcwFtVEgq7QSbi5EEBK3UUrRTbOzj2zaXZoNLDkLw3Ag7sC5vu4XHzHzfb97OrASbP5LN9UEIvHbCgqAgaHEHRItaHJBheYKgoUUWPyAIWhyQYXmCoKFFFj8gCFockGF5gqChRRY/IAiaAMjBGEtrmvYKQOhPvJkkSV85510Av0zI8WQIUoKMsfeSJN3l83n4fD54vV69kPV6jdVqhWazCU3TPnDOP1KJJBMoy/K3SCTyolarwePxnKx/u92iWCxiMpl8V1X1JYVIEoFHcuFw+G4wGOg1LxYL9Ho9jMdj/T0ajSKdTiMQCOjviUQC0+mUhCSFwBtFUR7m8zncbjfK5TJardZJOLlcDpVKBZvNBqFQCIfD4RmABzNJmi6QMfa2UCh8KpVKOrlYLHa23tFopJOsVqtoNBrvOOefLS1QluX7brf7Oh6PI5vNot/vn603lUqh3W5jOBwik8l8UVX1jdUF/lgul4rT6YTL5QLn/Gy9jDHsdjvs93v4/f6DqqrPhcALHDD9Dl7aoslkEp1O53pa1PYfGQAORVF+zmYzfcD/z5g4DvxgMHgcEw6zVzfTW/R4Pew+6PVPwOOqVq/X9YF/6jkO+Nvb2+tb1R7F2HrZ/ovYDWMs88TvUs/s1ezfTiG5gxeMKfKjQiC5xcQJBEFig8nDC4LkFhMnEASJDSYPLwiSW0ycQBAkNpg8vCBIbjFxAkGQ2GDy8IIgucXECWxP8Dd10wJIhynNlgAAAABJRU5ErkJggg==')
+						label
+							display: flex
+							align-items: center
+							height: 50px
+							width: calc( 100% -40px )
+							background: $white
+							border: solid 1px #e1e1e1
+							border-radius: 5px
+							margin-left: 23px
+							padding-left: 25px
+							padding-right: 15px
+							justify-content: space-between
+							.wrap
+								display: flex
+								align-items: center
+								select
+									width: 200px
+									border: 0
+									border-bottom: 1px solid #e1e1e1
+					.form-group + .form-group
+						margin-top: 20px
+					.payment-method
+						.title-ck
+							span
+								margin-bottom: 4px
+								text-transform: uppercase
+								display: block
+						.method-info
+							table
+								tr
+									@media (max-width: 767.98px)
+										display: flex
+										flex-direction: column
+									td
+										@media (max-width: 767.98px)
+											flex: 0 0 100%
+											max-width: 100%
+										&:first-child
+											padding-right: 27px
+											color: $gray-9
+						.select-group
+							display: flex
+							align-items: center
+							input[type="radio"]
+								cursor: pointer
+								appearance: none
+								background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAAB/klEQVRoQ+2XT2rCUBDGR4lJILhK1YW4UHHx8Ai9QAulvUG7ak/QnsKeoF21N2gptBfoEeQtRF2IC7VZiZA/EsqzCkW0SXh5dAwTeIvATPJ983svM8lBxq9cxv0BGTx0wkSQCCKvAG1R5IAi5RHByBIhDyCCyAFFyiOCkSVCHkAEkQOKlEcEI0uEPIAIygLq9XrGcrm8BIAzADheP+8TAN7CMHxqt9u+7Dv+yldKkHN+CwAd27bBNM3VEpfruqvlOI64vWOM3asyqcwg5/zdsqyTcrkMhmHs1O/7PkwmE1gsFh+MsVMVJpUYFOQsy+rUarVYmkejkTCphGTqBrvdrp7P571GowG6rscy6HkeDIdD0DTNbLVaXqykmEGpG+ScX9u2/VAqlWJK+AmbzWbiTN4wxh4TJUYEqzD4Uq1Wz4vFYiKd8/kcxuPxK2PsIlHiPxj8ajabdqFQSKQzCALo9/sOY+woUSIZTLNcAMA5z/wWzfZHZj2aufV6fW+D3940ouEPBgMIw9BIe3RL/SsqxGe60W/obEa1SqWyt+GLBj+dTg9vVPtlMrvD9sbkenS72vW7pGnac9qj2fb5VnIGU+48Uo8jg1LlQ5BMBBFAkJJABKXKhyCZCCKAICWBCEqVD0EyEUQAQUoCEZQqH4JkIogAgpQEIihVPgTJmSf4DWNIwDkYSBQTAAAAAElFTkSuQmCC')
+								background-position: 50%
+								background-repeat: no-repeat
+								width: 20px
+								height: 20px
+								@media screen and ( max-width: 767.67px )
+									display: none
+								&:checked
+									background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAYAAACohjseAAACUElEQVRoQ+2XP4gaURDGv23OtPs2vY1op1iqlYKQYEwaQSutEhAbhaTxtPJPcwFtVEgq7QSbi5EEBK3UUrRTbOzj2zaXZoNLDkLw3Ag7sC5vu4XHzHzfb97OrASbP5LN9UEIvHbCgqAgaHEHRItaHJBheYKgoUUWPyAIWhyQYXmCoKFFFj8gCFockGF5gqChRRY/IAiaAMjBGEtrmvYKQOhPvJkkSV85510Av0zI8WQIUoKMsfeSJN3l83n4fD54vV69kPV6jdVqhWazCU3TPnDOP1KJJBMoy/K3SCTyolarwePxnKx/u92iWCxiMpl8V1X1JYVIEoFHcuFw+G4wGOg1LxYL9Ho9jMdj/T0ajSKdTiMQCOjviUQC0+mUhCSFwBtFUR7m8zncbjfK5TJardZJOLlcDpVKBZvNBqFQCIfD4RmABzNJmi6QMfa2UCh8KpVKOrlYLHa23tFopJOsVqtoNBrvOOefLS1QluX7brf7Oh6PI5vNot/vn603lUqh3W5jOBwik8l8UVX1jdUF/lgul4rT6YTL5QLn/Gy9jDHsdjvs93v4/f6DqqrPhcALHDD9Dl7aoslkEp1O53pa1PYfGQAORVF+zmYzfcD/z5g4DvxgMHgcEw6zVzfTW/R4Pew+6PVPwOOqVq/X9YF/6jkO+Nvb2+tb1R7F2HrZ/ovYDWMs88TvUs/s1ezfTiG5gxeMKfKjQiC5xcQJBEFig8nDC4LkFhMnEASJDSYPLwiSW0ycQBAkNpg8vCBIbjFxAkGQ2GDy8IIgucXECWxP8Dd10wJIhynNlgAAAABJRU5ErkJggg==')
+								&:checked ~ label
+									border: 1px solid $main
+							label
+								width: 100%
+								margin-left: 23px
+								border: solid 1px #e1e1e1
+								transition: .3s all ease-in-out
+								@media (max-width: 767.98px)
+									margin-left: 0px
+								.method-info
+									width: 100%
+									display: flex
+									align-items: center
+									@media (max-width: 767.98px)
+										flex-wrap: wrap
+									.img
+										height: 100px
+										display: flex
+										align-items: center
+										justify-content: center
+										border-right: solid 1px #e1e1e1
+										flex: 0 0 100px
+										max-width: 100%
+										@media (max-width: 767.98px)
+											flex: 0 0 100%
+											max-width: 100%
+									.text-wrap
+										padding-left: 30px
+										flex: 1
+										@media (max-width: 767.98px)
+											flex: 0 0 100%
+											max-width: 100%
+										@media (max-width: 575.98px)
+											padding: 0 10px !important
+											padding-bottom: 10px !important
+						&:last-child
+							.select-group
+								label
+									.method-info
+										.img
+											height: 130px
+											@media (max-width: 575.98px)
+												height: 90px
+										.text-wrap
+											padding-top: 18px
+											padding-bottom: 10px
+						&:first-child
+							.text-wrap
+								.text
+									@media (max-width: 767.98px)
+										text-align: center
+						+ .payment-method
+							margin-top: 20px
+			.receive-address-btn
+				.btn-right
+					display: flex
+					justify-content: flex-end
+					.btn-primary
+						display: flex
+						align-items: center
+						justify-content: center
+						width: 200px
+						height: 50px
+						border-radius: 5px
+						text-transform: uppercase
+						transition: all .5s
+						em
+							font-size: r(20px)
+						&.gray-6
+							background: #ebebeb
+							em
+								padding-right: 10px
+							&:hover
+								background: $red
+								color: $white
+						&.red
+							background: $red
+							color: $white
+							margin-left: 20px
+							em
+								padding-left: 10px
+							&:hover
+								background: #ebebeb
+								color: $black-1
+		.minicart
+			padding-bottom: 11px
+			@media (max-width: 767.98px)
+				margin-top: 30px
+			.carttitle
+				a
+					em
+						color: $main
+						font-size: r(18px)
+						font-weight: 400
+			.carttable
+				.product
+					display: flex
+					align-items: center
+					padding: 20px 0
+					border-bottom: thin solid #ebebeb
+					@media (max-width: 1199.98px)
+						flex-wrap: wrap
+					@media screen and ( max-width: 375px )
+						flex-direction: column
+					.productimg
+						flex: 0 0 72px
+						align-items: center
+						justify-content: center
+						display: flex
+						@media screen and ( max-width: 991px )
+							flex: 0 0 30%
+						@media (max-width: 1199.98px)
+							flex: 0 0 100%
+							margin-bottom: 15px
+						a
+							display: block
+							width: 100%
+							height: 65px
+							@media (max-width: 1024.98px)
+								height: 100px
+							@media (max-width: 767.98px)
+								width: 165px
+								height: 110px
+								margin-bottom: 20px
+						img
+							width: 100%
+							height: 100%
+							object-fit: contain
+							@media screen and ( max-width: 375px )
+								padding: 10px 5px
+					.content
+						display: flex
+						margin-left: 15px
+						justify-content: space-between
+						width: 100%
+						@media (max-width: 1199.98px)
+							flex: 0 0 100%
+							margin-left: 0px
+						@media screen and ( max-width: 991px )
+							flex: 1
+						@media screen and ( max-width: 576px )
+							flex-direction: column
+						.productdetail
+							@media (max-width: 1199.98px)
+								display: flex
+								align-items: center
+						.productname
+							font-size: r(16px)
+							font-weight: 400
+							max-width: 200px
+							padding-top: 5px
+						.amount
+							font-size: r(16px)
+							display: flex
+							justify-content: center
+							align-items: flex-end
+							white-space: nowrap
+							flex-direction: column
+							font-weight: 400
+							@media screen and ( max-width: 576px )
+								margin-top: 10px
+								flex-direction: row
+								justify-content: flex-start
+								.price
+									margin-right: 5px
+								.count
+									margin-right: 5px
+							.total
+								font-weight: 800
+								font-size: r(18px)
+								@media screen and ( max-width: 576px )
+									position: relative
+									margin-left: auto
+				.bottom
+					padding: 15px 0px
+					.text
+						display: flex
+						justify-content: space-between
+						align-items: center
+						&:last-child
+							.value
+								color: $red
+						.label
+							font-size: r(18px)
+							font-weight: 700
+							line-height: 40px
+						.value
+							font-size: r(18px)
+							font-weight: 800
+							line-height: 26px
+							&.discount-total,
+							&.shipping-total
+								font-weight: normal
+							&.order-total
+								width: auto
+								padding: 0
+								font-size: r(18px)
+								line-height: 40px
+								margin: 0
+		.checkout-discount
+			margin-top: 30px
+			.admin-title
+				display: flex
+				align-items: center
+				justify-content: space-between
+				font-size: r(18px)
+				line-height: 18px
+				font-weight: 700
+				color: $black
+				text-transform: uppercase
+				padding-bottom: 15px
+				margin-bottom: 30px
+				border-bottom: solid 3px #ebebeb
+
+			.carttable
+				.normal-text
+					font-size: r(16px)
+					margin-bottom: 15px
+					line-height: 22px
+
+			.setting-control
+				display: flex
+				flex-wrap: wrap
+				margin-bottom: 20px
+				height: 50px
+				input
+					max-width: calc( 100% - 130px)
+					flex: 0 0 calc( 100% - 130px)
+					width: 100%
+					height: 100%
+					border-top-left-radius: 5px
+					border-bottom-left-radius: 5px
+					border: none
+					padding: 5px 15px
+					order: 1
+					background: #f0f0f0
+				button
+					flex: 0 0 130px
+					width: 100%
+					border: none
+					height: 100%
+					background: $main
+					order: 2
+					color: $white
+					font-size: r(14px)
+					text-align: center
+					letter-spacing: 1.4px
+					text-transform: uppercase
+					font-weight: 700
+					transition: .3s all ease-in-out
+					&:hover
+						background: $main
+				.code
+					font-size: 18px
+					padding: 5px 15px
+					height: 40px
+					border: 1px solid $brow-f20
+					margin-right: 15px
+					font-weight: 700
+					color: $main
+				.coupon-apply-error
+					max-width: 100%
+					flex: 0 0 100%
+					width: 100%
+					font-size: 12px
+					font-weight: 400
+					color: red
+					font-style: italic
+					order: 3
+			.check-text
+				margin-bottom: 20px
+				color: $gray-6
+.checkout-complete-section
+	.completed-wrapper
+		width: 100%
+		padding-top: 14px
+		padding-left: 26px
+		padding-right: 34px
+		padding-bottom: 50px
+		background: $white
+		.title
+			display: flex
+			align-items: center
+			font-size: r(18px)
+			line-height: 24px
+			color: $black
+			font-weight: 700
+			padding-bottom: 8px
+			text-transform: uppercase
+			border-bottom: solid 3px #ebebeb
+		img
+			padding-right: 18px
+		.article-content
+			display: flex
+			flex-direction: column
+			justify-content: center
+			width: 100%
+			padding-top: 50px
+			.content
+				padding-bottom: 30px
+				p
+					line-height: 22px
+					.email
+						color: #00c1ef
+		.cart-group-button
+			margin-bottom: 50px
+			.btn-next
+				width: 280px
+				height: 50px
+				border-radius: 5px
+				background: #ebebeb
+				display: flex
+				align-items: center
+				justify-content: center
+				text-transform: uppercase
+				transition: all .3s
+				em
+					font-size: r(20px)
+				span
+					padding-left: 10px
+				@media screen and ( min-width: 1025px )
+					&:hover
+						background: $main
+						color: $white
+.carttitle
+	display: flex
+	align-items: center
+	color: $black-1
+	font-family: Montserrat
+	font-size: r(24px)
+	font-weight: 400
+	justify-content: space-between
+	text-transform: uppercase
+	padding-bottom: 5px
+	margin-bottom: 30px
+	border-bottom: solid 1px $border-2
+	@media (max-width: 767.98px)
+		font-size: r(20px)
+.suggestsearch
+	position: absolute
+	top: 100%
+	left: 0
+	width: 100%
+	height: 415px
+	padding: 30px
+	overflow-y: auto
+	background: $white
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1)
+	.product-item
+		border: solid 1px #ebebeb
+		border-radius: 5px
+		padding: 15px
+		.option
+			top: 10px
+		.pro-img
+			width: 100%
+			margin-bottom: 20px
+			a
+				+img-scale(.4)
+.search-product-wrapper
+	.product-item
+		.pro-img
+			a
+				+img-scale(.4)
+.checkout-login-section
+	background: #f7f7f7
+	.cart-login
+		max-width: 495px
+		padding: 23px
+		margin: 0 auto
+		background: $white
+		box-shadow: 0 0 20px rgba(33,33,33,.2)
+		.login-heading
+			font-size: r(24px)
+			font-weight: 700
+			line-height: r(18px)
+			text-transform: uppercase
+			padding-bottom: 15px
+			border-bottom: solid 3px #ebebeb
+			margin-bottom: 31px
+		.login-form
+			.select-group
+				margin-bottom: 39px
+				display: none
+				ul
+					li
+						display: flex
+						align-items: center
+						span
+							display: flex
+							align-items: center
+						input[type="radio"]
+							cursor: pointer
+							appearance: none
+							background-image: url('../img/icons/check.png')
+							background-position: 50%
+							background-repeat: no-repeat
+							width: 20px
+							height: 20px
+							&:checked
+								background-image: url('../img/icons/checked.png')
+						label
+							padding-left: 15px
+							line-height: r(30px)
+			.module-title
+				font-size: r(18px)
+				line-height: r(22px)
+				font-weight: 800
+				text-transform: uppercase
+				padding-bottom: 18px
+			.form-group
+				width: 100%
+				label
+					display: flex
+					align-items: center
+					padding-bottom: 10px
+					span
+						color: $red
+				input
+					width: 100%
+					height: 50px
+					border: none
+					border-radius: 5px
+					background: #f0f0f0
+				&.form-bottom
+					display: flex
+					align-items: center
+					justify-content: space-between
+					span
+						font-size: r(14px)
+						line-height: r(22px)
+						.signup
+							color: #068fdd
+					.forget
+						font-size: r(14px)
+						line-height: r(22px)
+				&:nth-child(2)
+					margin-top: 30px
+					margin-bottom: 22px
+			.btn-continue
+				width: 100%
+				height: 40px
+				border-radius: 0px
+				border: 1px solid $brow-f20
+				background-color: $main
+				color: $brow-f20
+				font-size: 14px
+				font-weight: 700
+				margin-top: 30px
+				text-transform: uppercase
+				transition: .3s all ease-in-out
+				&:hover
+					background: $black-1
+					color: $main
+					border: solid 1px $main
+.recover-password
+	.login-box
+		padding: 30px
+		background: $white
+		box-shadow: 0 0 20px rgba(33,33,33,.2)
+	.card
+		.login-card-body
+			.login-box-msg
+				padding-bottom: 7px
+				font-size: r(18px)
+				font-weight: 700
+			.input-group
+				position: relative
+				width: 100%
+				margin-bottom: 20px
+				input
+					width: 100%
+					height: 50px
+					padding-left: 50px
+					border: none
+					border-radius: 5px
+					background: #f0f0f0
+				.input-group-icon
+					position: absolute
+					top: 50%
+					left: 10px
+					color: $red
+					font-size: r(20px)
+					display: flex
+					align-items: center
+					justify-content: center
+					transform: translateY(-50%)
+				.fa
+					position: absolute
+					left: 0
+					bottom: -20px
+					color: $red
+				.captcha
+					.RadCaptcha
+						margin-bottom: 20px
+						span
+							color: $red
+						div
+							div
+								display: flex
+								align-items: center
+								margin-bottom: 20px
+								.rcRefreshImage
+									margin-left: 20px
+									font-size: 0
+									&::after
+										content: 'replay'
+										font-family: Material Icons
+										font-size: r(30px)
+										color: $red
+			.buttom
+				width: 100%
+				input
+					width: 100%
+					height: 50px
+					border: none
+					background: $red
+					color: $white
+					text-transform: uppercase

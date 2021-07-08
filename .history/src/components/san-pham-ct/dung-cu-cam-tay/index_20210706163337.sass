@@ -1,0 +1,676 @@
+.san-pham-ct
+	background-color: #f5f5f5
+	padding: 60px 0px
+	.wrap-select-input
+		&.options-wrap
+			margin-top: 30px
+			.filter-wrap
+				display: flex
+				span
+					white-space: nowrap
+					flex: 0 0 130px
+					@media (max-width: 767.98px)
+						flex: 0 0 100%
+				.select-options
+					display: flex
+					margin-left: -20px
+					margin-right: -20px
+					flex-wrap: wrap
+					width: 100%
+					li
+						min-width: 130px
+						height: 40px
+						padding: 0 10px
+						display: flex
+						justify-content: center
+						align-items: center
+						margin-bottom: 20px
+						a
+							border: 1px solid $border-2
+							background-color: $white
+							width: 100%
+							height: 100%
+							padding: 0 15px
+							display: flex
+							align-items: center
+							justify-content: center
+							transition: .3s all  ease-in-out
+							&.active
+								border: 1px solid #003333
+								.product-option
+									color: $black-1
+							.product-option
+								color: $gray-9
+								font-size: 1rem
+			// border: 1px solid #e1e1e1
+			// align-items: normal
+			// border-right: 0
+			// .product-options
+			// 	padding: 7px 15px
+			// 	border-right: 1px solid #e1e1e1
+			// 	&:first-child
+			// 		display: flex
+			// 		flex-direction: column
+			// 		justify-content: center
+			// 	> span
+			// 		font-weight: 600
+			// 		font-size: r(18px)
+			// .select-options
+			// 	li
+			// 		margin-left: 0
+			// 		transition: .3s all  ease-in-out
+			// 		padding: 0 5px
+			// 		&:hover
+			// 			color: $main
+	.wrap-button-buy
+		&.mt-19
+			margin-top: 19px
+		.btn
+			min-width: 190px
+			height: 40px
+			color: $brow-f20
+			font-size: r(14px)
+			font-weight: 700
+			background-color: #f5f5f5
+			text-transform: uppercase
+			display: inline-flex
+			align-items: center
+			justify-content: center
+			transition: .3s all ease-in-out
+			cursor: pointer
+			@media screen and ( max-width: 575px )
+				min-width: auto
+				width: 100%
+			&.add-to-cart
+				border: 1px solid $brow-f20
+				background-color: $main
+				position: relative
+				z-index: 2
+				&::before
+					content: ''
+					background-color: $black
+					position: absolute
+					left: 50%
+					transform: translateX(-50%)
+					width: 0%
+					opacity: 0
+					height: 100%
+					top: 0
+					z-index: -1
+					transition: .3s all ease-in-out
+				@media screen and ( min-width: 1025px )
+					&:hover
+						border: 1px solid $main
+						color: $main
+						&::before
+							opacity: 1
+							width: 100%
+			&.buy-now
+				border: 1px solid $black
+				position: relative
+				z-index: 2
+				&::before
+					content: ''
+					background-color: $main
+					position: absolute
+					left: 50%
+					transform: translateX(-50%)
+					width: 0%
+					opacity: 0
+					height: 100%
+					top: 0
+					z-index: -1
+					transition: .3s all ease-in-out
+				@media screen and ( min-width: 1025px )
+					&:hover
+						border: 1px solid $black
+						&::before
+							width: 100%
+							opacity: 1
+			&+.btn
+				margin-top: 10px
+				@media screen and ( min-width: 575px )
+					margin-left: 20px
+					margin-top: 0px
+	.wrap-price
+		margin-top: 8px
+		.main-price
+			color: #e30016
+			font-size: r(24px)
+			font-weight: 700
+			text-decoration: none
+			margin-right: 16px
+		.sale-price
+			color: $gray-9
+			font-size: r(12px)
+			font-weight: 400
+	.wrap-number-order
+		display: flex
+		align-items: center
+		&.mt-19
+			margin-top: 13px
+		&.one-line
+			display: block
+			.input-amount
+				margin-top: 10px
+		span
+			margin-right: 25px
+		.input-amount
+			display: flex
+			align-items: center
+			[class*='btn-']
+				width: 40px
+				height: 40px
+				background-color: #dfdfdf
+				display: flex
+				align-items: center
+				justify-content: center
+				transition: .3s all ease-in-out
+				&:hover
+					background-color: #cacaca
+			.btn-dec
+				display: flex
+				align-items: center
+				justify-content: center
+				&::before
+					content: ''
+					background-image: url(../img/icons/subtract-icon.png)
+					width: 21px
+					height: 1px
+			.btn-inc
+				display: flex
+				align-items: center
+				justify-content: center
+				&::before
+					content: ''
+					background-image: url(../img/icons/plus-icon.png)
+					width: 21px
+					height: 21px
+			.amount
+				height: 40px
+				width: 70px
+				text-align: center
+				border: 0px
+				background-color: #f5f5f5
+	.wrap-share
+		display: flex
+		&.mt
+			margin-top: 14px
+		.add-favorites
+			color: #e30016
+			font-size: 24px
+			font-weight: 400
+			transition: .3s all ease-in-out
+			&:hover
+				transform: translateY(-3px)
+		.like-facebook
+			color: #246da0
+			font-size: 18px
+			font-weight: 400
+			margin-left: 18px
+			transition: .3s all ease-in-out
+			&:hover
+				transform: translateY(-3px)
+			em
+				padding-top: 8px
+	.wrap-main-product
+		background-color: #fff
+		padding: 30px
+		display: flex
+		flex-wrap: wrap
+		.wrap-img-product
+			display: flex
+			flex: 0 0 50%
+			max-width: 50%
+			height: 100%
+			overflow: hidden
+			@media screen and ( max-width: 1200px )
+				height: auto
+				flex: 0 0 100%
+				max-width: 100%
+				margin-bottom: 25px
+			@media screen and ( max-width: 767.67px )
+				flex-wrap: wrap
+			&.border-right
+				@media screen and ( min-width: 1200px )
+					border-right: 1px solid $border-2
+			.thumbnail-product
+				flex: 0 0 115px
+				max-width: 115px
+				height: 473px
+				@media screen and ( max-width: 767.67px )
+					flex: 0 0 100%
+					max-width: 100%
+					height: auto
+					margin-top: 10px
+					order: 2
+				.wrap-button
+					.button-prev,.button-next
+						position: absolute
+						width: 30px
+						height: 30px
+						display: flex
+						align-items: center
+						justify-content: center
+						border: 1px solid $border-dc
+						background-color: $white
+						z-index: 10
+						transition: .3s all ease-in-out
+						&:hover
+							background-color: $black
+							border: 1px solid $main
+							em
+								color: $main
+						em
+							color: $gray-9
+							font-size: 14px
+							font-weight: 400
+							transition: .3s all ease-in-out
+					.button-prev
+						top: 0
+						left: 50%
+						transform: translateX(-50%)
+						@media screen and ( max-width: 767.67px )
+							left: 0
+							top: 50%
+							transform: translateX(0) translateY(-50%) rotate(270deg)
+					.button-next
+						bottom: 0
+						left: 50%
+						transform: translateX(-50%)
+						@media screen and ( max-width: 767.67px )
+							right: 0
+							top: 50%
+							left: auto
+							transform: translateX(0) translateY(-50%) rotate(270deg)
+				.swiper-container
+					height: 100%
+					.swiper-slide-thumb-active
+						.wrap-img
+							border: 1px solid $main
+					.wrap-img
+						border: 1px solid #e0e0e0
+						padding: 5px
+						height: 100%
+						transition: .3s all ease-in-out
+						.img
+							height: 100%
+							display: flex
+							align-items: center
+							justify-content: center
+							@media (max-width: 767.98px)
+								height: 110px
+								padding: 5px
+							@media (max-width: 575.98px)
+								height: 88px
+							img
+								max-width: 100%
+								max-height: 100%
+								object-fit: contain
+			.img-main-product
+				flex: 0 0 calc( 100% - 115px )
+				max-width: calc( 100% - 115px )
+				height: 473px
+				margin-left: 3px
+				@media screen and ( max-width: 767.67px )
+					flex: 0 0 100%
+					max-width: 100%
+				@media (max-width: 575.98px)
+					height: 350px
+				.swiper-container
+					height: 100%
+		.wrap-content-product
+			flex: 0 0 50%
+			max-width: 50%
+			@media screen and ( max-width: 1200px )
+				flex: 0 0 100%
+				max-width: 100%
+			&.padding-content
+				@media screen and ( min-width: 1200px )
+					padding-left: 30px
+			.wrap-main-price-share
+				border-bottom: 1px solid #e0e0e0
+				display: flex
+				justify-content: space-between
+				padding-bottom: 10px
+				padding-right: 6px
+				.wrap-share
+					padding-top: 8px
+	.content-main
+		padding-top: 15px
+		.sku
+			color: $black-1
+			font-size: 1rem
+			font-weight: 700
+			text-transform: uppercase
+			padding-left: 15px
+		table
+			width: 100%
+			margin-top: 10px
+			tr
+				@media screen and ( min-width: 575px )
+					&:nth-child(2n-1)
+						background-color: #f5f5f5
+					&:nth-child(2n)
+						background-color: #fff
+				@media screen and ( max-width: 575px )
+					display: flex
+					flex-direction: column
+				td
+					color: $black-1
+					font-size: 1rem
+					font-weight: 400
+					padding: 8px 0px
+					@media screen and ( max-width: 575px )
+						padding-left: 15px
+					&:first-child
+						color: $black-1
+						font-size: 1rem
+						@media screen and ( max-width: 575px )
+							background-color: #f5f5f5
+						@media screen and ( min-width: 575px )
+							width: 42.5%
+							padding-left: 15px
+	.wrap-desc-product
+		margin-top: 28px
+		.tab-desc-product
+			.title-tab-product
+				border: 1px solid $black
+				background-color: $main
+				display: inline-block
+				padding: 6px 39px
+				color: $black-1
+				font-size: r(18px)
+				font-weight: 700
+				text-transform: uppercase
+			.content-product
+				border: 1px solid $border-2
+				background-color: $white
+				padding: 24px 50px
+				a
+					transition: .3s all  ease-in-out
+					color: $main
+					&:hover
+						text-decoration: underline
+				p
+					margin-bottom: 15px
+				ul
+					list-style: disc
+					margin-bottom: 15px
+					padding-left: 15px
+				table
+					margin-bottom: 15px
+					width: 100%
+					tr
+						td
+							border: 1px solid #e1e1e1
+							padding: 5px 0px
+		.wrap-box-left
+			@media (min-width: 1024px)
+				padding-right: 20px
+	.wrap-other-product
+		border: 1px solid $border-2
+		background-color: $white
+		padding: 15px 19px
+		margin-top: 40px
+		position: relative
+		.title-other-product
+			padding-bottom: 7px
+			border-bottom: 2px solid $black
+			margin-bottom: 20px
+		.wrap-item
+			@media screen and ( max-width: 1023.67px )
+				display: flex
+				flex-wrap: wrap
+				margin-left: -15px
+				margin-right: -15px
+				.item-product-other
+					flex: 0 0 50%
+					max-width: 50%
+					padding: 0 5px
+					@media screen and ( max-width: 575px )
+						flex: 0 0 100%
+						max-width: 100%
+		.item-product-other
+			&.no-padding
+				.img
+					padding: 0px
+			@media screen and ( max-width: 1023.67px )
+				margin-bottom: 25px
+			&+.item-product-other
+				@media screen and ( min-width: 1024px )
+					margin-top: 13px
+					padding-top: 20px
+					border-top: 1px solid $border-2
+			.img
+				padding: 5px
+				border: 1px solid $border-2
+				a
+					display: block
+					height: 245px
+					padding: 20px
+					img
+						width: 100%
+						height: 100%
+						object-fit: contain
+			.wrap-content
+				.title
+					color: $black-3
+					font-size: r(14px)
+					font-weight: 400
+					margin-top: 12px
+					line-height: 1.2
+					display: block
+				.wrap-price
+					ins
+						color: $red
+						font-weight: 500
+						text-decoration: none
+					del
+						color: $gray-9
+						font-size: r(12px)
+						font-weight: 400
+						text-decoration: line-through
+						margin-left: 48px
+	.box-comment-facebook
+		min-height: 295px
+		border: 1px solid $border-2
+		background-color: $white
+		padding: 19px 30px
+		margin-top: 30px
+		.title-page
+			margin-bottom: 11px
+			@media screen and ( max-width: 575px )
+				font-size: 1.5rem
+		.count-comment
+			padding-left: 2px
+		.head
+			border-bottom: 1px solid $border-2
+			padding-bottom: 13px
+	.donvi
+		border-bottom: 1px solid $border-2
+		padding-bottom: 8px
+		padding-top: 7px
+	.wrap-kich-thuoc
+		display: flex
+		margin-top: 5px
+		margin-bottom: 21px
+		@media (max-width: 575.98px)
+			flex-direction: column
+		&> label
+			@extend  .title-bold-product
+			padding-left: 15px
+			margin-right: 50px
+			padding-top: 10px
+			@media (max-width: 575.98px)
+				margin-bottom: 15px
+		ul
+			li
+				&+li
+					margin-top: 15px
+				input
+					display: none
+					&:checked ~ label
+						border: 1px solid $black-3
+						color: $black-1
+				label
+					max-width: 240px
+					width: 100%
+					padding: 0 16px
+					white-space: nowrap
+					height: 40px
+					border: 1px solid $border-2
+					background-color: $white
+					color: $gray-9
+					font-size: 1rem
+					font-weight: 400
+					display: flex
+					align-items: center
+					justify-content: center
+					cursor: pointer
+					transition: .3s all ease-in-out
+	.wrap-box-calculate
+		width: 100%
+		min-height: 190px
+		border: 1px solid $border-2
+		background-color: $white
+		padding: 25px 30px 27px 30px
+		margin-top: 30px
+		.dien-tich
+			display: flex
+			align-items: center
+			margin-top: 13px
+			@media screen and ( max-width: 767.67px )
+				flex-direction: column
+				align-items: flex-start
+			.wrap-form-dt
+				display: flex
+				align-items: center
+				@media (max-width: 767.98px)
+					margin-top: 10px
+				@media (max-width: 575.98px)
+					flex-direction: column
+					align-items: flex-start
+				input[type="text"]
+					width: 130px
+					height: 40px
+					border: 1px solid $border-2
+					background-color: $white
+					text-align: center
+					@media screen and ( min-width: 768px )
+						margin-left: 19px
+				.box
+					width: 40px
+					height: 40px
+					background-color: #f5f5f5
+					display: flex
+					align-items: center
+					justify-content: center
+					color: $black-3
+					font-size: 14px
+					font-weight: 400
+				.btn-calculate
+					width: 130px
+					display: flex
+					align-items: center
+					justify-content: center
+					height: 40px
+					border: 0
+					outline: none
+					background-color: $red
+					color: $white
+					font-size: 14px
+					font-weight: 700
+					text-transform: uppercase
+					margin-left: 20px
+					position: relative
+					@media (max-width: 575.98px)
+						margin-left: 0px
+						margin-top: 10px
+		.wrap-form-hop
+			margin-top: 17px
+			display: flex
+			align-items: center
+			@media screen and ( max-width: 767.67px )
+				flex-direction: column
+				align-items: flex-start
+			.wrap
+				display: flex
+				@media screen and ( max-width: 767.67px )
+					margin-top: 10px
+			label
+				margin-right: 20px
+			input
+				width: 146px
+				height: 40px
+				background-color: #f5f5f5
+				border: 0
+				outline: none
+				text-align: center
+				border-right: 1px solid #e5e5e5 !important
+			.box
+				width: 64px
+				height: 40px
+				display: flex
+				background-color: #f5f5f5
+				align-items: center
+				justify-content: center
+	.wrap-order-button-1-line
+		margin-top: 10px
+		margin-bottom: 25px
+		@media screen and ( min-width: 1280px )
+			display: flex
+			align-items: flex-end
+		.wrap-button-buy
+			display: flex
+			@media screen and ( min-width: 1280px )
+				.add-to-cart
+					margin-left: 10px
+				.buy-now
+					margin-left: 10px
+			@media (max-width: 767.98px)
+				flex-direction: column
+	.wrap-number
+	.wrap-select-input
+		// display: flex
+		// align-items: center
+		// margin-top: 10px
+		// @media (max-width: 767.98px)
+		// 	flex-direction: column
+		// 	align-items: flex-start
+		// ul
+		// 	display: flex
+		// 	align-items: center
+		// 	flex-wrap: wrap
+		// 	@media (max-width: 767.98px)
+		// 		margin-top: 10px
+		// 		width: 100%
+		// 		margin-left: -10px
+		// 		margin-right: -10px
+		// 	li
+		// 		@media (min-width: 768px)
+		// 			margin-left: 20px
+		// 		@media (max-width: 767.98px)
+		// 			margin-bottom: 10px
+		// 			flex: 0 0 50%
+		// 			max-width: 50%
+		// 			padding-left: 10px
+		// 			padding-right: 10px
+		// 		input
+		// 			display: none
+		// 			&:checked ~ label
+		// 				border: 1px solid $black-3
+		// 				color: $black-1
+		// 		label
+		// 			min-width: 110px
+		// 			height: 40px
+		// 			border: 1px solid $border-2
+		// 			background-color: $white
+		// 			display: flex
+		// 			align-items: center
+		// 			justify-content: center
+		// 			color: $gray-9
+		// 			transition: .3s all ease-in-out
+		// 			@media (max-width: 767.98px)
+		// 				min-width: auto
+		// 				width: 100%
