@@ -1,0 +1,267 @@
+.btn
+	display: inline-block
+	font-weight: 400
+	text-align: center
+	white-space: nowrap
+	vertical-align: middle
+	user-select: none
+	background: $tran
+	&-toggle
+		cursor: pointer
+		position: relative
+		padding: 0
+		min-width: 30px
+		min-height: 23px
+		margin-left: 30px
+		transition: .3s all linear
+		span
+			display: block
+			position: absolute
+			height: 3px
+			width: 100%
+			background: $white
+			border-radius: 9px
+			opacity: 1
+			left: 0
+			-webkit-transform: rotate(0deg)
+			-moz-transform: rotate(0deg)
+			-o-transform: rotate(0deg)
+			transform: rotate(0deg)
+			transition: .5s ease-in-out
+			&:nth-child(1)
+				top: 0
+			&:nth-child(2),
+			&:nth-child(3)
+				top: 10px
+			&:nth-child(4)
+				top: 20px
+		&.active
+			span
+				&:nth-child(1)
+					top: 18px
+					width: 0%
+					left: 50%
+				&:nth-child(2)
+					-webkit-transform: rotate(45deg)
+					-moz-transform: rotate(45deg)
+					-o-transform: rotate(45deg)
+					transform: rotate(45deg)
+				&:nth-child(3)
+					-webkit-transform: rotate(-45deg)
+					-moz-transform: rotate(-45deg)
+					-o-transform: rotate(-45deg)
+					transform: rotate(-45deg)
+				&:nth-child(4)
+					top: 18px
+					width: 0%
+					left: 50%
+		@media screen and ( min-width: 1025px )
+			display: none
+		@media(max-width: 576px)
+			+ span
+				display: none
+	&-defaul
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		transition: 0.3s ease-out
+		width: 160px
+		height: 40px
+		border: 1px solid $brow-f20
+		background: $brow-f20
+		cursor: pointer
+		span
+			position: relative
+			font-weight: 700
+			text-transform: uppercase
+			letter-spacing: 0.7px
+			transition: 0.3s ease-out
+			z-index: 10
+			padding: 10px 18px
+			font-size: r(14px)
+		em
+			z-index: 10
+			color: $brow-f20
+			font-size: r(15px)
+			transition: 0.3s ease-out
+		&::before
+			position: absolute
+			top: 0
+			right: 0
+			height: 100%
+			width: 100%
+			content: ''
+			background: $white
+			transition: 0.3s ease-out
+
+		@media screen and ( min-width: 991.98px )
+			&:hover
+				border: 1px solid $tran
+				&::before
+					width: 0
+				span,
+				em
+					color: $main
+	&-black,
+	&-yellow
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		transition: 0.3s ease-out
+		padding: 10px 18px
+		span
+			position: relative
+			font-weight: 700
+			text-transform: uppercase
+			letter-spacing: 0.7px
+			transition: 0.3s ease-out
+			z-index: 10
+			font-size: r(14px)
+		&::before
+			position: absolute
+			top: 0
+			right: 0
+			height: 100%
+			width: 100%
+			content: ''
+			transition: 0.3s ease-out
+	&-black
+		background: $main
+		span
+			color: $main
+			position: relative
+			display: inline-block
+			@media screen and ( min-width: 1025px )
+				&:hover
+					span
+						&::before
+							width: 100%
+			&::before
+				content: ''
+				width: 0
+				position: absolute
+				display: inline-block
+				height: 1px
+				top: 100%
+				left: 50%
+				transform: translateX(-50%)
+				background-color: $main
+				transition: .3s all ease-in-out
+		&::before
+			background: $black
+		@media screen and ( min-width: 991.98px )
+			&:hover
+				&::before
+					width: 100%
+	&-yellow
+		background: $brow-f20
+		@media screen and ( min-width: 1025px )
+			&:hover
+				span
+					&::before
+						width: 100%
+		span
+			color: $black
+			position: relative
+			display: inline-block
+			&::before
+				content: ''
+				width: 0
+				height: 1px
+				position: absolute
+				display: inline-block
+				top: calc( 100% - 15px )
+				left: 50%
+				transform: translateX(-50%)
+				background-color: $main
+				transition: .3s all ease-in-out
+		&::before
+			background: $main
+		@media screen and ( min-width: 991.98px )
+			&:hover
+				&::before
+					width: 100%
+.button-sw-1
+	width: 50px
+	height: 50px
+	border: 1px solid $border-dc
+	background-color: $white
+	display: flex
+	align-items: center
+	transition: .3s all ease-in-out
+	justify-content: center
+	&:hover
+		background-color: $black
+		border: 1px solid $main
+		em
+			color: $main
+	em
+		transition: .3s all ease-in-out
+	&.button-prev
+		margin-right: 29px
+		@media screen and ( max-width: 1280px )
+			margin-right: 5px
+	&.button-next
+		margin-left: 29px
+		@media screen and ( max-width: 1280px )
+			margin-left: 5px
+.wrap-button-slide
+	display: flex
+	align-items: center
+	justify-content: center
+	@media screen and ( max-width: 1280px )
+		margin-top: 30px
+	.button-prev
+		right: 100%
+		top: 50%
+		transform: translateY(-50%)
+		position: absolute
+		@media screen and ( max-width: 1280px )
+			position: static
+			transform: translateY(0)
+	.button-next
+		left: 100%
+		top: 50%
+		transform: translateY(-50%)
+		position: absolute
+		@media screen and ( max-width: 1280px )
+			position: static
+			transform: translateY(0)
+.wrap-button-next-cart
+	display: flex
+	align-items: center
+	margin-left: auto
+	margin-top: 42px
+	width: fit-content
+	@media screen and ( max-width: 1023.67px )
+		width: 100%
+	@media (max-width: 575.98px)
+		flex-direction: column
+	.btn
+		width: 250px
+		height: 40px
+		color: $brow-f20
+		font-size: r(14px)
+		font-weight: 700
+		text-transform: uppercase
+		display: flex
+		align-items: center
+		justify-content: center
+		padding-top: 2px
+		@media screen and ( max-width: 1023.67px )
+			width: calc( 50% - 10px )
+		@media (max-width: 575.98px)
+			width: 100%
+			&+.btn
+				margin-top: 15px
+	.btn-shopping
+		border: 1px solid $border-2
+		background-color: $white
+	.btn-checkout
+		border: 1px solid $brow-f20
+		background-color: $main
+		margin-left: 20px
+		@media (max-width: 575.98px)
+			margin-left: 0px

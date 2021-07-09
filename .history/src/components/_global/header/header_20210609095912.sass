@@ -1,0 +1,386 @@
+header
+	width: 100%
+	background: $white
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 99
+	transition: .3s all ease-in-out
+	transform: translateY(0)
+	&.active
+		@media (max-width: 767.98px)
+			transform: translateY(-120px)
+		@media (max-width: 575.98px)
+			transform: translateY(-88px)
+	nav
+		.header-top
+			width: 100%
+			padding: r(9.3px) 0
+			background: $brow-f20
+			.nav-main
+				.navbar
+					margin-left: 110px
+					.nav-item
+						position: relative
+						padding: 0 r(20px)
+						&.active
+							.nav-link
+								color: $main
+								&::after
+									width: 100%
+						.nav-link
+							padding: 0
+							color: $white
+							font-size: r(14px)
+							font-weight: 700
+							text-transform: uppercase
+							position: relative
+							transition: all .5s ease-in-out
+						&::before
+							position: absolute
+							top: 50%
+							left: 0
+							width: 4px
+							height: 4px
+							background: $white
+							transform: translateY(-50%)
+							content: ''
+							transition: all .5s ease-in-out
+						&:first-child
+							&::before
+								display: none
+						&.active
+							.nav-link
+								color: $main
+						@media screen and ( min-width: 991.98px )
+							&:hover
+								.nav-link
+									color: $main
+
+				.wrap-right
+					margin-left: auto
+					.hotline
+						color: $main
+						font-size: r(14px)
+						font-weight: 700
+						letter-spacing: 0.7px
+						@media screen and ( max-width: 1200px )
+							display: none
+						em
+							font-size: r(18px)
+							font-weight: 400
+							padding-right: 7px
+					.promotion
+						margin-left: 30px
+						padding-right: 10px
+						a
+							opacity: 0.8
+							color: $main
+							font-size: r(12px)
+							font-weight: 400
+							&.active
+								text-decoration: underline
+					.wrap-end
+						.language
+							position: relative
+							padding-left: 10px
+							.dropdown
+								&:hover
+									.dropdown-menu
+										opacity: 1
+								a
+									display: flex
+									align-items: center
+									color: $gray-9
+									font-size: r(12px)
+									font-weight: 400
+									text-transform: uppercase
+									line-height: 10px
+									em
+										color: $gray-9
+										font-size: r(18px)
+										font-weight: 400
+										letter-spacing: 0.9px
+								.dropdown-menu
+									padding: 0
+									z-index: 1000
+									position: absolute
+									top: 120%
+									opacity: 0
+									background-color: #fff
+									transition: .3s all ease-in-out
+									li
+										padding: 7px
+										transition: .3s all ease-in-out
+										&:hover
+											background-color: $main
+											color: white
+							&::after
+								position: absolute
+								top: 0
+								left: 0
+								width: 1px
+								height: 11px
+								content: ''
+								background: $gray-6
+					.toggle-button
+						margin-left: 30px
+						position: relative
+						.icon
+							transition: all .5s
+							em
+								font-size: r(30px)
+								color: $main
+							&.active
+								transform: rotate(-180deg)
+						.sub-toggle
+							position: absolute
+							top: 100%
+							right: 0
+							z-index: 999
+							padding: 30px
+							width: auto
+							display: none
+							background: $brow-f20
+						@media screen and ( min-width: 1200px )
+							display: none
+						@media screen and ( max-width: 1199.98px )
+							.hotline
+								em
+									font-size: r(20px)
+							.promotion
+								margin-left: 0
+								padding-top: 18px
+								a
+									font-weight: 700
+									font-size: r(14px)
+									opacity: 1
+							.wrapper-button
+								margin-top: 18px
+								.btn-yellow
+									margin-top: 10px
+									margin-left: 0
+		.header-bottom
+			.logo-box
+				min-width: 110px
+				height: 110px
+				box-shadow: 3px 4px 20px rgba(0, 0, 0, 0.1)
+				background: $white
+				margin-top: -40px
+				display: flex
+				align-items: center
+				justify-content: center
+			.search-wrapper
+				margin-left: auto
+				[class*='Module']
+					width: 100%
+				.form-group
+					width: 280px
+					height: 36px
+					background: #f1f1f1
+					display: flex
+					align-items: center
+					[class*='Module']
+						height: 100%
+					.searchbox
+						height: 100%
+						display: flex
+					input
+						width: 100%
+						height: 100%
+						border: none
+						background: $tran
+						color: $brow-f20
+						font-size: r(12px)
+						font-weight: 400
+						padding-left: 10px
+					button
+						height: 100%
+						border: none
+						display: flex
+						align-items: center
+						justify-content: center
+						em
+							color: $brow-f20
+							font-size: r(18px)
+							font-weight: 400
+			.account-wrapper
+				display: flex
+				align-items: center
+				list-style: none
+				margin-left: 32px
+				li
+					a
+						color: $brow-f20
+						font-size: r(12px)
+						font-weight: 400
+						display: flex
+						align-items: center
+						transition: all .5s
+						position: relative
+						padding: 0 10px
+						&::after
+							position: absolute
+							top: 50%
+							left: -18px
+							transform: translateY(-50%)
+							font-family: remixicon
+							color: $brow-f20
+							font-size: r(20px)
+							font-weight: 500
+							margin-right: 8px
+							line-height: 0
+					&:first-child
+						padding-right: 10px
+						a
+							&::after
+								content: '\EFE0'
+					&:last-child
+						padding-left: 30px
+						border-left: solid 1px #e1e1e1
+						a
+							&::after
+								content: "\F264"
+					@media screen and ( min-width: 991.98px )
+						&:hover
+							color: $main
+							em
+								color: $main
+			.shopping-card-toggle
+				margin-left: 30px
+				position: relative
+				.wrap-cart-icon
+					cursor: pointer
+				.icon
+					em
+						color: var(--brow-f20)
+						font-size: r(24px)
+						font-weight: 500
+				.quilt
+					position: absolute
+					right: -10px
+					top: 0
+					display: flex
+					align-items: center
+					justify-content: center
+					width: 20px
+					height: 20px
+					border-radius: 50%
+					background: $main
+					color: var(--brow-f20)
+					font-size: r(10px)
+					font-weight: 500
+			.wrapper-button
+				margin-left: 43px
+				display: flex
+				align-items: center
+				@media screen and ( max-width: 1200px )
+					display: none
+				.btn-yellow
+					margin-left: 10px
+		@media screen and ( max-width: 1279.98px )
+			.header-top
+				.nav-main
+					.navbar
+						margin-left: 90px
+						.nav-item
+							padding: 0 1rem
+			.header-bottom
+				.logo-box
+					min-width: 90px
+					height: 90px
+				.search-wrapper
+					.form-group
+						width: 200px
+
+		@media screen and ( max-width: 1199.98px )
+			.header-top
+				.nav-main
+					.navbar
+						margin-left: 120px
+						.nav-item
+							.nav-link
+								font-size: r(13px)
+		@media screen and ( max-width: 1024.98px )
+			position: relative
+			.header-top
+				.nav-main
+					.navbar
+						padding: 0px
+						margin-left: 0
+						position: absolute
+						flex-direction: column
+						top: 100%
+						right: -100%
+						opacity: 0
+						visibility: hidden
+						width: 100vw
+						height: 100vh
+						z-index: 1000
+						background: $brow-f20
+						align-items: flex-start
+						transition: all .5s ease-in-out
+						.nav-item
+							padding: 1rem
+							transform: translateX(100%)
+							opacity: 0
+							transition: 1s all
+							width: 100%
+							padding-left: 43px
+							&::before
+								left: 18px
+							&:last-child
+								border-bottom: 1px solid $main
+							.nav-link
+								font-size: 1.1rem
+							&+.nav-item
+								border-top: 1px solid $main
+							&:first-child
+								&::before
+									display: block
+						&.active
+							right: 0
+							opacity: 1
+							visibility: visible
+							.nav-item
+								opacity: 1
+								transform: translateX(0)
+								&:nth-child(1)
+									transition-delay: .3s
+								&:nth-child(2)
+									transition-delay: .4s
+								&:nth-child(3)
+									transition-delay: .5s
+								&:nth-child(4)
+									transition-delay: .6s
+								&:nth-child(5)
+									transition-delay: .7s
+		@media screen and ( max-width: 767.98px )
+			.header-bottom
+				padding-bottom: 15px
+				padding-top: 5px
+				.container
+					flex-wrap: wrap
+					flex-direction: row
+				.account-wrapper
+					margin-left: auto
+				.search-wrapper
+					order: 4
+					width: 100%
+					margin-top: 10px
+					.form-group
+						width: 100%
+		@media screen and ( max-width: 575.98px )
+			.header-bottom
+				.logo-box
+					min-width: unset
+					width: 60px
+					height: 60px
+					padding: 10px
+				.shopping-card-toggle
+					margin-left: 10px
+	&.show__scroll
+		position: fixed
+		top: 0
+		z-index: 1000
+		box-shadow: 0 0 20px rgba(33,33,33,.2)
