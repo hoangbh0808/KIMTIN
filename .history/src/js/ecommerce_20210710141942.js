@@ -744,9 +744,7 @@ $(document).ready(function () {
 	/****************/
 	$("body").on("change", ".ajaxsort", function () {
 		ProcessAjax($(this).val());
-		setTimeout(() => {
-			phantrang();
-		}, 500);
+		phantrang()
 	});
 
 	$("body").on("click", "a.ajaxlink", function (e) {

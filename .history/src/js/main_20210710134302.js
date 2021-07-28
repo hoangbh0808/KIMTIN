@@ -508,7 +508,8 @@ function ClickFilterProduct(e) {
 }
 /*==================== Phan trang ====================*/
 function phantrang() {
-	$(".pagination")
+	$(".modulepager")
+		.find(".pagination")
 		.find("li>a.NextPage, li>a.LastPage, li>a.BackPage, li>a.FirstPage")
 		.parent()
 		.hide();
@@ -546,8 +547,7 @@ const InsertMobileAccount = () => {
 		'<div class="button-account-profile"><p class="title-main">Thông tin tài khoản</p> <em class="ri-arrow-down-s-line"></em></div>'
 	).insertBefore(".user-sidelink");
 	if ($(window).width() < 1024) {
-		$(".button-account-profile").click(function (e) {
-			e.preventDefault()
+		$(".button-account-profile").click(function () {
 			$(this).toggleClass("active");
 			$(".user-sidelink").toggleClass("active");
 		});
@@ -557,7 +557,7 @@ const InsertMobileAccount = () => {
 function ApeendWidth(e) {
 	var count = $(".home-choose ul li .count");
 	count.each(function (index) {
-		let width = Number($(this).css("width").slice(0, -2)) + 25 + "px";
+		let width = Number($(this).css("width").slice(0, -2)) + "px";
 		console.log(width);
 		$(this).css("min-width", width);
 	});
@@ -574,6 +574,7 @@ function checkWidthHomeChoose() {
 		var count123 = new CountUp(count[index], 0, value, 0, 5, countOptions);
 		count123.start();
 	});
+	$(this).css("min-width", "auto");
 }
 /*==================== Check active filer ====================*/
 function checkActiveFilter() {
@@ -602,7 +603,6 @@ function CheckTable(e) {
 		'<div class="wrap-table-responsive"></div>'
 	);
 }
-
 /*==================== LOAD FUNCTION ====================*/
 $(document).ready(function () {
 	AOS.init();
@@ -618,7 +618,6 @@ $(document).ready(function () {
 	accordianList();
 	// For Page Product
 	CheckTable();
-	phantrang();
 	// adjustProductAmount();
 	setTimeout(() => {
 		responeProduct();
@@ -662,6 +661,5 @@ $(document).ready(function () {
 			offset: 400,
 		}
 	);
-	ApeendWidth()
 	CheckFilterOrder();
 });

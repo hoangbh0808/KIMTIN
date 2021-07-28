@@ -744,9 +744,7 @@ $(document).ready(function () {
 	/****************/
 	$("body").on("change", ".ajaxsort", function () {
 		ProcessAjax($(this).val());
-		setTimeout(() => {
-			phantrang();
-		}, 500);
+		// $(".pagination").appendTo(".hero-product");
 	});
 
 	$("body").on("click", "a.ajaxlink", function (e) {

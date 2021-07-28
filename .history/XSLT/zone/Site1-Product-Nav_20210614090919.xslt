@@ -62,10 +62,10 @@
 							</xsl:attribute>
 							<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
 						</a>
-						<!-- <div class="icon">
+						<div class="icon">
 							<span></span>
 							<span></span>
-						</div> -->
+						</div>
 					</div>
 				</xsl:otherwise>
 			</xsl:choose>

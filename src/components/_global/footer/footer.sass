@@ -85,7 +85,6 @@ footer
 			padding-top: 33px
 			width: 100%
 			height: 100%
-
 			.title
 				color: $brow-f20
 				font-weight: 700
@@ -141,6 +140,8 @@ footer
 			display: flex
 			flex-direction: column
 			justify-content: space-between
+			&.no-jcc
+				justify-content: flex-start
 			.footer-body
 				ul
 					li
@@ -151,11 +152,11 @@ footer
 					flex-direction: row
 					a
 						display: flex
-						align-items: flex-end
+						align-items: center
 						justify-content: center
-						margin-bottom: 14px
-						+ a
-							margin-left: 15px
+						padding: 5px 5px
+						img
+							max-height: 30px
 		.col-lg-3
 			&:last-child
 				.footer-card

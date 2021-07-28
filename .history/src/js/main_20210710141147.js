@@ -546,8 +546,7 @@ const InsertMobileAccount = () => {
 		'<div class="button-account-profile"><p class="title-main">Thông tin tài khoản</p> <em class="ri-arrow-down-s-line"></em></div>'
 	).insertBefore(".user-sidelink");
 	if ($(window).width() < 1024) {
-		$(".button-account-profile").click(function (e) {
-			e.preventDefault()
+		$(".button-account-profile").click(function () {
 			$(this).toggleClass("active");
 			$(".user-sidelink").toggleClass("active");
 		});
