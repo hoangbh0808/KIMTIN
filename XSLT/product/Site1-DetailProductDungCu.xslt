@@ -106,7 +106,31 @@
 								<xsl:value-of disable-output-escaping="yes" select="Code">
 												</xsl:value-of>
 							</div>
-							<xsl:value-of disable-output-escaping="yes" select="FullContent"></xsl:value-of>
+							<div class="product-fullcontent">
+								<xsl:value-of disable-output-escaping="yes" select="FullContent"></xsl:value-of>
+							</div>
+							<div class="wrap-select-input options-wrap">
+								<!--
+							<span>Quy cách</span>
+							<ul>
+								<li>
+									<input type="radio" id="quycach1" name="quycach"/>
+									<label for="quycach1">Ø 3.2</label>
+								</li>
+								<li>
+									<input type="radio" id="quycach2" name="quycach"/>
+									<label for="quycach2">Ø 4.0</label>
+								</li>
+								<li>
+									<input type="radio" id="quycach3" name="quycach"/>
+									<label for="quycach3">Ø 4.0</label>
+								</li>
+							</ul>
+							-->
+								<xsl:if test="count(ProductProperties[EnableShoppingCart='True'])>0">
+									<xsl:apply-templates select="ProductProperties[EnableShoppingCart='True']"> </xsl:apply-templates>
+								</xsl:if>
+							</div>
 						</div>
 						<div class="wrap-number-order one-line mt-19">
 							<span>Số lượng</span>
@@ -217,6 +241,18 @@
 				</div>
 			</section>
 		</xsl:if>
+		<input type="hidden" id="hdProductId">
+			<xsl:attribute name="value">
+				<xsl:choose>
+					<xsl:when test="ParentProductId != '0' and ParentProductId != ''">
+						<xsl:value-of select="ParentProductId"/>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="ProductId"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:attribute>
+		</input>
 	</xsl:template>
 	<xsl:template match="ProductImages" mode="Thumb">
 		<div class="swiper-slide">
@@ -417,5 +453,57 @@
 				</xsl:if>
 			</div>
 		</div>
+	</xsl:template>
+	<xsl:template match="ProductProperties">
+		<xsl:choose>
+			<xsl:when test="0=0">
+				<div class="filter-wrap product-options">
+					<span>
+						<xsl:choose>
+							<xsl:when test="DisplayName!=''">
+								<xsl:value-of select="DisplayName"></xsl:value-of>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:value-of select="DisplayName"></xsl:value-of>
+							</xsl:otherwise>
+						</xsl:choose>
+					</span>
+					<ul class="select-options">
+						<xsl:apply-templates select="Options"/>
+					</ul>
+					<input type="hidden" class="product-option-input">
+						<xsl:attribute name="name">
+							<xsl:text>product_option_</xsl:text>
+							<xsl:value-of select="FieldId"/>
+						</xsl:attribute>
+						<xsl:attribute name="value">
+							<xsl:value-of select="ActiveOptionId"/>
+						</xsl:attribute>
+					</input>
+				</div>
+			</xsl:when>
+			<xsl:otherwise> </xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	<xsl:template match="Options">
+		<li>
+			<a class="product-option" onclick="AjaxCart.selectproductoption(this);return false;">
+				<xsl:if test="IsActive='true'">
+					<xsl:attribute name="class">
+						<xsl:text>product-option active</xsl:text>
+					</xsl:attribute>
+				</xsl:if>
+				<xsl:attribute name="href">#</xsl:attribute>
+				<xsl:attribute name="data-name">
+					<xsl:value-of select="Title"/>
+				</xsl:attribute>
+				<xsl:attribute name="data-id">
+					<xsl:value-of select="OptionId"/>
+				</xsl:attribute>
+				<div class="product-option" >
+					<xsl:value-of select="Title" disable-output-escaping="yes"/>
+				</div>
+			</a>
+		</li>
 	</xsl:template>
 </xsl:stylesheet>

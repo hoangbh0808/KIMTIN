@@ -69,7 +69,9 @@
 									<xsl:apply-templates select="ProductProperties[EnableShoppingCart='True']"> </xsl:apply-templates>
 								</xsl:if>
 							</div>
-							<xsl:value-of disable-output-escaping="yes" select="FullContent"></xsl:value-of>
+							<div class="product-fullcontent">
+								<xsl:value-of disable-output-escaping="yes" select="FullContent"></xsl:value-of>
+							</div>
 						</div>
 						<div class="wrap-box-calculate">
 							<div class="title-bold-product">Nhập diện tích</div>

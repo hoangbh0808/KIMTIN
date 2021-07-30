@@ -5,6 +5,7 @@
         <xsl:apply-templates select="Product"></xsl:apply-templates>
     </xsl:template>
     <xsl:template match="Product">
+        <xsl:value-of disable-output-escaping="yes" select="ModuleTitle"></xsl:value-of>
         <div class="row">
             <div class="col-lg-7">
                 <div class="box-img zoom-img">
@@ -29,7 +30,7 @@
             <div class="col-lg-5">
                 <div class="box-content">
                     <div class="ctn text-main f-14 fw-5 text-upp">
-                        <xsl:text disable-output-escaping="yes">sản phẩm mới</xsl:text>
+                        <xsl:value-of disable-output-escaping="yes" select="/ProductList/NewsProductTxt"></xsl:value-of>
                     </div>
                     <div class="block-title">
                         <xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
@@ -46,7 +47,8 @@
                             <xsl:attribute name="title">
                                 <xsl:value-of select="Title"></xsl:value-of>
                             </xsl:attribute>
-                            <xsl:text disable-output-escaping="yes">xem chi tiết</xsl:text>
+                            <xsl:value-of disable-output-escaping="yes" select="/ProductList/ViewDetailTxt">
+                            </xsl:value-of>
                             <em class="material-icons">arrow_right_alt</em>
                             <span class="hvr"></span>
                         </a>
@@ -55,5 +57,4 @@
             </div>
         </div>
     </xsl:template>
-
 </xsl:stylesheet>

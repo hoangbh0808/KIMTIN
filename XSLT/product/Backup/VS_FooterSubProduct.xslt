@@ -5,7 +5,6 @@
     <xsl:template match="/ZoneList">
         <div class="title text-white f-16 fw-7 text-upp">
             <xsl:apply-templates select="Zone[3]" mode="Parent"></xsl:apply-templates>
-            <em class="material-icons">keyboard_arrow_down</em>
         </div>
         <ul class="ls-none p-0 d-flex flex-column text-white f-13 fw-4">
             <xsl:apply-templates select="Zone[3]/Product" mode="Child"></xsl:apply-templates>
