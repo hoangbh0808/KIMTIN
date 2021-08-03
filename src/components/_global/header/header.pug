@@ -1,67 +1,85 @@
 header
 	nav
-		.header-top 
-			.container 
+		.header-top
+			.container
 				.nav-main.d-flex.align-center
 					ul.navbar.d-flex.align-center
-						li.nav-item 
+						li.nav-item.dropdown
 							a.nav-link(href="vat-lieu.html") vật liệu hàn
-						li.nav-item 
+							.dropdown-main-menu
+								ul.list-menu.nav-1
+									-for(i=0;i<8;i++)
+										li.list-item
+											a(href="")  Que hàn
+											ul.list-menu.nav-2
+												li.list-item
+													a(href="") Que hàn thép thường
+												li.list-item
+													a(href="") Que hàn thép cường độ cao
+												li.list-item
+													a(href="") Que hàn thép không rỉ
+												li.list-item
+													a(href="") Que hàn đắp phục hồi bề mặt
+												li.list-item
+													a(href="") Que hàn tig
+												li.list-item
+													a(href="") Que hàn gang
+						li.nav-item
 							a.nav-link(href="dung-cu-han.html") dụng cụ hàn
-						li.nav-item 
+						li.nav-item
 							a.nav-link(href="dung-cu-cam-tay.html") dụng cụ cầm tay
-						li.nav-item 
+						li.nav-item
 							a.nav-link(href="van-san.html") ván sàn
-						li.nav-item 
+						li.nav-item
 							a.nav-link(href="san-pham-khac.html") sản phẩm khác
-					.wrap-right.d-flex.align-center 
+					.wrap-right.d-flex.align-center
 						.hotline.d-flex.align-center
-							em.ri-phone-line 
+							em.ri-phone-line
 							span +84 938 55 8748
-						.promotion 
+						.promotion
 							a(href="") Khuyến mãi
 						.wrap-end.d-flex.align-center
 							.language
 								.dropdown
-									a(href="javascript:;") VN 
+									a(href="javascript:;") VN
 										em.ri-arrow-down-s-line
 									ul.dropdown-menu
-										li 
-											a(href="") EN 
-										li 
+										li
+											a(href="") EN
+										li
 											a(href="") VN
-						.toggle-button 
+						.toggle-button
 							.icon
 								em.ri-arrow-down-s-line
-							.sub-toggle 
+							.sub-toggle
 					.btn.btn-toggle
-						span 
-						span 
 						span
 						span
-		.header-bottom 
-			.container.d-flex.align-center 
-				.logo-box 
-					a(href="") 
+						span
+						span
+		.header-bottom
+			.container.d-flex.align-center
+				.logo-box
+					a(href="")
 						img(src="./img/logo.png", alt="")
-				.search-wrapper 
+				.search-wrapper
 					.form-group
 						input(type="text" placeholder="Tìm kiếm...")
 						button.btn.btn-search
 							em.ri-search-line
-				ul.account-wrapper 
+				ul.account-wrapper
 					li
-						a(href="") 
+						a(href="")
 							|Đăng ký
 					li
-						a(href="") 
+						a(href="")
 							|Đăng nhập
 				.shopping-card-toggle.d-flex.align-center
 					.icon
 						em.ri-shopping-cart-2-line
 					span.quilt 05
-				.wrapper-button 
-					a.btn.btn-black(href="") 
+				.wrapper-button
+					a.btn.btn-black(href="")
 						span khách hàng đại ký
 					a.btn.btn-yellow(href="")
 						span chào giá cạnh tranh

@@ -36,12 +36,19 @@
 						</h1>
 						<div class="wrap-main-price-share">
 							<div class="wrap-price">
-								<ins class="main-price product-price">
-									<xsl:value-of disable-output-escaping="yes" select="Price"></xsl:value-of>
-								</ins>
-								<del class="sale-price product-oldprice">
-									<xsl:value-of disable-output-escaping="yes" select="OldPrice"></xsl:value-of>
-								</del>
+								<xsl:choose>
+									<xsl:when test="Price != '' and Price != 0">
+										<ins class="main-price product-price">
+											<xsl:value-of disable-output-escaping="yes" select="Price"></xsl:value-of>
+										</ins>
+										<del class="sale-price product-oldprice">
+											<xsl:value-of disable-output-escaping="yes" select="OldPrice"></xsl:value-of>
+										</del>
+									</xsl:when>
+									<xsl:otherwise>
+										<div class="contact-no-price"> Liên hệ </div>
+									</xsl:otherwise>
+								</xsl:choose>
 							</div>
 							<div class="wrap-share">
 								<div class="wishlist-warp">
@@ -332,12 +339,21 @@
 					<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
 				</a>
 				<div class="wrap-price">
-					<ins>
-						<xsl:value-of disable-output-escaping="yes" select="Price"></xsl:value-of>
-					</ins>
-					<del>
-						<xsl:value-of disable-output-escaping="yes" select="OldPrice"></xsl:value-of>
-					</del>
+					<xsl:choose>
+						<xsl:when test="Price != '' and Price != 0">
+							<ins>
+								<xsl:value-of disable-output-escaping="yes" select="Price"></xsl:value-of>
+							</ins>
+							<del>
+								<xsl:value-of disable-output-escaping="yes" select="OldPrice"></xsl:value-of>
+							</del>
+						</xsl:when>
+						<xsl:otherwise>
+							<div class="contact-no-price">
+							Liên hệ
+							</div>
+						</xsl:otherwise>
+					</xsl:choose>
 				</div>
 			</div>
 		</div>
@@ -370,12 +386,19 @@
 						</a>
 					</div>
 					<div class="wraper-price d-flex aligin-center">
-						<span class="price">
-							<xsl:value-of disable-output-escaping="yes" select="Price"></xsl:value-of>
-						</span>
-						<span class="oldprice">
-							<xsl:value-of disable-output-escaping="yes" select="OldPrice"></xsl:value-of>
-						</span>
+						<xsl:choose>
+							<xsl:when test="Price != '' and Price != 0">
+								<span class="price">
+									<xsl:value-of disable-output-escaping="yes" select="Price"></xsl:value-of>
+								</span>
+								<span class="oldprice">
+									<xsl:value-of disable-output-escaping="yes" select="OldPrice"></xsl:value-of>
+								</span>
+							</xsl:when>
+							<xsl:otherwise>
+								<div class="contact-no-price"> Liên hệ </div>
+							</xsl:otherwise>
+						</xsl:choose>
 					</div>
 				</div>
 				<xsl:if test="floor(ShowOption div 1) mod 2 = 1">
@@ -429,12 +452,19 @@
 						</a>
 					</div>
 					<div class="wraper-price d-flex aligin-center">
-						<span class="price">
-							<xsl:value-of disable-output-escaping="yes" select="Price"></xsl:value-of>
-						</span>
-						<span class="oldprice">
-							<xsl:value-of disable-output-escaping="yes" select="OldPrice"></xsl:value-of>
-						</span>
+						<xsl:choose>
+							<xsl:when test="Price != '' and Price != 0">
+								<span class="price">
+									<xsl:value-of disable-output-escaping="yes" select="Price"></xsl:value-of>
+								</span>
+								<span class="oldprice">
+									<xsl:value-of disable-output-escaping="yes" select="OldPrice"></xsl:value-of>
+								</span>
+							</xsl:when>
+							<xsl:otherwise>
+								<div class="contact-no-price"> Liên hệ </div>
+							</xsl:otherwise>
+						</xsl:choose>
 					</div>
 				</div>
 				<xsl:if test="floor(ShowOption div 1) mod 2 = 1">

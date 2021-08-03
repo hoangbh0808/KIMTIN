@@ -354,12 +354,21 @@
 					<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
 				</a>
 				<div class="wrap-price">
-					<ins>
-						<xsl:value-of disable-output-escaping="yes" select="Price"></xsl:value-of>
-					</ins>
-					<del>
-						<xsl:value-of disable-output-escaping="yes" select="OldPrice"></xsl:value-of>
-					</del>
+					<xsl:choose>
+						<xsl:when test="Price != '' and Price != 0">
+							<ins>
+								<xsl:value-of disable-output-escaping="yes" select="Price"></xsl:value-of>
+							</ins>
+							<del>
+								<xsl:value-of disable-output-escaping="yes" select="OldPrice"></xsl:value-of>
+							</del>
+						</xsl:when>
+						<xsl:otherwise>
+							<div class="contact-no-price">
+							Liên hệ
+							</div>
+						</xsl:otherwise>
+					</xsl:choose>
 				</div>
 			</div>
 		</div>
