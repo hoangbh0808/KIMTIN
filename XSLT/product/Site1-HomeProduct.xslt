@@ -35,7 +35,7 @@
 		</section>
 	</xsl:template>
 	<xsl:template match="Product">
-		<div class="swiper-slide" data-aos="zoom-in" data-aos-delay="300">
+		<div class="swiper-slide">
 			<div class="swiper-inner">
 				<div class="img">
 					<a>

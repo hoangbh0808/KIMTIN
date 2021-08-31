@@ -35,22 +35,33 @@
 	</xsl:template>
 	<xsl:template match="Product">
 		<div class="product-item">
-			<a class="pro-img">
-				<xsl:attribute name="href">
-					<xsl:value-of select="Url"></xsl:value-of>
-				</xsl:attribute>
-				<xsl:attribute name="title">
-					<xsl:value-of select="Title"></xsl:value-of>
-				</xsl:attribute>
-				<img class="lazyload">
-					<xsl:attribute name="data-src">
-						<xsl:value-of select="ImageUrl"></xsl:value-of>
+			<div class="pro-img">
+				<a >
+					<xsl:attribute name="href">
+						<xsl:value-of select="Url"></xsl:value-of>
 					</xsl:attribute>
-					<xsl:attribute name="alt">
+					<xsl:attribute name="title">
 						<xsl:value-of select="Title"></xsl:value-of>
 					</xsl:attribute>
-				</img>
-			</a>
+					<img class="lazyload">
+						<xsl:attribute name="data-src">
+							<xsl:value-of select="ImageUrl"></xsl:value-of>
+						</xsl:attribute>
+						<xsl:attribute name="alt">
+							<xsl:value-of select="Title"></xsl:value-of>
+						</xsl:attribute>
+					</img>
+					<img class="hover lazyload">
+						<xsl:attribute name="data-src">
+							<xsl:value-of disable-output-escaping="yes" select="ThumbnailUrl"></xsl:value-of>
+						</xsl:attribute>
+						<xsl:attribute name="alt">
+							<xsl:value-of select="Title"></xsl:value-of>
+						</xsl:attribute>
+					</img>
+					<xsl:apply-templates select="ProductImages"></xsl:apply-templates>
+				</a>
+			</div>
 			<xsl:if test="floor(ShowOption div 1) mod 2 = 1">
 				<div class="option yellow">
 					<div class="desc">Mới</div>

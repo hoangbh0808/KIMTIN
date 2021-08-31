@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
 	<xsl:output method="html" indent="yes"/>
 	<xsl:template match="/ProductList">
-		<div class="section-title" data-aos="zoom-in-up" data-aos-easing="ease-in-out">
+		<div class="section-title" >
 			<xsl:value-of disable-output-escaping="yes" select="ModuleTitle"></xsl:value-of>
 		</div>
 		<div class="row">
@@ -16,7 +16,7 @@
 		</div>
 	</xsl:template>
 	<xsl:template match="Product">
-		<div class="col-6 col-sm-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+		<div class="col-6 col-sm-6 col-md-4 col-lg-3" >
 			<div class="item-pro">
 				<div class="img">
 					<a>

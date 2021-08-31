@@ -2,10 +2,10 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
 	<xsl:output method="html" indent="yes"/>
 	<xsl:template match="/ZoneList">
-		<div class="section-title" data-aos="zoom-in-up" data-aos-easing="ease-in-out">
+		<div class="section-title">
 			<xsl:value-of disable-output-escaping="yes" select="ModuleTitle"></xsl:value-of>
 		</div>
-		<div class="hero-catelog d-flex align-center" data-aos="fade-up" data-aos-easing="ease-in-out">
+		<div class="hero-catelog d-flex align-center">
 			<xsl:apply-templates select="Zone"></xsl:apply-templates>
 		</div>
 	</xsl:template>

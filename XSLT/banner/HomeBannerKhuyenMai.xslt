@@ -11,7 +11,7 @@
 		</section>
 	</xsl:template>
 	<xsl:template match="Banner">
-		<div class="col-lg-4 col-md-4 col-sm-6 " data-aos="zoom-in-up">
+		<div class="col-lg-4 col-md-4 col-sm-6 ">
 			<div class="banner-item">
 				<div class="img">
 					<a>

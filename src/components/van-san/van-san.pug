@@ -1,9 +1,9 @@
 section.section.product-list.flooring
-	.container 
-		.row 
+	.container
+		.row
 			.col-12.col-lg-3
 				.side-navigation-wrapper
-					.title 
+					.title
 						h1 Dụng cụ hàn
 						.icon
 							span
@@ -21,7 +21,7 @@ section.section.product-list.flooring
 						li.navigation-item
 							.accordion-title
 								a(href='') Hugong
-								.icon 
+								.icon
 									span
 									span
 				-for(i = 1; i < 6; i++)
@@ -31,24 +31,24 @@ section.section.product-list.flooring
 								span
 								span
 						.filter-option
-							ul 
+							ul
 								li.active
-									a(href="") CROWN    
+									a(href="") CROWN
 								li
-									a(href="") DWT 
-			.col-lg-9 
-				.hero-product.ajaxresponse 
+									a(href="") DWT
+			.col-lg-9
+				.hero-product.ajaxresponse
 					.block_name_category.d-flex
 						.name_category
 							h2 Máy hàn Crown
 						.wrap-left.d-flex
-							.sort-wrap.d-flex 
-								p Sắp xếp: 
+							.sort-wrap.d-flex
+								p Sắp xếp:
 								select.ajaxsort
 									option(value="" selected) Mới nhất
 									option(value="") Giá: Thấp - Cao
 									option(value="") Giá: Cao - Thấp
-							.option-wrap.d-flex  
+							.option-wrap.d-flex
 								p Hiển thị:
 								select.ajaxsort
 									option(value="" selected) 12
@@ -58,13 +58,15 @@ section.section.product-list.flooring
 									option(value="") 100
 					.block-product.ajaxresponsewrap
 						-for(i=1; i<13; i++)
-							.product-item 
-								a.pro-img(href="san-pham-chi-tiet.html")
-									img.lazyload(data-src="./img/product/pro-4.png", alt="")
-								.option.yellow 
+							.product-item
+								.pro-img(href="san-pham-chi-tiet.html")
+									a
+										img.lazyload(data-src="./img/product/pro-4.png", alt="")
+										img.hover(src="http://preview8266.canhcam.com.vn/Data/Sites/1/Product/5845/2.jpg", alt="")
+								.option.yellow
 									.desc Mới
 								.pro-infor
-									.pro-title 
+									.pro-title
 										a(href="vat-lieu-chi-tiet.html") Máy Hàn Điện Tử CT33102 CROWN
 									.pro-price.d-flex
 										span.price 550.000 đ
@@ -74,7 +76,7 @@ section.section.product-list.flooring
 							ul.pagination
 								li.active
 									span 1
-								li 
+								li
 									a(href="") 2
-								li 
+								li
 									a(href="") 3
