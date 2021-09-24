@@ -406,10 +406,12 @@
 	margin-top: 20px
 	tr
 		td
-			padding: r(20px) 0px
+			padding: r(20px) r(5px)
 			border: 1px solid #dbdbdb
 			border-width: 0 0 1px
 			font-size: r(16px)
+			.text
+				white-space: nowrap
 			&:first-child
 				a
 					font-weight: bold
@@ -422,6 +424,7 @@
 				border-radius: 10px
 				padding: 2px 10px
 				display: inline-block
+				white-space: nowrap
 				background-color: $main
 .button-account-profile
 	display: none
