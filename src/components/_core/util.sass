@@ -220,19 +220,19 @@
 	&:hover
 		color: $main
 .side-navigation-wrapper
-	@media (max-width: 1024.98px)
-		position: fixed
-		top: 0
-		right: 100%
-		background-color: white
-		z-index: 999
-		width: 100%
-		height: calc( 100% - 40px )
-		padding: 20px
-		transition: all 600ms cubic-bezier(0.825, 0.09, 0.085, 1.01)
-		overflow-y: auto
-		&.active
-			right: 0
+	// @media (max-width: 1024.98px)
+	// 	position: fixed
+	// 	top: 0
+	// 	right: 100%
+	// 	background-color: white
+	// 	z-index: 999
+	// 	width: 100%
+	// 	height: calc( 100% - 40px )
+	// 	padding: 20px
+	// 	transition: all 600ms cubic-bezier(0.825, 0.09, 0.085, 1.01)
+	// 	overflow-y: auto
+	// 	&.active
+	// 		right: 0
 	.title
 		position: relative
 		width: 100%
@@ -305,6 +305,8 @@
 					line-height: 50px
 					transition: all .2s
 					font-weight: 400
+					@media (max-width: 1023.98px)
+						line-height: 40px
 				.icon
 					width: 15px
 					height: 15px
@@ -361,7 +363,7 @@
 	@media screen and ( max-width: 1199.98px )
 		.title
 			h1
-				font-size: r(18px)
+				font-size: 1rem
 		.side-navigation
 			padding: 15px
 			.navigation-item
@@ -372,12 +374,16 @@
 					padding-left: 7px
 					li
 						a
-							font-size: r(11px)
+							font-size: .9rem
+							line-height: 28px
 	@media screen and ( max-width: 1024.98px )
 		margin-bottom: 30px
 		.title
 			padding: 7px 30px
 	@media screen and ( max-width: 991.98px )
+		.side-navigation
+			max-height: 200px
+			overflow-y: auto
 		.side-navigation
 			padding: 0 15px
 .filter-wrapper
@@ -527,20 +533,23 @@ textarea
 		bottom: 0
 		left: 0
 		width: 100%
+		transform: translateY(100%)
 		z-index: 99
+		transition: .3s all ease-in-out
+		&.isOpen
+			transform: translateY(0)
 		.button-flex
 			display: flex
 			align-items: center
 			justify-content: center
-			flex: 0 0 50%
-			max-width: 50%
+			flex: 1 0 50%
 			height: 40px
 			background-color: $black-1
 			color: $main
 			font-size: r(18px)
 			font-weight: bold
-			&+.button-flex
-				border-left: 1px solid $main
+			&.button-dmsp
+				display: none
 			@media (max-width: 575.98px)
 				font-size: r(14px)
 .fb_iframe_widget_fluid_desktop iframe
@@ -583,3 +592,13 @@ span._50f7
 	font-size: 16px
 	font-weight: 500
 	text-transform: uppercase
+#popup_2
+	padding: 0 !important
+	.fancybox-close-small
+		background-color: rgba(0, 0, 0, 0.4)
+		width: 40px
+		height: 40px
+		padding: 8px
+		svg
+			path
+				fill: white

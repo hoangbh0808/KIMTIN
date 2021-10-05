@@ -47,18 +47,6 @@
 									<xsl:value-of disable-output-escaping="yes" select="Description"></xsl:value-of>
 								</div>
 							</xsl:if>
-							<xsl:if test="Url != ''">
-								<a class="btn btn-yellow none-line">
-									<xsl:attribute name="href">
-										<xsl:value-of select="Url"></xsl:value-of>
-									</xsl:attribute>
-									<xsl:attribute name="title">
-										<xsl:value-of select="Title"></xsl:value-of>
-									</xsl:attribute>
-									<span>Mua ngay</span>
-									<em class="lnr lnr-arrow-right"></em>
-								</a>
-							</xsl:if>
 						</div>
 					</div>
 				</div>
@@ -83,16 +71,6 @@
 							<div class="banner-desc">
 								<xsl:value-of disable-output-escaping="yes" select="Description"></xsl:value-of>
 							</div>
-							<a class="btn btn-yellow">
-								<xsl:attribute name="href">
-									<xsl:value-of select="Url"></xsl:value-of>
-								</xsl:attribute>
-								<xsl:attribute name="title">
-									<xsl:value-of select="Title"></xsl:value-of>
-								</xsl:attribute>
-								<span>Mua ngay</span>
-								<em class="lnr lnr-arrow-right"></em>
-							</a>
 						</div>
 					</div>
 				</div>

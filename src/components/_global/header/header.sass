@@ -65,6 +65,11 @@ header
 
 				.wrap-right
 					margin-left: auto
+					@media (max-width: 1024.98px)
+						.btn-black
+							margin-left: 15px
+							span
+								font-size: .6rem
 					.hotline
 						color: $main
 						font-size: r(14px)
@@ -131,6 +136,7 @@ header
 								background: $gray-6
 					.toggle-button
 						margin-left: 30px
+						display: none
 						position: relative
 						.icon
 							transition: all .5s
@@ -144,12 +150,10 @@ header
 							top: 100%
 							right: 0
 							z-index: 999
-							padding: 30px
+							padding: 15px
 							width: auto
 							display: none
 							background: $brow-f20
-						@media screen and ( min-width: 1200px )
-							display: none
 						@media screen and ( max-width: 1199.98px )
 							.hotline
 								em
@@ -177,11 +181,20 @@ header
 				align-items: center
 				justify-content: center
 			.search-wrapper
-				margin-left: auto
+				max-width: 590px
+				width: 100%
+				@media (max-width: 1279.98px)
+					max-width: 540px
+				@media (max-width: 1023.98px)
+					max-width: 300px
+				@media (max-width: 767.98px)
+					max-width: 100%
+				@media (min-width: 768px)
+					padding-left: 20px
 				[class*='Module']
 					width: 100%
 				.form-group
-					width: 280px
+					width: 100%
 					height: 36px
 					background: #f1f1f1
 					display: flex
@@ -295,10 +308,6 @@ header
 				.logo-box
 					min-width: 90px
 					height: 90px
-				.search-wrapper
-					.form-group
-						width: 200px
-
 		@media screen and ( max-width: 1199.98px )
 			.header-top
 				.nav-main
@@ -361,6 +370,8 @@ header
 									transition-delay: .6s
 								&:nth-child(5)
 									transition-delay: .7s
+								&:nth-child(6)
+									transition-delay: .8s
 		@media screen and ( max-width: 767.98px )
 			.header-bottom
 				padding-bottom: 15px
@@ -396,7 +407,7 @@ header
 		left: 0
 		width: 100%
 		opacity: 0
-		transition: .3s all  ease-in-out
+		transition: .3s all ease-in-out
 		visibility: hidden
 		background-color: #fff
 		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05)
@@ -416,7 +427,7 @@ header
 			column-count: 4
 			column-gap: 10px
 			a
-				transition: .3s all  ease-in-out
+				transition: .3s all ease-in-out
 				&:hover
 					color: $main
 					text-decoration: underline

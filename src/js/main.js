@@ -206,19 +206,12 @@ const mappingInit = () => {
 		desktopMethod: "appento",
 		breakpoint: 1200,
 	});
-	$(".wrap-right .promotion").mapping({
-		mobileWrapper: ".wrap-right .toggle-button .sub-toggle",
-		mobileMethod: "appendTo",
-		desktopWrapper: ".wrap-right",
-		desktopMethod: "appento",
-		breakpoint: 1200,
-	});
 	$(".header-bottom .wrapper-button").mapping({
-		mobileWrapper: ".wrap-right .toggle-button .sub-toggle",
-		mobileMethod: "appendTo",
+		mobileWrapper: ".wrap-right .wrap-end",
+		mobileMethod: "insertAfter",
 		desktopWrapper: ".header-bottom",
 		desktopMethod: "appento",
-		breakpoint: 1200,
+		breakpoint: 1025,
 	});
 
 	$("header")
@@ -481,6 +474,11 @@ function clickTriggerCart() {
 }
 /*==================== ClickFilterProduct ====================*/
 function ClickFilterProduct(e) {
+	if ($('.filter-option').length <= 0) {
+		$('.button-blsp').hide()
+	} else {
+		$('.button-blsp').closest('.wrap-fixed-menu').addClass('isOpen')
+	}
 	$(".button-dmsp").click(function () {
 		if ($(".wrap-filter-wraper").is(".active")) {
 			$(".button-blsp").trigger("click");
@@ -602,10 +600,17 @@ function CheckTable(e) {
 		'<div class="wrap-table-responsive"></div>'
 	);
 }
+/*==================== Append sub-toggle ====================*/
+function appendSubToggle() {
+	if ($(window).width() <=575) {
+		$('.promotion a').addClass('nav-link').appendTo('header nav .header-top .nav-main .navbar').wrap('<li class="nav-item"></li>')
+	}
+}
 
 /*==================== LOAD FUNCTION ====================*/
 $(document).ready(function () {
 	AOS.init();
+	appendSubToggle()
 	scrollTop();
 	mainMenu();
 	initBanner();
@@ -664,4 +669,10 @@ $(document).ready(function () {
 	);
 	ApeendWidth()
 	CheckFilterOrder();
+});
+$(document).ready(function () {
+	if ($('body').hasClass('en-us')) {
+		console.log('ENG')
+		$('#ctl00_mdl157_ctl00_Search_txtSearch').attr('placeholder','Search')
+	}
 });

@@ -10,6 +10,7 @@
 			justify-content: space-between
 			border-bottom: solid 1px #e0e0e0
 			.name_category
+				padding-right: 15px
 				h2
 					color: $black-1
 					font-size: r(24px)
@@ -20,6 +21,7 @@
 					p
 						color: $black-3
 						font-size: r(14px)
+						white-space: nowrap
 						font-weight: 700
 						padding-right: 15px
 					select
@@ -149,6 +151,8 @@
 				.name_category
 					width: 100%
 					padding-bottom: 10px
+					h2
+						font-size: 1.3rem
 			.block-product
 				.product-item
 					&:nth-child(4),
@@ -198,5 +202,9 @@
 				.product-item
 					.pro-img
 						padding: 29px 16px
-						img
-							transform: scale(1)
+						@media (max-width: 1023.98px)
+							padding: 0
+						a
+							+img-ratio(218/243)
+							img
+								transform: scale(1)
